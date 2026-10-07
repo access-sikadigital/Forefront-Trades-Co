@@ -27,3 +27,17 @@ export function Logo({ className, wordColor = "currentColor", markColor = "var(-
     </svg>
   );
 }
+
+/**
+ * One line of the official wordmark ("FOREFRONT" or "TRADES CO."), cropped from the
+ * same artwork as <Logo>, so text-reveal animations still use the real lettering.
+ */
+export function WordmarkLine({ line, className, color = "currentColor" }: { line: 1 | 2; className?: string; color?: string }) {
+  return (
+    <svg viewBox={line === 1 ? "132 -2 370 47" : "132 57 370 48"} overflow="visible" aria-hidden className={cn("block h-auto", className)}>
+      {WORD.map((d, i) => (
+        <path key={i} d={d} fill={color} />
+      ))}
+    </svg>
+  );
+}

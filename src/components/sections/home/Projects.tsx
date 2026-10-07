@@ -142,7 +142,7 @@ function AllProjectsCard() {
           aria-hidden
           className="pointer-events-none absolute -right-1/4 -bottom-1/4 size-[120%] text-orange/25 transition-transform duration-[1.6s] ease-[var(--ease-expo)] group-hover:rotate-12"
         >
-          <Logomark className="size-full" strokeWidth={4} />
+          <Logomark className="size-full" />
         </div>
         <span className="label relative text-orange">Portfolio</span>
         <span className="relative font-display text-h2 leading-[0.95] font-bold">

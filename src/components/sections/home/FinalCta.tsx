@@ -20,18 +20,19 @@ export function FinalCta() {
       const q = gsap.utils.selector(root);
       gsap
         .timeline({ scrollTrigger: { trigger: root.current, start: "top 95%", end: "center center", scrub: 0.8 }, defaults: { ease: "none" } })
-        .fromTo(q("[data-mark='frame']"), { drawSVG: "0%" }, { drawSVG: "100%" })
-        .fromTo(q("[data-mark='cell']"), { drawSVG: "0%" }, { drawSVG: "100%" }, "-=0.3")
-        .fromTo(q("[data-mark='arc']"), { drawSVG: "0%" }, { drawSVG: "100%" }, "-=0.3")
-        .fromTo(q("[data-mark-wrap]"), { rotate: -30, scale: 0.8 }, { rotate: 0, scale: 1 }, 0);
+        // Official logomark as a background watermark: its exact outline draws with the
+        // scroll, then a faint fill settles in so it never competes with the CTA buttons.
+        .fromTo(q("[data-mark='outline']"), { drawSVG: "0%" }, { drawSVG: "100%", duration: 1 })
+        .fromTo(q("[data-mark='fill']"), { opacity: 0 }, { opacity: 0.14, duration: 0.35 }, "-=0.1")
+        .fromTo(q("[data-mark-wrap]"), { rotate: -30, scale: 0.8 }, { rotate: 0, scale: 1, duration: 1.25 }, 0);
     },
     { scope: root },
   );
 
   return (
     <section ref={root} className="relative overflow-hidden bg-purple-950 text-white">
-      <div data-mark-wrap aria-hidden className="pointer-events-none absolute top-1/2 right-[-8vw] -translate-y-1/2 text-orange/25 lg:text-orange/80">
-        <Logomark className="size-[52vw] max-w-[760px] lg:size-[42vw]" strokeWidth={3.2} />
+      <div data-mark-wrap aria-hidden className="pointer-events-none absolute top-1/2 right-[-8vw] -translate-y-1/2 text-orange/40 lg:text-orange">
+        <Logomark animated className="size-[52vw] max-w-[760px] lg:size-[42vw]" />
       </div>
       <div className="container-x relative py-section">
         <Reveal>

@@ -98,7 +98,7 @@ export function Statement() {
                     </textPath>
                   </text>
                 </svg>
-                <Logomark className="size-[30%]" strokeWidth={10} />
+                <Logomark className="size-[30%]" />
               </div>
             </div>
           </div>

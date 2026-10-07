@@ -45,7 +45,7 @@ export function Footer() {
     <footer ref={root} className="relative overflow-hidden bg-purple-950 text-white">
       <div data-inner className="relative">
         <div data-arc className="pointer-events-none absolute -top-[18vw] -right-[18vw] origin-center text-orange/[0.07]">
-          <Logomark className="size-[60vw] max-w-[820px]" strokeWidth={5} />
+          <Logomark className="size-[60vw] max-w-[820px]" />
         </div>
 
         <div className="container-x relative grid gap-14 pt-24 pb-10 lg:grid-cols-12 lg:pt-32">

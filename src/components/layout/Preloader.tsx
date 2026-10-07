@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { WordmarkLine } from "@/components/ui/Logo";
 import { Logomark } from "@/components/ui/Logomark";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { completeIntro, PRELOADER_SEEN_KEY } from "@/lib/intro";
@@ -39,10 +40,11 @@ export function Preloader() {
 
       const tl = gsap.timeline({ defaults: { ease: "ftc.inOut" }, onComplete: finish });
       tl.set(q("[data-content]"), { autoAlpha: 1 })
-        .from(q("[data-mark='frame']"), { drawSVG: "0%", duration: 1.0 })
-        .from(q("[data-mark='cell']"), { drawSVG: "0%", duration: 0.6 }, "-=0.45")
-        .from(q("[data-mark='arc']"), { drawSVG: "0%", duration: 0.7 }, "-=0.35")
-        .from(q("[data-word]"), { yPercent: 110, duration: 0.9, stagger: 0.08, ease: "ftc.out" }, "-=0.7")
+        // Official logomark: outline draws in, then the solid artwork fills over it.
+        .fromTo(q("[data-mark='outline']"), { drawSVG: "0%" }, { drawSVG: "100%", duration: 1.3 })
+        .fromTo(q("[data-mark='fill']"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.2")
+        .to(q("[data-mark='outline']"), { opacity: 0, duration: 0.3 }, "<")
+        .from(q("[data-word]"), { yPercent: 110, duration: 0.9, stagger: 0.08, ease: "ftc.out" }, "-=0.6")
         .to(q("[data-count]"), { textContent: 100, snap: { textContent: 1 }, duration: 1.6, ease: "power2.inOut" }, 0)
         .to(q("[data-content]"), { autoAlpha: 0, y: -24, duration: 0.5, ease: "power2.in" }, "+=0.15")
         .add(() => completeIntro(), "-=0.05")
@@ -66,14 +68,19 @@ export function Preloader() {
       ))}
 
       <div data-content data-reveal className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="flex items-center gap-5 sm:gap-7">
-          <Logomark className="size-16 sm:size-20" strokeWidth={9} />
-          <div className="font-display text-[1.65rem] leading-[1.02] font-bold tracking-[-0.01em] text-white sm:text-[2.1rem]">
+        {/* Official primary lockup proportions: wordmark lines together match the mark height. */}
+        <div className="flex items-center gap-[1.4rem] sm:gap-7">
+          <Logomark animated className="size-16 sm:size-20" />
+          <div className="flex h-16 flex-col justify-between sm:h-20">
             <span className="block overflow-hidden">
-              <span data-word className="block">FOREFRONT</span>
+              <span data-word className="block">
+                <WordmarkLine line={1} className="h-[1.8rem] w-auto sm:h-[2.25rem]" color="#fff" />
+              </span>
             </span>
             <span className="block overflow-hidden">
-              <span data-word className="block">TRADES CO.</span>
+              <span data-word className="block">
+                <WordmarkLine line={2} className="h-[1.84rem] w-auto sm:h-[2.3rem]" color="#fff" />
+              </span>
             </span>
           </div>
         </div>

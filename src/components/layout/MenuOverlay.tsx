@@ -77,7 +77,7 @@ export function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => v
       {/* Decoration lives in its own clipped layer so it can never widen the menu (no sideways scroll). */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div data-mark className="absolute -right-[18vw] -bottom-[14vw] text-white/[0.04]">
-          <Logomark className="size-[80vw] max-w-[900px]" strokeWidth={6} />
+          <Logomark className="size-[80vw] max-w-[900px]" />
         </div>
       </div>
 
