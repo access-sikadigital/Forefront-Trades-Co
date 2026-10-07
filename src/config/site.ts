@@ -29,27 +29,18 @@ export const site = {
 
 export type NavItem = { label: string; href: string; children?: NavItem[] };
 
+// Service order is fixed by the client — keep it identical to the home page cards.
+export const serviceNav: NavItem[] = [
+  { label: "Kitchen renovations", href: "/kitchen-renovations/" },
+  { label: "Bathroom renovations", href: "/bathroom-renovations/" },
+  { label: "Laundry renovations", href: "/laundry-renovations/" },
+  { label: "Full home renovations", href: "/home-renovations/" },
+  { label: "Home extensions", href: "/home-extensions/" },
+  { label: "Heritage restorations", href: "/heritage-renovations/" },
+];
+
 export const mainNav: NavItem[] = [
-  {
-    label: "Extensions",
-    href: "/home-extensions/",
-    children: [
-      { label: "Home extensions", href: "/home-extensions/" },
-      { label: "Second storey extensions", href: "/home-extensions/second-storey/" },
-      { label: "Ground floor extensions", href: "/home-extensions/ground-floor/" },
-    ],
-  },
-  {
-    label: "Renovations",
-    href: "/home-renovations/",
-    children: [
-      { label: "Full home renovations", href: "/home-renovations/" },
-      { label: "Kitchen renovations", href: "/kitchen-renovations/" },
-      { label: "Bathroom renovations", href: "/bathroom-renovations/" },
-      { label: "Laundry renovations", href: "/laundry-renovations/" },
-      { label: "Heritage renovations", href: "/heritage-renovations/" },
-    ],
-  },
+  { label: "Services", href: "/home-renovations/", children: serviceNav },
   { label: "Design & Construct", href: "/design-and-construct/" },
   { label: "Projects", href: "/projects/" },
   { label: "About", href: "/about/" },
@@ -60,13 +51,9 @@ export const footerNav: { title: string; links: NavItem[] }[] = [
   {
     title: "Services",
     links: [
-      { label: "Home extensions", href: "/home-extensions/" },
+      ...serviceNav,
       { label: "Second storey extensions", href: "/home-extensions/second-storey/" },
-      { label: "Home renovations", href: "/home-renovations/" },
-      { label: "Kitchen renovations", href: "/kitchen-renovations/" },
-      { label: "Bathroom renovations", href: "/bathroom-renovations/" },
-      { label: "Laundry renovations", href: "/laundry-renovations/" },
-      { label: "Heritage renovations", href: "/heritage-renovations/" },
+      { label: "Ground floor extensions", href: "/home-extensions/ground-floor/" },
     ],
   },
   {

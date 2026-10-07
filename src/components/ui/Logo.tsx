@@ -15,8 +15,9 @@ type Props = {
 };
 
 export function Logo({ className, wordColor = "currentColor", markColor = "var(--color-orange)", title = "Forefront Trades Co." }: Props) {
+  // 3-unit viewBox padding: the artwork touches its box edges, which clipped curved letter tops on iOS.
   return (
-    <svg viewBox="0 0 500 103" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={title} className={cn("h-auto", className)}>
+    <svg viewBox="-3 -3 506 109" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label={title} className={cn("h-auto", className)}>
       {MARK.map((d, i) => (
         <path key={i} d={d} fill={markColor} className="transition-[fill] duration-500" />
       ))}

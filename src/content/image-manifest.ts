@@ -25,6 +25,7 @@ export const imageManifest: Record<string, readonly [number, number]> = {
   "/images/projects/footscray/kitchen-dining.jpg": [2400, 1600],
   "/images/projects/footscray/kitchen-galley.jpg": [2400, 1600],
   "/images/projects/footscray/kitchen.jpg": [2400, 1600],
+  "/images/projects/footscray/laundry.jpg": [2400, 1600],
   "/images/projects/footscray/living-wide.jpg": [2400, 1600],
   "/images/projects/footscray/living.jpg": [2400, 1478],
   "/images/projects/footscray/open-living.jpg": [2400, 1442],

@@ -15,7 +15,7 @@ import { Testimonial } from "@/components/sections/home/Testimonial";
 
 // Primary keyword: "renovation builders melbourne" (Sitemap v2)
 export const metadata: Metadata = {
-  title: { absolute: "Renovation Builders Melbourne | Extensions & Renovations | Forefront Trades Co." },
+  title: { absolute: "Renovation Builders Melbourne | Renovations & Extensions | Forefront Trades Co." },
   description:
     "Premium design & construct renovation and extension builders in Melbourne. Fixed price, on-time guarantee, 7-year warranty. 30+ years building across Melbourne's inner west & north.",
   alternates: { canonical: "/" },

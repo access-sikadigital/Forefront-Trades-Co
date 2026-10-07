@@ -9,11 +9,11 @@ import { services } from "@/content/home";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { cn, prefersReducedMotion } from "@/lib/utils";
 
+// Brand palette only: purple, deep purple, cream, orange.
 const tones = {
   purple: { bg: "bg-purple", text: "text-white", muted: "text-white/75", tag: "border-white/25", index: "text-orange" },
-  ink: { bg: "bg-ink", text: "text-white", muted: "text-white/75", tag: "border-white/25", index: "text-coral" },
-  amethyst: { bg: "bg-amethyst", text: "text-purple-950", muted: "text-purple-950/80", tag: "border-purple-950/25", index: "text-purple-950" },
-  coral: { bg: "bg-coral", text: "text-purple-950", muted: "text-purple-950/80", tag: "border-purple-950/25", index: "text-purple-950" },
+  deep: { bg: "bg-purple-950", text: "text-white", muted: "text-white/75", tag: "border-white/25", index: "text-orange" },
+  cream: { bg: "bg-cream", text: "text-purple", muted: "text-ink/75", tag: "border-purple/20", index: "text-orange" },
   orange: { bg: "bg-orange", text: "text-purple-950", muted: "text-purple-950/85", tag: "border-purple-950/25", index: "text-white" },
 } as const;
 
@@ -64,7 +64,7 @@ export function Services() {
           label="What we build"
           title={
             <>
-              Extensions and renovations,
+              Renovations and extensions,
               <br className="hidden md:block" /> designed and built as one.
             </>
           }

@@ -10,9 +10,9 @@
 export const hero = {
   eyebrow: "Renovation & extension builders · Melbourne",
   // Rendered as the page <h1>
-  title: ["Homes, extended", "& transformed."],
+  title: ["Homes, transformed", "& extended."],
   intro:
-    "Melbourne's design & construct builder for luxury extensions and renovations. One team from first sketch to handover, at a fixed price, on time.",
+    "Melbourne's design & construct builder for luxury renovations and extensions. One team from first sketch to handover, at a fixed price, on time.",
   primaryCta: { label: "Book a consultation", href: "/book-a-consultation/" },
   secondaryCta: { label: "View our projects", href: "/projects/" },
   video: {
@@ -41,53 +41,61 @@ export const stats = [
   { value: 42, suffix: "", label: "Suburbs across Melbourne's west & north" },
 ];
 
+// Service order is fixed by the client: kitchen → bathroom → laundry → full home → extensions → heritage.
 export const services = [
   {
     index: "01",
-    title: "Home extensions",
-    href: "/home-extensions/",
-    summary:
-      "Second storey and ground floor extensions designed around how you live — engineered, permitted and built by one team.",
-    tags: ["Second storey", "Ground floor", "Rear extensions"],
-    image: { src: "/images/projects/footscray/rear-extension.jpg", alt: "Rear extension with pool in Footscray" },
-    tone: "purple",
-  },
-  {
-    index: "02",
-    title: "Full home renovations",
-    href: "/home-renovations/",
-    summary:
-      "Whole-home transformations staged with care, so the result feels effortless and the process never overwhelms.",
-    tags: ["Period homes", "Open-plan living", "Staged builds"],
-    image: { src: "/images/projects/footscray/open-living.jpg", alt: "Light-filled open-plan living room" },
-    tone: "ink",
-  },
-  {
-    index: "03",
     title: "Kitchen renovations",
     href: "/kitchen-renovations/",
     summary: "Open-plan kitchens, butler's pantries and joinery detailed to the millimetre — the heart of the home, done properly.",
     tags: ["Butler's pantry", "Custom joinery", "Open plan"],
     image: { src: "/images/projects/footscray/kitchen-dining.jpg", alt: "White kitchen with timber dining setting" },
-    tone: "amethyst",
+    tone: "purple",
   },
   {
-    index: "04",
+    index: "02",
     title: "Bathroom renovations",
     href: "/bathroom-renovations/",
     summary: "Main bathrooms, ensuites and powder rooms with waterproofing done right and finishes that age beautifully.",
     tags: ["Ensuites", "Freestanding baths", "Waterproofing"],
     image: { src: "/images/projects/footscray/bathroom-vanity.jpg", alt: "Bathroom vanity with brushed brass tapware" },
-    tone: "coral",
+    tone: "cream",
+  },
+  {
+    index: "03",
+    title: "Laundry renovations",
+    href: "/laundry-renovations/",
+    summary: "Hard-working laundries with generous bench space, smart storage and finishes made to handle everyday life.",
+    tags: ["Storage", "Stone benchtops", "Tiling"],
+    image: { src: "/images/projects/footscray/laundry.jpg", alt: "Laundry with brushed brass tap, sage tiles and white stone bench, Footscray" },
+    tone: "deep",
+  },
+  {
+    index: "04",
+    title: "Full home renovations",
+    href: "/home-renovations/",
+    summary: "Whole-home transformations staged with care, so the result feels effortless and the process never overwhelms.",
+    tags: ["Period homes", "Open-plan living", "Staged builds"],
+    image: { src: "/images/projects/footscray/open-living.jpg", alt: "Light-filled open-plan living room" },
+    tone: "orange",
   },
   {
     index: "05",
-    title: "Heritage renovations",
+    title: "Home extensions",
+    href: "/home-extensions/",
+    summary: "Second storey and ground floor extensions designed around how you live — engineered, permitted and built by one team.",
+    tags: ["Second storey", "Ground floor", "Rear extensions"],
+    image: { src: "/images/projects/footscray/rear-extension.jpg", alt: "Rear extension with pool in Footscray" },
+    tone: "purple",
+  },
+  {
+    index: "06",
+    title: "Heritage restorations",
     href: "/heritage-renovations/",
-    summary: "Period homes renovated with respect for what's there — and the planning know-how heritage overlays demand.",
+    summary: "Period homes restored with respect for what's there — and the planning know-how heritage overlays demand.",
     tags: ["Heritage overlays", "Victorian & Edwardian", "Restorations"],
     image: { src: "/images/projects/footscray/facade.jpg", alt: "Restored weatherboard facade with picket fence" },
-    tone: "orange",
+    tone: "deep",
   },
 ] as const;
 
@@ -293,7 +301,7 @@ export const guides = {
       title: "How much does a home extension cost in Melbourne?",
       href: "/guides/home-extension-cost-melbourne/",
       tag: "Cost",
-      image: { src: "/images/projects/footscray/rear-alfresco.jpg", alt: "Rear extension and alfresco" },
+      image: { src: "/images/projects/footscray/alfresco.jpg", alt: "Extension bifold doors opening onto an outdoor dining area, Footscray" },
     },
     {
       title: "Kitchen renovation costs in Melbourne (2026)",
