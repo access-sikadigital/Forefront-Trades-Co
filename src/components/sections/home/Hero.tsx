@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { hero } from "@/content/home";
-import { site } from "@/config/site";
 import { fontsReady } from "@/lib/fonts-ready";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 import { onIntroComplete } from "@/lib/intro";
@@ -54,9 +53,10 @@ export function Hero() {
           .timeline({ paused: !started, defaults: { ease: "ftc.out" } })
           .fromTo(q("[data-hero='eyebrow']"), { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 0.9 }, 0)
           // power3 rather than the house expo curve: a longer, more visible rise for the headline.
-          .fromTo(lines, { yPercent: 115 }, { yPercent: 0, duration: 1.5, stagger: 0.14, ease: "power3.out" }, 0.1)
+          .fromTo(lines, { yPercent: 130 }, { yPercent: 0, duration: 1.5, stagger: 0.14, ease: "power3.out" }, 0.1)
           .fromTo(q("[data-hero='intro']"), { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 1.2 }, 0.6)
           .fromTo(q("[data-hero='cta']"), { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 1.2, stagger: 0.1 }, 0.75)
+          .fromTo(q("[data-hero='proof']"), { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 1 }, 0.95)
           .fromTo(q("[data-hero='meta']"), { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 1 }, 1.05);
       };
 
@@ -109,8 +109,9 @@ export function Hero() {
     }
   };
 
+  // Content starts just under the header at every size; from lg up the film fills the screen behind it.
   return (
-    <section ref={root} className="relative h-svh min-h-160 overflow-hidden bg-purple-950 text-white">
+    <section ref={root} className="relative overflow-hidden bg-purple-950 text-white lg:flex lg:min-h-svh lg:flex-col">
       <div data-frame className="absolute inset-0 overflow-hidden" style={{ clipPath: "inset(0% 0% 0% 0% round 0px)" }}>
         <div data-parallax className="absolute inset-0">
           <video
@@ -135,19 +136,22 @@ export function Hero() {
         <div className="absolute inset-0 bg-linear-to-r from-purple-950/70 via-purple-950/20 to-transparent" />
       </div>
 
-      <div data-content className="container-x relative flex h-full flex-col justify-end pt-28 pb-16 lg:pb-24">
-        <div className="max-w-280">
+      <div data-content className="container-x relative flex flex-col justify-start pt-28 pb-14 sm:pt-32 sm:pb-16 lg:flex-1 lg:justify-start lg:pt-40 lg:pb-20">
+        <div>
           <div data-hero="eyebrow" data-reveal>
-            <Eyebrow light>{hero.eyebrow}</Eyebrow>
+            {/* SEO: the H1 is the keyword line; the large display headline below sells. */}
+            <Eyebrow light as="h1" className="gap-3.5 !text-[0.86rem] !tracking-[0.16em] text-white/90 sm:!text-[0.95rem] lg:!text-[1.05rem] [&>span:first-child]:size-2.5">
+              {hero.h1}
+            </Eyebrow>
           </div>
 
-          <h1 data-hero-title data-reveal className="mt-6 text-hero text-white [text-shadow:0_2px_40px_rgb(29_7_40/0.35)]">
+          <p data-hero-title data-reveal className="mt-6 font-display font-bold text-hero text-white [text-shadow:0_2px_40px_rgb(29_7_40/0.35)]">
             {hero.title.map((line) => (
-              <span key={line} className="block">
+              <span key={line} className="block lg:whitespace-nowrap">
                 {line}
               </span>
             ))}
-          </h1>
+          </p>
 
           <p data-hero="intro" data-reveal className="mt-7 max-w-xl text-lead text-white/85 lg:mt-8">
             {hero.intro}
@@ -163,14 +167,21 @@ export function Hero() {
               </Button>
             </div>
           </div>
+
+          {/* Proof sits right under the action it supports */}
+          <p data-hero="proof" data-reveal className="label mt-7 flex flex-wrap items-center gap-x-3 gap-y-1.5 !text-[0.68rem] !tracking-[0.14em] text-white/70 sm:!text-[0.72rem]">
+            {hero.proof.map((item, i) => (
+              <span key={item} className="flex items-center gap-3">
+                {i > 0 && <span aria-hidden className="size-1 bg-orange" />}
+                {item}
+              </span>
+            ))}
+          </p>
         </div>
       </div>
 
       <div data-meta-wrap className="absolute right-gutter bottom-6 hidden lg:block">
         <div data-hero="meta" data-reveal className="flex items-center gap-6">
-          <p className="label text-white/60">
-            {site.rating.score}★ {site.rating.source} · Registered Builder {site.registeredBuilder}
-          </p>
           <button
             type="button"
             onClick={toggle}

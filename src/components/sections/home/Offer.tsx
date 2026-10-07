@@ -105,7 +105,7 @@ export function Offer() {
           </div>
           <div data-frame className="relative aspect-[4/5] overflow-hidden rounded-tr-[46%] bg-purple-950">
             <div data-portrait className="absolute inset-0">
-              <Photo src={offer.image.src} alt={offer.image.alt} frame={4 / 5} vw={{ desktop: 26, mobile: 90 }} bleed={1.3} className="object-[58%_center]" />
+              <Photo src={offer.image.src} alt={offer.image.alt} frame={4 / 5} vw={{ desktop: 26, mobile: 90 }} bleed={1.3} className="object-[32%_center]" />
             </div>
             <p data-caption className="label absolute bottom-5 left-5 rounded-full bg-purple-950/80 px-4 py-2.5 !text-[0.68rem] text-white backdrop-blur">
               {offer.caption}

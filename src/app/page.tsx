@@ -14,11 +14,25 @@ import { Statement } from "@/components/sections/home/Statement";
 import { Testimonial } from "@/components/sections/home/Testimonial";
 
 // Primary keyword: "renovation builders melbourne" (Sitemap v2)
+// Title 55/60 chars · description 154/155 chars (counted). Keyword first; the hero promise is the click reason.
+const title = "Renovation Builders Melbourne | Price & Date in Writing";
+const description =
+  "Renovation & extension builders for Melbourne's inner west & north. Your fixed price and finish date go in the contract. 4.9★ on Google. Free first visit.";
+
 export const metadata: Metadata = {
-  title: { absolute: "Renovation Builders Melbourne | Renovations & Extensions | Forefront Trades Co." },
-  description:
-    "Premium design & construct renovation and extension builders in Melbourne. Fixed price, on-time guarantee, 7-year warranty. 30+ years building across Melbourne's inner west & north.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "The price and the date, in writing | Forefront Trades Co.",
+    description:
+      "Kitchens, bathrooms, full renovations and extensions across Melbourne's inner west & north — on a fixed-price contract with the finish date written in.",
+    url: "/",
+  },
+  twitter: {
+    title: "The price and the date, in writing | Forefront Trades Co.",
+    description: "Renovation & extension builders for Melbourne's inner west & north. Fixed price, finish date in the contract, free first visit.",
+  },
 };
 
 export default function HomePage() {

@@ -10,7 +10,7 @@ import { gsap, useGSAP } from "@/lib/gsap";
 import { useLenis } from "@/components/providers/SmoothScroll";
 import { prefersReducedMotion } from "@/lib/utils";
 
-/** Footer that unveils from beneath the page (inner layer counter-scrolls). */
+/** Site footer. The background logomark turns slowly as the footer scrolls into view. */
 export function Footer() {
   const root = useRef<HTMLElement>(null);
   const lenis = useLenis();
@@ -19,22 +19,12 @@ export function Footer() {
     () => {
       if (prefersReducedMotion()) return;
       const q = gsap.utils.selector(root);
-      // end: "max" = the very bottom of the page, so the unveil always finishes flush
-      // (no gap under the footer). Desktop only — on phones the footer simply sits in place.
-      const mm = gsap.matchMedia();
-      mm.add("(min-width: 768px)", () => {
-        gsap.fromTo(
-          q("[data-inner]"),
-          { yPercent: -30 },
-          { yPercent: 0, ease: "none", scrollTrigger: { trigger: root.current, start: "top bottom", end: "max", scrub: true, invalidateOnRefresh: true } },
-        );
-      });
+      // Only the background mark moves; the footer content itself never shifts, so nothing is ever clipped.
       gsap.fromTo(
         q("[data-arc]"),
         { rotate: -90 },
         { rotate: 0, ease: "none", scrollTrigger: { trigger: root.current, start: "top bottom", end: "max", scrub: 0.6 } },
       );
-      return () => mm.revert();
     },
     { scope: root },
   );
@@ -51,7 +41,7 @@ export function Footer() {
         <div className="container-x relative grid gap-14 pt-24 pb-10 lg:grid-cols-12 lg:pt-32">
           <div className="lg:col-span-5">
             <p className="max-w-md font-display text-h3 font-semibold text-white">
-              Premium design &amp; construct renovations and extensions across Melbourne&rsquo;s inner west and north.
+              Renovation and extension builders for Melbourne&rsquo;s inner west and north, with the price and the finish date in writing.
             </p>
             <PhoneButton variant="light" className="mt-10" />
             <div className="mt-8 space-y-2 text-lg text-white/75">

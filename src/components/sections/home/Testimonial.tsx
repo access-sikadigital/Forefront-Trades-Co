@@ -6,6 +6,7 @@ import { SplitLines } from "@/components/motion/SplitLines";
 import { TextLink } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Photo } from "@/components/ui/Photo";
+import { QuoteSlider } from "@/components/sections/home/QuoteSlider";
 import { site } from "@/config/site";
 import { testimonial } from "@/content/home";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -88,6 +89,11 @@ export function Testimonial() {
             </button>
           )}
         </div>
+
+        {/* More homeowners, in their own words (transcribed from their video testimonials) */}
+        <Reveal className="mt-12 lg:mt-16">
+          <QuoteSlider quotes={testimonial.quotes} />
+        </Reveal>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { TextLink, ArrowIcon } from "@/components/ui/Button";
 import { Photo } from "@/components/ui/Photo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { services } from "@/content/home";
+import { services, servicesHeading } from "@/content/home";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { cn, prefersReducedMotion } from "@/lib/utils";
 
@@ -61,15 +61,10 @@ export function Services() {
     <section ref={root} className="relative bg-cream-50 pb-section">
       <div className="container-x">
         <SectionHeading
-          label="What we build"
-          title={
-            <>
-              Renovations and extensions,
-              <br className="hidden md:block" /> designed and built as one.
-            </>
-          }
-          intro="Whether you're adding a storey or reworking a single room, the same team designs it, permits it and builds it."
-          action={<TextLink href="/home-renovations/">All services</TextLink>}
+          label={servicesHeading.label}
+          title={servicesHeading.title}
+          intro={servicesHeading.intro}
+          action={<TextLink href={servicesHeading.link.href}>{servicesHeading.link.label}</TextLink>}
         />
 
         <ol className="mt-12 space-y-5 md:mt-16 md:space-y-0 lg:mt-24">

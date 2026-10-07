@@ -66,7 +66,7 @@ export function SplitLines({
           onSplit(self) {
             gsap.set(el, { autoAlpha: 1 });
             tween = gsap.from(self.lines, {
-              yPercent: 112,
+              yPercent: 130,
               duration: MOTION.reveal,
               stagger,
               delay,

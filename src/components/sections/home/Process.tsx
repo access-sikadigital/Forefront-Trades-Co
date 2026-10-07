@@ -1,8 +1,10 @@
 "use client";
 
 import { useRef, type CSSProperties } from "react";
+import { Reveal } from "@/components/motion/Reveal";
+import { TextLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { process } from "@/content/home";
+import { process, processHeading } from "@/content/home";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { prefersReducedMotion } from "@/lib/utils";
 
@@ -68,9 +70,9 @@ export function Process() {
     <section ref={root} className="relative overflow-hidden bg-white py-section" style={blueprint}>
       <div className="container-x">
         <SectionHeading
-          label="How it works"
-          title="Five steps. One point of contact."
-          intro="Single rooms in 4–6 weeks. Full homes in 3–6 months — with the same site lead from first visit to handover."
+          label={processHeading.label}
+          title={processHeading.title}
+          intro={processHeading.intro}
         />
 
         <ol data-stairs className="relative mt-16 grid gap-12 pl-8 xl:mt-24 xl:grid-cols-5 xl:items-start xl:gap-0 xl:pl-0">
@@ -111,6 +113,10 @@ export function Process() {
             </li>
           ))}
         </ol>
+
+        <Reveal className="mt-14 xl:mt-20">
+          <TextLink href={processHeading.link.href}>{processHeading.link.label}</TextLink>
+        </Reveal>
       </div>
     </section>
   );

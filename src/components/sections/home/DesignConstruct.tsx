@@ -20,7 +20,7 @@ const SCATTER = [
 ];
 
 /**
- * "Under one roof" — the Design & Construct idea, made literal.
+ * Design & Construct — the four disciplines, made literal.
  *
  * Desktop: the section pins. The four disciplines start as scattered photo
  * cards and, as you scroll, fly in one by one and lock into a single square —

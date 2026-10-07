@@ -53,11 +53,20 @@ export function Statement() {
             <SplitLines as="h2" className="mt-6 text-h2 text-purple">
               {statement.title}
             </SplitLines>
-            <TextScrub
-              text={statement.text}
-              className="mt-8 max-w-xl font-display text-[clamp(1.2rem,0.95rem+0.75vw,1.6rem)] leading-[1.38] font-medium tracking-[-0.01em] text-purple"
-            />
-            <Reveal className="mt-10">
+            {statement.text.map((para, i) => (
+              <TextScrub
+                key={i}
+                text={para}
+                className={`${i === 0 ? "mt-8" : "mt-5"} max-w-xl font-display text-[clamp(1.2rem,0.95rem+0.75vw,1.6rem)] leading-[1.38] font-medium tracking-[-0.01em] text-purple`}
+              />
+            ))}
+            <Reveal as="figure" className="mt-9 border-l-2 border-orange pl-5">
+              <blockquote className="font-display text-lg leading-snug font-medium text-purple">&ldquo;{statement.quote.text}&rdquo;</blockquote>
+              <figcaption className="label mt-3 !text-[0.66rem] !tracking-[0.14em] text-ink/60">
+                {statement.quote.name} · {statement.quote.source}
+              </figcaption>
+            </Reveal>
+            <Reveal className="mt-9">
               <TextLink href={statement.link.href}>{statement.link.label}</TextLink>
             </Reveal>
           </div>

@@ -33,7 +33,8 @@
   --text-display-xl--line-height: 0.92;
   --text-display-xl--letter-spacing: -0.035em;
   /* Hero h1 — a touch under display-xl so the film still breathes */
-  --text-hero: clamp(2.9rem, 0.9rem + 6.3vw, 8.5rem);
+  /* Width- AND height-aware so the two-line headline fits laptop screens without crowding the header */
+  --text-hero: min(clamp(2.6rem, 0.6rem + 6vw, 7.25rem), 11.5svh);
   --text-hero--line-height: 0.95;
   --text-hero--letter-spacing: -0.035em;
   --text-display: clamp(2.9rem, 1.4rem + 5.4vw, 7.5rem);
@@ -130,10 +131,12 @@ html.lenis body {
     font-weight: 500;
   }
 
-  /* SplitText line masks */
-  .split-line {
-    padding-bottom: 0.06em;
-    margin-bottom: -0.06em;
+  /* SplitText line masks: the clip box is extended below each line (and the extra
+     space cancelled with a negative margin) so descenders — g, y, p — aren't cut
+     off at tight display line-heights. */
+  .split-line-mask {
+    padding-bottom: 0.24em;
+    margin-bottom: -0.24em;
   }
 }
 
