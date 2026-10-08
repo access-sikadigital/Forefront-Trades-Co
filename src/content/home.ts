@@ -13,11 +13,11 @@ export const hero = {
   h1: "Renovation & extension builders in Melbourne",
   title: ["The price and the date,", "in\u00A0writing."],
   intro:
-    "Kitchens, bathrooms, laundries, full renovations and extensions across Melbourne's inner west and north. A fixed-price contract with the finish date written in. We manage the design, permits and build for you.",
-  primaryCta: { label: "Book a consultation", href: "/book-a-consultation/" },
+    "Kitchens, bathrooms, laundries, full renovations and extensions across Melbourne's inner west and north. Design, permits and build go on one fixed-price contract, with the finish date written in. Any change is priced for your approval before it's added.",
+  primaryCta: { label: "Book a free home visit", href: "/book-a-consultation/" },
   secondaryCta: { label: "View our projects", href: "/projects/" },
   // TODO(client): confirm 4.9★ (public widget shows 39 reviews) and 30+ years.
-  proof: ["First visit free", "4.9★ from 39 Google reviews", "Registered Builder CDBU76389"],
+  proof: ["4.9★ from 39 Google reviews", "Registered Builder CDBU76389", "\u201CCompleted on time\u201D \u2014 Nicole, Brookfield"],
   video: {
     sources: [
       { src: "/videos/hero-720.mp4", media: "(max-width: 900px)" },
@@ -32,7 +32,7 @@ export const statement = {
   title: "You shouldn't have to chase your builder.",
   text: [
     "Quotes that blow out. A final price that only exists in an email. Tradies who don't show, and nobody who can say when they will.",
-    "We work the other way: a fixed price, and a finish date agreed up front.",
+    "We work the other way: a fixed price, a finish date agreed up front, and nothing added to your bill without your sign-off.",
   ],
   quote: { text: "We were kept in the loop as to the day and time each tradie would be onsite.", name: "Chris Williams", source: "Google review" },
   link: { label: "Read our story", href: "/about/" },
@@ -53,7 +53,7 @@ export const servicesHeading = {
   label: "What we build",
   title: "From a new laundry to a second storey.",
   // TODO(client): add ballpark price ranges per service (biggest gap vs competitors).
-  intro: "A new laundry and a second storey go on the same kind of fixed-price contract. Single rooms take 4–6 weeks on site; full homes take 3–6 months.",
+  intro: "Every job goes on a fixed-price contract. Single rooms take 4–6 weeks on site. Full homes take 3–6 months.",
   link: { label: "All services", href: "/home-renovations/" },
 };
 
@@ -63,7 +63,7 @@ export const services = [
     index: "01",
     title: "Kitchen renovations",
     href: "/kitchen-renovations/",
-    summary: "Butler's pantries like the two we built in Craigieburn, plus internal bins, spice racks and profiled cabinetry.",
+    summary: "Storage worked out at design stage: butler's pantries like the two we built in Craigieburn, internal bins, spice racks and profiled cabinetry.",
     tags: ["Butler's pantry", "Custom joinery", "Open plan"],
     image: { src: "/images/projects/footscray/kitchen-dining.jpg", alt: "White kitchen with timber dining setting" },
     tone: "purple",
@@ -90,7 +90,7 @@ export const services = [
     index: "04",
     title: "Full home renovations",
     href: "/home-renovations/",
-    summary: "Full homes take 3–6 months on site. Ask us at the first visit how long you'd be without a kitchen or bathroom.",
+    summary: "Period homes and whole-house renovations, staged where it helps. At the first visit we'll tell you how long you'd be without a kitchen or bathroom.",
     tags: ["Period homes", "Open-plan living", "Staged builds"],
     image: { src: "/images/projects/footscray/open-living.jpg", alt: "Light-filled open-plan living room" },
     tone: "orange",
@@ -119,7 +119,7 @@ export const designConstruct = {
   label: "Design & Construct",
   title: "No architect and builder pointing at each other.",
   intro:
-    "We manage the interior design, drawings, engineering, permits and the build, and the build goes on one fixed-price contract. When something needs deciding, you ask us.",
+    "We manage the interior design, drawings, engineering, permits and build. You get one fixed-price contract, and one team to ask when something needs deciding.",
   pillars: [
     {
       title: "Interior design",
@@ -146,24 +146,25 @@ export const designConstruct = {
       image: { src: "/images/team/founders.jpg", alt: "Forefront Trades Co. founders" },
     },
   ],
-  promise: ["Design managed by us", "Fixed-price build", "Finish date in writing"],
+  // TODO(client): "Interior design included" depends on confirming the offer (Open Question #5).
+  promise: ["Interior design included", "Changes priced before they're added", "Finish date in the contract"],
   link: { label: "How design & construct works", href: "/design-and-construct/" },
 };
 
 export const processHeading = {
   label: "How it works",
   title: "What happens after you call.",
-  intro: "Permits add time depending on your council. We'll tell you how much at the first visit.",
-  link: { label: "Book a consultation", href: "/book-a-consultation/" },
+  intro: "Five steps from first visit to handover. You see the fixed price and finish date before you sign anything to build.",
+  link: { label: "Book a free home visit", href: "/book-a-consultation/" },
 };
 
 export const process = [
-  { step: "01", title: "Consultation", time: "First visit, free", text: "We walk your home with you and talk budget and timing honestly, including when the numbers don't stack up." },
+  { step: "01", title: "Home visit", time: "First visit, free", text: "We walk your home with you and talk budget and timing honestly, including when the numbers don't stack up." },
   // TODO(client): state the design fee (or that it's free / credited to the build) — answers "paying for plans is a gamble".
-  { step: "02", title: "Design", time: "Plans & pricing", text: "Concepts, interior selections and a fixed-price proposal. You see the build price and the finish date before you sign to build." },
+  { step: "02", title: "Design", time: "Plans & pricing", text: "Concepts, interior selections and a fixed-price proposal. You see the build price and the finish date before you commit to the build." },
   { step: "03", title: "Permits", time: "Depends on council", text: "We lodge and chase engineering, planning and building permits. If your street is under a heritage overlay, we plan for it from the first drawing." },
   // TODO(client): confirm a project WhatsApp group runs on every job.
-  { step: "04", title: "Build", time: "4 weeks – 6 months", text: "Nicole's job in Brookfield had a WhatsApp group with our team. She called it \u201Cvery, very important\u201D." },
+  { step: "04", title: "Build", time: "4 weeks – 6 months", text: "We book and run every trade on site. Nicole in Brookfield had a WhatsApp group with our team and called it \u201Cvery, very important\u201D." },
   { step: "05", title: "Handover", time: "Final walkthrough", text: "A final walkthrough, a clean home and your warranty documents." },
 ];
 
@@ -273,7 +274,8 @@ export const guarantees = [
   // TODO(client): list contract exclusions (provisional sums, latent conditions) if any.
   { icon: "attach_money", title: "Fixed price", text: "The price you sign covers the agreed scope. Change the scope and we price it for your approval first." },
   // TODO(client): add the remedy if the date is missed (e.g. $X per day) — strongest possible proof here.
-  { icon: "timer", title: "On-time guarantee", text: "Your completion date is written into the contract you sign." },
+  // Retitled from "On-time guarantee": no remedy is confirmed, and "guarantee" without terms is an ACL risk. Restore once the remedy is in.
+  { icon: "timer", title: "Finish date in your contract", text: "Your completion date is written into the contract you sign, not just quoted in an email." },
   // TODO(client): state what each warranty covers (e.g. structural and workmanship defects).
   { icon: "license", title: "7-year construction warranty", text: "Seven years on the construction work, from a Registered Builder." },
   { icon: "handyman", title: "3-year maintenance warranty", text: "Three years of maintenance cover once the job is handed over." },
@@ -287,11 +289,11 @@ export const offer = {
   amountPrefix: "up to",
   title: "of interior design, on us.",
   // Interior design is delivered with partner studios (AD Lawson Designs / AJL Studio per project reels) — not "in-house".
-  text: "Build with us and the interior designers we partner with work through layouts, finishes and selections with you. Your selections are priced into the fixed price from the start.",
+  text: "Build with us and you'll work through layouts, finishes and selections with the interior designers we partner with. Everything you choose is priced into your fixed price from the start.",
   // Derived from the brief ("layouts, finishes and selections") — TODO(client): confirm exact inclusions.
   inclusions: ["Layouts & space planning", "Finishes & materials", "Fixtures & fittings selections"],
   note: "On new design & construct projects",
-  cta: { label: "Book a consultation", href: "/book-a-consultation/" },
+  cta: { label: "Book a free home visit", href: "/book-a-consultation/" },
   image: { src: "/images/team/interior-designer-kitchen.jpg", alt: "Interior designer standing in a finished white kitchen with timber dining table" },
   caption: "Interior design, included",
 };
@@ -301,7 +303,7 @@ export const offer = {
 export const testimonial = {
   label: "Client stories",
   title: "Four clients, in their own words.",
-  intro: "Unscripted, filmed in their finished homes. Press play.",
+  intro: "Filmed in their finished homes. Press play.",
   link: { label: "Read our Google reviews", href: "/reviews/" },
   // Quotes are verbatim lines from each client's own video.
   // Order set by the client: Nicole first.
@@ -402,5 +404,5 @@ export const finalCta = {
   title: ["See the price", "before you build."],
   // TODO(client): say what happens after booking (who confirms, how fast).
   text: "The first visit is free. We walk the house with you and talk budget, and if what you want won't fit, we say so then. You only sign once you've seen the fixed price and the finish date.",
-  primaryCta: { label: "Book a consultation", href: "/book-a-consultation/" },
+  primaryCta: { label: "Book a free home visit", href: "/book-a-consultation/" },
 };
