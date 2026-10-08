@@ -125,7 +125,7 @@ export function Header() {
           <div className="relative z-[60] flex items-center gap-3 sm:gap-5">
             <PhoneButton variant={light ? "glass" : "dark"} size="sm" magnetic={false} className="hidden md:inline-flex" />
             <Button href="/book-a-consultation/" className="hidden h-12 px-5 sm:inline-flex sm:h-12 sm:px-5" arrow={false} magnetic={false}>
-              Book a consultation
+              Book a free home visit
             </Button>
             <button
               type="button"
