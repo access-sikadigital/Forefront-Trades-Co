@@ -11,11 +11,10 @@
 export const hero = {
   // Rendered as the page <h1> (keyword line); the display headline below sells.
   h1: "Renovation & extension builders in Melbourne",
-  // TODO(client): headline is only true if no provisional sums / latent-condition clauses can raise the price without the client's approval. Confirm before launch.
-  title: ["Nothing goes on your bill", "until you've said\u00A0yes."],
+  title: ["Melbourne's Premier Home", "Renovations & Extensions"],
   intro:
     "Kitchens, bathrooms, laundries, full renovations and extensions across Melbourne's inner west and north. One fixed-price contract covers design, permits and build, with the finish date written in.",
-  primaryCta: { label: "Book a free home visit", href: "/book-a-consultation/" },
+  primaryCta: { label: "Book a free consultation", href: "/book-a-consultation/" },
   secondaryCta: { label: "View our projects", href: "/projects/" },
   // TODO(client): confirm 4.9★ (public widget shows 39 reviews) and 30+ years.
   proof: ["4.9★ from 39 Google reviews", "Registered Builder CDBU76389", "\u201CCompleted on time\u201D \u2014 Nicole, Brookfield"],
@@ -30,7 +29,7 @@ export const hero = {
 
 export const statement = {
   label: "Why homeowners call us",
-  title: "You shouldn't have to chase your builder.",
+  title: "Achieve Your Dream Renovation. On-Time & On-Budget.",
   text: [
     "Quotes that blow out. A final price that only exists in an email. Tradies who don't show, and nobody who can say when they will.",
     "We work the other way: a fixed price, and a finish date agreed up front.",
@@ -156,7 +155,7 @@ export const processHeading = {
   label: "How it works",
   title: "What happens after you call.",
   intro: "Five steps from first visit to handover. You see the fixed price and finish date before you sign anything to build.",
-  link: { label: "Book a free home visit", href: "/book-a-consultation/" },
+  link: { label: "Book a free consultation", href: "/book-a-consultation/" },
 };
 
 export const process = [
@@ -294,7 +293,7 @@ export const offer = {
   // Derived from the brief ("layouts, finishes and selections") — TODO(client): confirm exact inclusions.
   inclusions: ["Layouts & space planning", "Finishes & materials", "Fixtures & fittings selections"],
   note: "On new design & construct projects",
-  cta: { label: "Book a free home visit", href: "/book-a-consultation/" },
+  cta: { label: "Book a free consultation", href: "/book-a-consultation/" },
   image: { src: "/images/team/interior-designer-kitchen.jpg", alt: "Interior designer standing in a finished white kitchen with timber dining table" },
   caption: "Interior design, included",
 };
@@ -303,7 +302,7 @@ export const offer = {
 // TODO(client): confirm permission to publish names alongside quotes.
 export const testimonial = {
   label: "Client stories",
-  title: "Four clients, in their own words.",
+  title: "What our clients say",
   intro: "Filmed in their finished homes. Press play.",
   link: { label: "Read our Google reviews", href: "/reviews/" },
   // Quotes are verbatim lines from each client's own video.
@@ -405,5 +404,5 @@ export const finalCta = {
   title: ["See the price", "before you build."],
   // TODO(client): say what happens after booking (who confirms, how fast).
   text: "The first visit is free. We walk the house with you and talk budget, and if what you want won't fit, we say so then. You only sign once you've seen the fixed price and the finish date.",
-  primaryCta: { label: "Book a free home visit", href: "/book-a-consultation/" },
+  primaryCta: { label: "Book a free consultation", href: "/book-a-consultation/" },
 };

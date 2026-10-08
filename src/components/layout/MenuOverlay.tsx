@@ -165,7 +165,7 @@ export function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => v
               onClick={onClose}
               className="label flex h-14 items-center justify-center rounded-[3px] bg-orange px-6 !text-[0.8rem] !tracking-[0.16em] text-white transition-colors hover:bg-white hover:text-purple"
             >
-              Book a free home visit
+              Book a free consultation
             </Link>
             <PhoneButton variant="light" magnetic={false} className="w-full justify-center" />
           </div>
