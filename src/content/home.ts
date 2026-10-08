@@ -11,9 +11,10 @@
 export const hero = {
   // Rendered as the page <h1> (keyword line); the display headline below sells.
   h1: "Renovation & extension builders in Melbourne",
-  title: ["The price and the date,", "in\u00A0writing."],
+  // TODO(client): headline is only true if no provisional sums / latent-condition clauses can raise the price without the client's approval. Confirm before launch.
+  title: ["Nothing goes on your bill", "until you've said\u00A0yes."],
   intro:
-    "Kitchens, bathrooms, laundries, full renovations and extensions across Melbourne's inner west and north. Design, permits and build go on one fixed-price contract, with the finish date written in. Any change is priced for your approval before it's added.",
+    "Kitchens, bathrooms, laundries, full renovations and extensions across Melbourne's inner west and north. One fixed-price contract covers design, permits and build, with the finish date written in.",
   primaryCta: { label: "Book a free home visit", href: "/book-a-consultation/" },
   secondaryCta: { label: "View our projects", href: "/projects/" },
   // TODO(client): confirm 4.9★ (public widget shows 39 reviews) and 30+ years.
@@ -32,7 +33,7 @@ export const statement = {
   title: "You shouldn't have to chase your builder.",
   text: [
     "Quotes that blow out. A final price that only exists in an email. Tradies who don't show, and nobody who can say when they will.",
-    "We work the other way: a fixed price, a finish date agreed up front, and nothing added to your bill without your sign-off.",
+    "We work the other way: a fixed price, and a finish date agreed up front.",
   ],
   quote: { text: "We were kept in the loop as to the day and time each tradie would be onsite.", name: "Chris Williams", source: "Google review" },
   link: { label: "Read our story", href: "/about/" },
