@@ -301,25 +301,46 @@ export const offer = {
 export const testimonial = {
   label: "Client stories",
   title: "Four clients, in their own words.",
-  video: { src: "/videos/testimonial-brookfield.mp4", poster: "/images/testimonial-brookfield-poster.jpg" },
-  name: "Nicole Brown",
-  project: "Laundry, splashback & theatre room · Brookfield",
+  intro: "Unscripted, filmed in their finished homes. Press play.",
   link: { label: "Read our Google reviews", href: "/reviews/" },
-  quotes: [
+  // Quotes are verbatim lines from each client's own video.
+  // Order set by the client: Nicole first.
+  videos: [
     {
-      quote: "We were just hoping for a safe and dry home and what we got was a really beautiful home that we're very proud of.",
-      name: "Cassandra Fraser",
-      project: "Three bathrooms, laundry & drainage · West Footscray",
+      src: "/videos/testimonial-brookfield.mp4",
+      preview: "/videos/preview-brookfield.mp4",
+      poster: "/images/testimonial-nicole-poster.jpg",
+      duration: "0:58",
+      name: "Nicole Brown",
+      project: "Laundry & kitchen · Brookfield",
+      quote: "The project was completed on time and really quickly.",
     },
     {
-      quote: "They put up with my questions and delivered what they said they were going to deliver.",
-      name: "Gary",
-      project: "Internal renovation · Point Cook",
-    },
-    {
-      quote: "When we encountered challenges, there was always a solution.",
+      src: "/videos/testimonial-sabana-oam.mp4",
+      preview: "/videos/preview-sabana-oam.mp4",
+      poster: "/images/testimonial-sabana-oam-poster.jpg",
+      duration: "1:07",
       name: "Sabana & Oam",
       project: "Home renovation",
+      quote: "When we encountered challenges, there was always a solution.",
+    },
+    {
+      src: "/videos/testimonial-gary.mp4",
+      preview: "/videos/preview-gary.mp4",
+      poster: "/images/testimonial-gary-poster.jpg",
+      duration: "0:42",
+      name: "Gary",
+      project: "Internal renovation · Point Cook",
+      quote: "They delivered what they said they were going to deliver.",
+    },
+    {
+      src: "/videos/testimonial-cassandra.mp4",
+      preview: "/videos/preview-cassandra.mp4",
+      poster: "/images/testimonial-cassandra-poster.jpg",
+      duration: "1:31",
+      name: "Cassandra Fraser",
+      project: "Bathrooms, laundry & drainage · West Footscray",
+      quote: "They took an absolute disaster and turned it into something really beautiful.",
     },
   ],
 };

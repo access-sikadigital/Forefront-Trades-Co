@@ -40,4 +40,8 @@ export const imageManifest: Record<string, readonly [number, number]> = {
   "/images/team/interior-designer-portrait.jpg": [1280, 1600],
   "/images/team/team-van.jpg": [2400, 1600],
   "/images/testimonial-brookfield-poster.jpg": [2400, 1350],
+  "/images/testimonial-cassandra-poster.jpg": [358, 640],
+  "/images/testimonial-gary-poster.jpg": [716, 1272],
+  "/images/testimonial-nicole-poster.jpg": [1080, 1922],
+  "/images/testimonial-sabana-oam-poster.jpg": [720, 1280],
 };
