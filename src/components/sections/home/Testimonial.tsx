@@ -6,6 +6,8 @@ import { SplitLines } from "@/components/motion/SplitLines";
 import { TextLink } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Photo } from "@/components/ui/Photo";
+import { GoogleRatingBadge, GoogleReviews } from "@/components/sections/home/GoogleReviews";
+import { googleReviews } from "@/content/reviews";
 import { VideoLightbox } from "@/components/sections/home/VideoLightbox";
 import { site } from "@/config/site";
 import { testimonial } from "@/content/home";
@@ -76,7 +78,7 @@ export function Testimonial() {
   );
 
   return (
-    <section ref={root} className="relative overflow-hidden bg-ink py-section text-white">
+    <section ref={root} className="relative overflow-hidden bg-purple-950 py-section text-white">
       <div className="container-x">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
@@ -91,15 +93,7 @@ export function Testimonial() {
             </Reveal>
           </div>
           <Reveal className="flex flex-col gap-6 lg:col-span-4 lg:col-start-9 lg:items-end lg:text-right">
-            <div className="flex items-center gap-4">
-              <span className="font-display text-6xl leading-none font-bold tracking-[-0.04em]">{site.rating.score}</span>
-              <span>
-                <span className="block text-lg tracking-[0.2em] text-orange" aria-label={`${site.rating.score} out of 5 stars`}>
-                  ★★★★★
-                </span>
-                <span className="label text-white/60">{site.rating.source} reviews</span>
-              </span>
-            </div>
+            <GoogleRatingBadge score={site.rating.score} href={googleReviews.readAllUrl} />
             <TextLink href={testimonial.link.href} light>
               {testimonial.link.label}
             </TextLink>
@@ -116,6 +110,11 @@ export function Testimonial() {
           <ReelCard key={v.src} v={v} index={i} onOpen={() => setActive(i)} />
         ))}
       </ul>
+
+      {/* Google reviews carousel */}
+      <div className="container-x mt-20 border-t border-white/10 pt-14 lg:mt-28 lg:pt-20">
+        <GoogleReviews />
+      </div>
 
       <VideoLightbox videos={testimonial.videos} index={active} onClose={close} onStep={step} />
     </section>

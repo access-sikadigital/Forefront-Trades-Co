@@ -117,7 +117,7 @@ export const services = [
 
 export const designConstruct = {
   label: "Design & Construct",
-  title: "No architect and builder pointing at each other.",
+  title: "One team, from start to finish",
   intro:
     "We manage the interior design, drawings, engineering, permits and build. You get one fixed-price contract, and one team to ask when something needs deciding.",
   pillars: [
@@ -153,7 +153,7 @@ export const designConstruct = {
 
 export const processHeading = {
   label: "How it works",
-  title: "What happens after you call.",
+  title: "What happens after our free consultation call",
   intro: "Five steps from first visit to handover. You see the fixed price and finish date before you sign anything to build.",
   link: { label: "Book a free consultation", href: "/book-a-consultation/" },
 };

@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { PhoneButton } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { Logomark } from "@/components/ui/Logomark";
-import { footerNav, legalNav, site } from "@/config/site";
+import { accreditations, footerNav, legalNav, site } from "@/config/site";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useLenis } from "@/components/providers/SmoothScroll";
 import { prefersReducedMotion } from "@/lib/utils";
@@ -69,6 +70,23 @@ export function Footer() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Accreditations: each mark on its own white tile, as the logos are designed to sit */}
+        <div className="container-x relative mb-14">
+          <div className="flex flex-col gap-5 border-t border-white/10 pt-10 lg:flex-row lg:items-center lg:gap-10">
+            <div className="shrink-0">
+              <p className="label !text-[0.66rem] !tracking-[0.16em] text-orange">Registered &amp; accredited</p>
+              <p className="mt-2 font-display text-lg font-semibold text-white">Registered Builder {site.registeredBuilder}</p>
+            </div>
+            <ul className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
+              {accreditations.map((a) => (
+                <li key={a.name} className="flex h-24 items-center justify-center rounded-[6px] bg-white px-5 sm:h-28">
+                  <Image src={a.src} alt={a.name} width={a.width} height={a.height} sizes="220px" className={`${a.h} w-auto max-w-full object-contain`} />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

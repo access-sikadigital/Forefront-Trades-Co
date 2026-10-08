@@ -78,6 +78,16 @@ export const footerNav: { title: string; links: NavItem[] }[] = [
   },
 ];
 
+// Accreditation logos shown in the footer. Files live in public/brand/accreditations.
+// TODO(client): confirm current HIA membership and approval to display each mark.
+export const accreditations = [
+  // h = display height class, tuned so wide and tall marks look the same weight.
+  { name: "Registered Building Practitioner", src: "/brand/accreditations/registered-building-practitioner.png", width: 900, height: 326, h: "h-10 sm:h-12 xl:h-14" },
+  { name: "Building and Plumbing Commission", src: "/brand/accreditations/bpc-logo.png", width: 822, height: 417, h: "h-12 sm:h-14 xl:h-16" },
+  { name: "Housing Industry Association member", src: "/brand/accreditations/hia.png", width: 800, height: 905, h: "h-14 sm:h-16 xl:h-[4.5rem]" },
+  { name: "Victorian Building Authority", src: "/brand/accreditations/vba-logo.png", width: 1320, height: 384, h: "h-9 sm:h-11 xl:h-[3.25rem]" },
+] as const;
+
 export const legalNav: NavItem[] = [
   { label: "Privacy policy", href: "/privacy-policy/" },
   { label: "Terms", href: "/terms/" },
