@@ -152,7 +152,8 @@ export const designConstruct = {
 };
 
 export const processHeading = {
-  label: "How it works",
+  // Absorbs the old Design & Construct section (removed to shorten the page).
+  label: "One team, from start to finish",
   title: "What happens after our free consultation call",
   intro: "Five steps from first visit to handover. You see the fixed price and finish date before you sign anything to build.",
   link: { label: "Book a free consultation", href: "/book-a-consultation/" },
@@ -177,78 +178,38 @@ export const projects = {
   title: "Recent work in Footscray, Altona and Craigieburn.",
   intro: "Real projects, photographed after handover.",
   link: { label: "All projects", href: "/projects/" },
-  columns: [
-    [
-      {
-        suburb: "Footscray",
-        title: "Five bedrooms, a pool and a studio",
-        scope: "Full renovation · Extension · Pool",
-        image: { src: "/images/projects/footscray/pool-extension.jpg", alt: "Rear extension and plunge pool, Footscray" },
-        ratio: 4 / 5,
-        href: "/projects/footscray/",
-      },
-      {
-        suburb: "Altona",
-        title: "Black vanity, terrazzo floor",
-        scope: "Bathroom · Powder room",
-        image: { src: "/images/projects/altona/vanity.jpg", alt: "Black curved vanity with terrazzo, Altona" },
-        ratio: 3 / 4,
-        href: "/projects/altona/",
-      },
-      {
-        suburb: "Footscray",
-        title: "Herringbone floors, open-plan kitchen",
-        scope: "Kitchen · Living",
-        image: { src: "/images/projects/footscray/kitchen.jpg", alt: "Kitchen and dining with herringbone timber floor" },
-        ratio: 4 / 3,
-        href: "/projects/footscray/",
-      },
-    ],
-    [
-      {
-        suburb: "Craigieburn",
-        title: "Two kitchens and an indoor pool",
-        scope: "Renovation & extension",
-        image: { src: "/images/compare/craigieburn-kitchen-after.jpg", alt: "Stone island kitchen, Craigieburn" },
-        ratio: 4 / 3,
-        href: "/projects/craigieburn/",
-      },
-      {
-        suburb: "Footscray",
-        title: "Brushed brass and sage tile",
-        scope: "Main bathroom · Ensuite",
-        image: { src: "/images/projects/footscray/bathroom-vanity.jpg", alt: "Bathroom vanity with brushed brass tapware, Footscray" },
-        ratio: 4 / 5,
-        href: "/projects/footscray/",
-      },
-      {
-        suburb: "Altona",
-        title: "A shower lit like a gallery",
-        scope: "Ensuite · Feature lighting",
-        image: { src: "/images/projects/altona/feature-lights.jpg", alt: "Vertical LED feature lights in a white tiled shower, Altona" },
-        ratio: 2 / 3,
-        href: "/projects/altona/",
-      },
-    ],
-    [
-      {
-        suburb: "Footscray",
-        title: "Living that opens to the garden",
-        scope: "Living · Alfresco",
-        image: { src: "/images/projects/footscray/open-living.jpg", alt: "Light-filled open-plan living, Footscray" },
-        ratio: 1,
-        href: "/projects/footscray/",
-      },
-      {
-        suburb: "Footscray",
-        title: "The weatherboard front, restored",
-        scope: "Facade · Landscaping",
-        image: { src: "/images/projects/footscray/facade.jpg", alt: "Restored weatherboard facade with picket fence, Footscray" },
-        ratio: 4 / 5,
-        href: "/projects/footscray/",
-      },
-    ],
+  // Four strong projects in one row (client feedback: page too long). The rest live on /projects/.
+  items: [
+    {
+      suburb: "Footscray",
+      title: "Five bedrooms, a pool and a studio",
+      scope: "Full renovation · Extension · Pool",
+      image: { src: "/images/projects/footscray/pool-extension.jpg", alt: "Rear extension and plunge pool, Footscray" },
+      href: "/projects/footscray/",
+    },
+    {
+      suburb: "Craigieburn",
+      title: "Two kitchens and an indoor pool",
+      scope: "Renovation & extension",
+      image: { src: "/images/compare/craigieburn-kitchen-after.jpg", alt: "Stone island kitchen, Craigieburn" },
+      href: "/projects/craigieburn/",
+    },
+    {
+      suburb: "Altona",
+      title: "Black vanity, terrazzo floor",
+      scope: "Bathroom · Powder room",
+      image: { src: "/images/projects/altona/vanity.jpg", alt: "Black curved vanity with terrazzo, Altona" },
+      href: "/projects/altona/",
+    },
+    {
+      suburb: "Footscray",
+      title: "The weatherboard front, restored",
+      scope: "Facade · Landscaping",
+      image: { src: "/images/projects/footscray/facade.jpg", alt: "Restored weatherboard facade with picket fence, Footscray" },
+      href: "/projects/footscray/",
+    },
   ],
+
 };
 
 export const beforeAfter = {
@@ -350,27 +311,8 @@ export const testimonial = {
 export const areas = {
   label: "Where we build",
   title: "Renovation builders for Melbourne's inner west & north.",
-  text: "Our base is in Maribyrnong. Most of our work is in 42 suburbs across six councils: Maribyrnong, Moonee Valley, Brimbank, Hobsons Bay, Merri-bek and Melbourne. We take on larger jobs further out too, like Craigieburn and Point Cook.",
+  text: "Our base is in Maribyrnong. Most of our work is in 42 suburbs across six councils, and we take on larger jobs further out too, like Craigieburn and Point Cook.",
   link: { label: "Check your suburb", href: "/areas/" },
-  // Tier-1 suburb hubs (launch) lead; the rest follow in rollout order.
-  suburbs: [
-    { name: "Brunswick", href: "/home-renovations/brunswick/" },
-    { name: "Yarraville", href: "/home-renovations/yarraville/" },
-    { name: "Essendon", href: "/home-renovations/essendon/" },
-    { name: "Newport", href: "/home-renovations/newport/" },
-    { name: "Maribyrnong", href: "/home-renovations/maribyrnong/" },
-    { name: "Moonee Ponds", href: "/home-renovations/moonee-ponds/" },
-    { name: "Ascot Vale", href: "/home-renovations/ascot-vale/" },
-    { name: "Footscray", href: "/home-renovations/footscray/" },
-    { name: "Pascoe Vale", href: "/home-renovations/pascoe-vale/" },
-    { name: "Seddon", href: "/home-renovations/seddon/" },
-    { name: "Spotswood", href: "/home-renovations/spotswood/" },
-    { name: "Kensington", href: "/home-renovations/kensington/" },
-    { name: "Flemington", href: "/home-renovations/flemington/" },
-    { name: "Sunshine", href: "/home-renovations/sunshine/" },
-    { name: "Albion", href: "/home-renovations/albion/" },
-    { name: "Kingsville", href: "/home-renovations/kingsville/" },
-  ],
 };
 
 export const guides = {
@@ -401,7 +343,7 @@ export const guides = {
 
 export const finalCta = {
   label: "Start your project",
-  title: ["See the price", "before you build."],
+  title: ["Start with a", "free home visit."],
   // TODO(client): say what happens after booking (who confirms, how fast).
   text: "The first visit is free. We walk the house with you and talk budget, and if what you want won't fit, we say so then. You only sign once you've seen the fixed price and the finish date.",
   primaryCta: { label: "Book a free consultation", href: "/book-a-consultation/" },

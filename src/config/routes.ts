@@ -334,7 +334,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/guides/",

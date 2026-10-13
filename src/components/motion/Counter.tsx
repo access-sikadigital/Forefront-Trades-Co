@@ -22,7 +22,7 @@ export function Counter({ value, decimals = 0, className }: { value: number; dec
         n: value,
         duration: 1.8,
         ease: "power2.out",
-        scrollTrigger: { trigger: el, start: "clamp(top 95%)", once: true },
+        scrollTrigger: { trigger: el, start: "top 95%", once: true },
         onUpdate: () => {
           el.textContent = format(state.n);
         },

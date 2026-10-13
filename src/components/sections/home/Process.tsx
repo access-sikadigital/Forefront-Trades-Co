@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { TextLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { process, processHeading } from "@/content/home";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP, MOTION } from "@/lib/gsap";
 import { prefersReducedMotion } from "@/lib/utils";
 
 /** Faint drafting grid — the section reads like a sheet of plans. */
@@ -18,8 +18,7 @@ const blueprint: CSSProperties = {
 
 /**
  * The five steps step down the page as a staircase, read top-left to bottom-right.
- * On scroll an orange line draws down the stairs (riser, then tread), and each
- * step brightens and lifts as the line reaches it. Mobile: a vertical rail.
+ * Static orange stair lines; the steps fade up in order. Mobile: a vertical rail.
  */
 export function Process() {
   const root = useRef<HTMLElement>(null);
@@ -28,40 +27,12 @@ export function Process() {
     () => {
       if (prefersReducedMotion()) return;
       const q = gsap.utils.selector(root);
-      const steps = q("[data-step]");
-      const mm = gsap.matchMedia();
-
-      mm.add("(min-width: 1280px)", () => {
-        const tl = gsap.timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: { trigger: q("[data-stairs]")[0], start: "top 88%", end: "bottom 55%", scrub: 0.8 },
-        });
-        steps.forEach((step, i) => {
-          const sel = gsap.utils.selector(step);
-          const at = i * 1;
-          if (i > 0) tl.fromTo(sel("[data-riser]"), { scaleY: 0 }, { scaleY: 1, duration: 0.35 }, at);
-          tl.fromTo(sel("[data-tread]"), { scaleX: 0 }, { scaleX: 1, duration: 0.65 }, at + (i > 0 ? 0.35 : 0))
-            .fromTo(sel("[data-node]"), { scale: 0 }, { scale: 1, duration: 0.2, ease: "back.out(3)" }, at + (i > 0 ? 0.3 : 0))
-            .fromTo(sel("[data-body]"), { opacity: 0.18, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, at + 0.25);
-        });
-      });
-
-      mm.add("(max-width: 1279px)", () => {
-        gsap.fromTo(
-          q("[data-rail]"),
-          { scaleY: 0 },
-          { scaleY: 1, ease: "none", scrollTrigger: { trigger: q("[data-stairs]")[0], start: "top 88%", end: "bottom 60%", scrub: 0.6 } },
-        );
-        steps.forEach((step) =>
-          gsap.fromTo(
-            step.querySelector("[data-body]"),
-            { opacity: 0.2, y: 20 },
-            { opacity: 1, y: 0, ease: "power2.out", scrollTrigger: { trigger: step, start: "top 92%", end: "top 65%", scrub: true } },
-          ),
-        );
-      });
-
-      return () => mm.revert();
+      // Lines are static; the steps simply fade up in order (site-wide motion).
+      gsap.fromTo(
+        q("[data-body]"),
+        { autoAlpha: 0, y: MOTION.rise },
+        { autoAlpha: 1, y: 0, duration: MOTION.reveal, ease: "ftc.out", stagger: 0.12, scrollTrigger: { trigger: q("[data-stairs]")[0], start: MOTION.start, once: true } },
+      );
     },
     { scope: root },
   );

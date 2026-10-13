@@ -23,7 +23,7 @@ export function Reveal({
   children,
   className,
   stagger = false,
-  y = 28,
+  y = MOTION.rise,
   delay = 0,
   afterIntro = false,
   start = MOTION.start,
@@ -53,7 +53,7 @@ export function Reveal({
           stagger: stagger === false ? 0 : stagger,
           ease: "ftc.out",
           paused: afterIntro,
-          scrollTrigger: afterIntro ? undefined : { trigger: el, start: `clamp(${start})`, once: true },
+          scrollTrigger: afterIntro ? undefined : { trigger: el, start, once: true },
         },
       );
       if (afterIntro) return onIntroComplete(() => tween.play());

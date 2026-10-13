@@ -80,7 +80,7 @@ export function SplitLines({
         if (afterIntro) {
           cleanupTrigger = onIntroComplete(play);
         } else {
-          const st = ScrollTrigger.create({ trigger: el, start: `clamp(${start})`, once: true, onEnter: play });
+          const st = ScrollTrigger.create({ trigger: el, start, once: true, onEnter: play });
           cleanupTrigger = () => st.kill();
         }
       });

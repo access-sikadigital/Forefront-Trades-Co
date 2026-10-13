@@ -2,38 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 import { PhoneButton } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { Logomark } from "@/components/ui/Logomark";
 import { accreditations, footerNav, legalNav, site } from "@/config/site";
-import { gsap, useGSAP } from "@/lib/gsap";
 import { useLenis } from "@/components/providers/SmoothScroll";
-import { prefersReducedMotion } from "@/lib/utils";
 
-/** Site footer. The background logomark turns slowly as the footer scrolls into view. */
+/** Site footer (static — no scroll-linked motion). */
 export function Footer() {
-  const root = useRef<HTMLElement>(null);
   const lenis = useLenis();
-
-  useGSAP(
-    () => {
-      if (prefersReducedMotion()) return;
-      const q = gsap.utils.selector(root);
-      // Only the background mark moves; the footer content itself never shifts, so nothing is ever clipped.
-      gsap.fromTo(
-        q("[data-arc]"),
-        { rotate: -90 },
-        { rotate: 0, ease: "none", scrollTrigger: { trigger: root.current, start: "top bottom", end: "max", scrub: 0.6 } },
-      );
-    },
-    { scope: root },
-  );
 
   const toTop = () => (lenis ? lenis.scrollTo(0, { duration: 1.8 }) : window.scrollTo({ top: 0, behavior: "smooth" }));
 
   return (
-    <footer ref={root} className="relative overflow-hidden bg-purple-950 text-white">
+    <footer className="relative overflow-hidden bg-purple-950 text-white">
       <div data-inner className="relative">
         <div data-arc className="pointer-events-none absolute -top-[18vw] -right-[18vw] origin-center text-orange/[0.07]">
           <Logomark className="size-[60vw] max-w-[820px]" />
@@ -41,6 +23,7 @@ export function Footer() {
 
         <div className="container-x relative grid gap-14 pt-24 pb-10 lg:grid-cols-12 lg:pt-32">
           <div className="lg:col-span-5">
+            <Logo className="mb-8 w-52 sm:w-60" wordColor="#fff" />
             <p className="max-w-md font-display text-h3 font-semibold text-white">
               Renovation and extension builders for Melbourne&rsquo;s inner west and north, with the price and the finish date in writing.
             </p>
@@ -88,10 +71,6 @@ export function Footer() {
               ))}
             </ul>
           </div>
-        </div>
-
-        <div className="container-x relative">
-          <Logo className="w-full opacity-95" wordColor="#fff" />
         </div>
 
         <div className="container-x relative mt-10 flex flex-col gap-4 border-t border-white/10 py-8 text-sm text-white/55 md:flex-row md:items-center md:justify-between">

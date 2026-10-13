@@ -11,7 +11,7 @@ import { googleReviews } from "@/content/reviews";
 import { VideoLightbox } from "@/components/sections/home/VideoLightbox";
 import { site } from "@/config/site";
 import { testimonial } from "@/content/home";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP, MOTION } from "@/lib/gsap";
 import { cn, prefersReducedMotion } from "@/lib/utils";
 
 type Video = (typeof testimonial.videos)[number];
@@ -36,43 +36,12 @@ export function Testimonial() {
     () => {
       if (prefersReducedMotion()) return;
       const q = gsap.utils.selector(root);
-      const mm = gsap.matchMedia();
-
-      // Deal the deck: each card starts stacked at the row's centre, fanned, then spreads to its slot.
-      mm.add("(min-width: 1024px)", () => {
-        const row = q("[data-deck]")[0] as HTMLElement;
-        const cards = q("[data-reel]") as HTMLElement[];
-        const fan = [-9, -3, 3, 9];
-        const offset = (card: HTMLElement) => {
-          const r = row.getBoundingClientRect();
-          return r.left + r.width / 2 - (card.offsetLeft + row.getBoundingClientRect().left + card.offsetWidth / 2);
-        };
-        const tl = gsap.timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: { trigger: row, start: "top 92%", end: "top 30%", scrub: 0.8, invalidateOnRefresh: true },
-        });
-        cards.forEach((card, i) => {
-          tl.fromTo(
-            card,
-            { x: () => offset(card), y: 60, rotate: fan[i % fan.length], scale: 0.86, zIndex: cards.length - i },
-            { x: 0, y: 0, rotate: 0, scale: 1 },
-            0,
-          );
-        });
-      });
-
-      // Mobile: simple rise-in.
-      mm.add("(max-width: 1023px)", () => {
-        gsap.from(q("[data-reel]"), {
-          y: 40,
-          autoAlpha: 0,
-          duration: 1,
-          stagger: 0.1,
-          ease: "ftc.out",
-          scrollTrigger: { trigger: q("[data-deck]")[0], start: "top 90%", once: true },
-        });
-      });
-      return () => mm.revert();
+      // Site-wide motion: one fade-up, same ease and timing everywhere.
+      gsap.fromTo(
+        q("[data-reel]"),
+        { autoAlpha: 0, y: MOTION.rise },
+        { autoAlpha: 1, y: 0, duration: MOTION.reveal, ease: "ftc.out", stagger: 0.1, scrollTrigger: { trigger: q("[data-deck]")[0], start: MOTION.start, once: true } },
+      );
     },
     { scope: root },
   );
@@ -149,7 +118,7 @@ function ReelCard({ v, index, onOpen }: { v: Video; index: number; onOpen: () =>
         onBlur={stop}
         data-cursor="Play"
         aria-label={`Play video: ${v.name}, ${v.project}`}
-        className="group relative block aspect-[9/16] w-full overflow-hidden rounded-[6px] bg-purple-950 text-left shadow-[0_30px_60px_-30px_rgb(0_0_0/0.6)] transition-transform duration-700 ease-[var(--ease-expo)] lg:hover:-translate-y-2"
+        className="group relative block aspect-[9/16] w-full lg:aspect-[4/5] overflow-hidden rounded-[6px] bg-purple-950 text-left shadow-[0_30px_60px_-30px_rgb(0_0_0/0.6)] transition-transform duration-700 ease-[var(--ease-expo)] lg:hover:-translate-y-2"
       >
         <Photo src={v.poster} alt="" frame={9 / 16} vw={{ desktop: 24, mobile: 78 }} className="transition-transform duration-[1.6s] ease-[var(--ease-expo)] group-hover:scale-[1.04]" />
         {/* Silent hover preview (only fetched when hovered) */}

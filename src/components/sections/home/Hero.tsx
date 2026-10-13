@@ -18,7 +18,6 @@ import { prefersReducedMotion } from "@/lib/utils";
  * Fonts are awaited for at most ~700ms so the copy is never held back; if a
  * font lands later, SplitText re-splits and the timeline keeps its progress.
  *
- * Scroll — the frame insets into a rounded "window" and the copy drifts up.
  */
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -76,17 +75,6 @@ export function Hero() {
           gsap.to(q("[data-film]"), { scale: 1, duration: 2.4, ease: "ftc.out" });
         });
       });
-
-      // ── Scroll-out ─────────────────────────────────────────
-      gsap
-        .timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: 0.5 },
-        })
-        .to(q("[data-frame]"), { clipPath: "inset(0% 3% 8% 3% round 16px)" }, 0)
-        .to(q("[data-parallax]"), { yPercent: 18 }, 0)
-        .to(q("[data-content]"), { yPercent: -22, opacity: 0.2 }, 0)
-        .to(q("[data-meta-wrap]"), { opacity: 0, duration: 0.2 }, 0);
 
       return () => {
         cancelled = true;

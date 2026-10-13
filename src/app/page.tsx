@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import { Areas } from "@/components/sections/home/Areas";
-import { BeforeAfter } from "@/components/sections/home/BeforeAfter";
-import { DesignConstruct } from "@/components/sections/home/DesignConstruct";
 import { FinalCta } from "@/components/sections/home/FinalCta";
 import { Guarantees } from "@/components/sections/home/Guarantees";
-import { Guides } from "@/components/sections/home/Guides";
 import { Hero } from "@/components/sections/home/Hero";
-import { Offer } from "@/components/sections/home/Offer";
 import { Process } from "@/components/sections/home/Process";
 import { Projects } from "@/components/sections/home/Projects";
 import { Services } from "@/components/sections/home/Services";
@@ -38,18 +34,15 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* Order follows client feedback: shorter page, service area higher up. */}
       <Hero />
       <Statement />
       <Services />
-      <DesignConstruct />
-      <Process />
-      <Projects />
-      <BeforeAfter />
-      <Guarantees />
-      <Offer />
-      <Testimonial />
       <Areas />
-      <Guides />
+      <Projects />
+      <Process />
+      <Guarantees />
+      <Testimonial />
       <FinalCta />
     </>
   );
