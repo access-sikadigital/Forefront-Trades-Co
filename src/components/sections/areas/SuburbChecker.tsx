@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useId, useMemo, useState } from "react";
 import { PhoneButton } from "@/components/ui/Button";
-import { serviceArea } from "@/content/areas";
+import { serviceArea, suburbSlug } from "@/content/areas";
 import { cn } from "@/lib/utils";
 
 const all = serviceArea.flatMap((c) => c.suburbs.map((s) => ({ suburb: s, council: c.council })));
@@ -45,7 +46,10 @@ export function SuburbChecker() {
               ✓
             </span>
             <span>
-              <strong className="font-display text-purple">Yes, we build in {result.suburb}.</strong> It&rsquo;s in {result.council}, one of our core areas.
+              <strong className="font-display text-purple">Yes, we build in {result.suburb}.</strong> It&rsquo;s in {result.council}, one of our core areas.{" "}
+              <Link href={`/home-renovations/${suburbSlug(result.suburb)}/`} className="font-semibold whitespace-nowrap text-purple underline underline-offset-4 hover:text-orange">
+                See {result.suburb}
+              </Link>
             </span>
           </p>
         )}

@@ -36,7 +36,7 @@ export const statement = {
   ],
   quote: { text: "We were kept in the loop as to the day and time each tradie would be onsite.", name: "Chris Williams", source: "Google review" },
   link: { label: "Read our story", href: "/about/" },
-  image: { src: "/images/team/team-van.jpg", alt: "The Forefront Trades Co. team outside a completed renovation in Footscray" },
+  image: { src: "/images/team/founders.jpg", alt: "The founders of Forefront Trades Co." },
   detail: { src: "/images/projects/altona/kitchen.jpg", alt: "Galley kitchen with integrated oven, Altona" },
   badge: "30+ years · Design · Construct · ",
 };
@@ -313,32 +313,6 @@ export const areas = {
   title: "Renovation builders for Melbourne's inner west & north.",
   text: "Our base is in Maribyrnong. Most of our work is in 42 suburbs across six councils, and we take on larger jobs further out too, like Craigieburn and Point Cook.",
   link: { label: "Check your suburb", href: "/areas/" },
-};
-
-export const guides = {
-  label: "Renovation guides",
-  title: "Know the numbers before you start.",
-  link: { label: "All guides", href: "/guides/" },
-  items: [
-    {
-      title: "How much does a home extension cost in Melbourne?",
-      href: "/guides/home-extension-cost-melbourne/",
-      tag: "Cost",
-      image: { src: "/images/projects/footscray/alfresco.jpg", alt: "Extension bifold doors opening onto an outdoor dining area, Footscray" },
-    },
-    {
-      title: "Kitchen renovation costs in Melbourne (2026)",
-      href: "/guides/kitchen-renovation-cost-melbourne/",
-      tag: "Cost",
-      image: { src: "/images/projects/footscray/kitchen-galley.jpg", alt: "Galley kitchen with gas cooktop" },
-    },
-    {
-      title: "Renovating under a heritage overlay in Melbourne",
-      href: "/guides/renovating-under-a-heritage-overlay/",
-      tag: "Planning",
-      image: { src: "/images/projects/footscray/facade-angle.jpg", alt: "Weatherboard period home facade" },
-    },
-  ],
 };
 
 export const finalCta = {

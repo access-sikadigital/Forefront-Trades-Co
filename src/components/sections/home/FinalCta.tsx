@@ -18,16 +18,12 @@ export function FinalCta() {
     <section className="relative overflow-hidden bg-cream-50 py-section">
       <div className="container-x grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-12">
         {/* Left: the ask */}
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-7">
           <Reveal>
             <Eyebrow>{finalCta.label}</Eyebrow>
           </Reveal>
-          <SplitLines as="h2" className="mt-6 text-display text-purple">
-            {finalCta.title.map((l) => (
-              <span key={l} className="block">
-                {l}
-              </span>
-            ))}
+          <SplitLines as="h2" className="mt-6 text-h2 text-purple">
+            {finalCta.title.join(" ")}
           </SplitLines>
           <Reveal className="mt-6">
             <p className="max-w-lg text-lead text-ink/75">{finalCta.text}</p>

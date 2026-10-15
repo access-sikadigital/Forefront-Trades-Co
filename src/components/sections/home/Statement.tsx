@@ -14,8 +14,9 @@ export function Statement() {
   return (
     <section className="relative overflow-hidden bg-cream-50 py-section">
       <div className="container-x">
-        <div className="grid gap-16 lg:grid-cols-12 lg:items-center lg:gap-12">
-          <div className="lg:col-span-5">
+        {/* 50 / 50: copy | photo (client feedback: the photo took too much width) */}
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div>
             <Reveal>
               <Eyebrow>{statement.label}</Eyebrow>
             </Reveal>
@@ -40,13 +41,13 @@ export function Statement() {
             </Reveal>
           </div>
 
-          {/* Collage from md up (proportions are % of the box). On phones: the team photo alone. */}
-          <div className="relative aspect-[4/3] lg:col-span-7 lg:aspect-[16/11]">
+          {/* Team photo with the static brand badge from md up */}
+          <div className="relative aspect-[4/3]">
             <ImageReveal
               src={statement.image.src}
               alt={statement.image.alt}
               frame={4 / 3}
-              vw={{ desktop: 44, mobile: 100 }}
+              vw={{ desktop: 46, mobile: 100 }}
               className="absolute inset-0 rounded-[3px]"
             />
             {/* Static brand badge (no motion) */}

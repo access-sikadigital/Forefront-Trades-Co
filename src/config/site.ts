@@ -44,7 +44,7 @@ export const mainNav: NavItem[] = [
   { label: "Design & Construct", href: "/design-and-construct/" },
   { label: "Projects", href: "/projects/" },
   { label: "About", href: "/about/" },
-  { label: "Guides", href: "/guides/" },
+  { label: "Blog", href: "/blog/" },
 ];
 
 export const footerNav: { title: string; links: NavItem[] }[] = [
@@ -54,6 +54,7 @@ export const footerNav: { title: string; links: NavItem[] }[] = [
       ...serviceNav,
       { label: "Second storey extensions", href: "/home-extensions/second-storey/" },
       { label: "Ground floor extensions", href: "/home-extensions/ground-floor/" },
+      { label: "Ensuite renovations", href: "/bathroom-renovations/ensuites/" },
     ],
   },
   {
@@ -70,8 +71,8 @@ export const footerNav: { title: string; links: NavItem[] }[] = [
   {
     title: "Resources",
     links: [
-      { label: "Renovation guides", href: "/guides/" },
-      { label: "Cost calculator", href: "/renovation-cost-calculator/" },
+      { label: "Blog", href: "/blog/" },
+      { label: "Book a consultation", href: "/book-a-consultation/" },
       { label: "Areas we service", href: "/areas/" },
       { label: "Contact", href: "/contact/" },
     ],

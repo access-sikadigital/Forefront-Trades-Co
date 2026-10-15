@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     images: [{ url: "/images/projects/footscray/pool-extension.jpg", width: 2400, height: 1600, alt: "Forefront Trades Co. rear extension and pool, Footscray" }],
   },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/brand/logo/logomark-orange.svg" },
 };
 
 export const viewport: Viewport = {

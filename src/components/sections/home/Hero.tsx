@@ -99,7 +99,7 @@ export function Hero() {
 
   // Content starts just under the header at every size; from lg up the film fills the screen behind it.
   return (
-    <section ref={root} className="relative overflow-hidden bg-purple-950 text-white lg:flex lg:min-h-svh lg:flex-col">
+    <section ref={root} className="relative overflow-hidden bg-ink-950 text-white lg:flex lg:min-h-svh lg:flex-col">
       <div data-frame className="absolute inset-0 overflow-hidden" style={{ clipPath: "inset(0% 0% 0% 0% round 0px)" }}>
         <div data-parallax className="absolute inset-0">
           <video
@@ -118,10 +118,10 @@ export function Hero() {
             <source src="/videos/hero-1080.mp4" type="video/mp4" />
           </video>
         </div>
-        {/* Legibility scrims in brand purple rather than black */}
-        <div className="absolute inset-0 bg-purple-950/25" />
-        <div className="absolute inset-0 bg-linear-to-t from-purple-950 via-purple-950/45 to-purple-950/30" />
-        <div className="absolute inset-0 bg-linear-to-r from-purple-950/70 via-purple-950/20 to-transparent" />
+        {/* Legibility scrims in deep charcoal (client: purple scrims looked off) */}
+        <div className="absolute inset-0 bg-ink-950/25" />
+        <div className="absolute inset-0 bg-linear-to-t from-ink-950 via-ink-950/45 to-ink-950/30" />
+        <div className="absolute inset-0 bg-linear-to-r from-ink-950/70 via-ink-950/20 to-transparent" />
       </div>
 
       <div data-content className="container-x relative flex flex-col justify-start pt-28 pb-14 sm:pt-32 sm:pb-16 lg:flex-1 lg:justify-start lg:pt-40 lg:pb-20">
@@ -133,7 +133,7 @@ export function Hero() {
             </Eyebrow>
           </div>
 
-          <p data-hero-title data-reveal className="mt-6 font-display font-bold text-hero text-white [text-shadow:0_2px_40px_rgb(29_7_40/0.35)]">
+          <p data-hero-title data-reveal className="mt-6 font-display font-bold text-hero text-white [text-shadow:0_2px_40px_rgb(0_0_0/0.35)]">
             {hero.title.map((line) => (
               <span key={line} className="block lg:whitespace-nowrap">
                 {line}

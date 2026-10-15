@@ -74,9 +74,20 @@ export function Footer() {
         </div>
 
         <div className="container-x relative mt-10 flex flex-col gap-4 border-t border-white/10 py-8 text-sm text-white/55 md:flex-row md:items-center md:justify-between">
-          <p>
-            © {new Date().getFullYear()} {site.name} · Registered Builder {site.registeredBuilder}
-          </p>
+          <div className="flex flex-col gap-1.5 lg:flex-row lg:items-center lg:gap-3">
+            <p>
+              © {new Date().getFullYear()} {site.name} · Registered Builder {site.registeredBuilder}
+            </p>
+            <span aria-hidden className="hidden lg:inline">
+              ·
+            </span>
+            <p>
+              Designed & developed by{" "}
+              <a href="https://sikadigital.com" target="_blank" rel="noopener" className="text-white/80 underline-offset-4 transition-colors hover:text-orange hover:underline">
+                Sika Digital
+              </a>
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-6">
             {legalNav.map((l) => (
               <Link key={l.href} href={l.href} className="hover:text-white">

@@ -29,3 +29,28 @@ export function organizationJsonLd() {
     sameAs: Object.values(site.socials),
   };
 }
+
+type ServiceSchemaInput = { name: string; path: string; description: string; faqs: { q: string; a: string }[] };
+
+/** Service + FAQPage schema for a service pillar page. */
+export function serviceJsonLd({ name, path, description, faqs }: ServiceSchemaInput) {
+  const url = `${site.url}${path}`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name,
+      serviceType: name,
+      description,
+      url,
+      provider: { "@id": `${site.url}/#organization` },
+      areaServed: { "@type": "City", name: "Melbourne" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+  ];
+}

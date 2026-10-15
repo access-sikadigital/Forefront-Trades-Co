@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { serviceArea } from "@/content/areas";
+import { serviceArea, suburbSlug } from "@/content/areas";
 import { areas } from "@/content/home";
 
 /**
@@ -22,7 +23,16 @@ export function Areas() {
                 <h3 className="font-display text-base font-semibold text-purple sm:text-lg">{c.council}</h3>
                 <span className="label !text-[0.62rem] !tracking-[0.14em] text-orange tabular">{c.suburbs.length} suburbs</span>
               </div>
-              <p className="mt-3 hidden text-base leading-relaxed text-ink/70 sm:block">{c.suburbs.join(" · ")}</p>
+              <p className="mt-3 hidden text-base leading-relaxed text-ink/70 sm:block">
+                {c.suburbs.map((s, i) => (
+                  <span key={s}>
+                    {i > 0 && " · "}
+                    <Link href={`/home-renovations/${suburbSlug(s)}/`} className="underline-offset-4 transition-colors hover:text-orange hover:underline">
+                      {s}
+                    </Link>
+                  </span>
+                ))}
+              </p>
             </li>
           ))}
         </Reveal>
