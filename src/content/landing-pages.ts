@@ -243,11 +243,8 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
     ],
     proof: [
       {
-        image: img(
-          "compare/craigieburn-kitchen-after.jpg",
-          "Kitchen with a stone waterfall island, two rush-seat stools, timber cabinetry and a stone splashback, Craigieburn",
-        ),
-        caption: "Stone waterfall island and timber joinery, Craigieburn",
+        image: img("projects/footscray/kitchen-island-run.jpg", "White island kitchen with gas cooktop and herringbone floor, Footscray"),
+        caption: "Island kitchen with shaker joinery, Footscray",
       },
       {
         image: img("projects/altona/kitchen-galley.jpg", "Galley kitchen with induction cooktop and white finger tiles, Altona"),
@@ -402,18 +399,12 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
     ],
     proof: [
       {
-        image: img(
-          "compare/craigieburn-dining-before.jpg",
-          "Kitchen and dining area mid-construction, with bare plaster, open cabinets and an unfinished island, Craigieburn",
-        ),
-        caption: "Kitchen and dining mid-build, Craigieburn",
+        image: img("projects/footscray/living-wide.jpg", "Open-plan living with herringbone floor and two sofas, Footscray"),
+        caption: "Open-plan living, Footscray",
       },
       {
-        image: img(
-          "compare/craigieburn-dining-after.jpg",
-          "Finished dining and kitchen with panelled walls, an oval timber table, a marble-look waterfall island and white cabinets, Craigieburn",
-        ),
-        caption: "The same room, finished, Craigieburn",
+        image: img("projects/footscray/main-bathroom.jpg", "Main bathroom with freestanding bath and double vanity, Footscray"),
+        caption: "Main bathroom with freestanding bath, Footscray",
       },
       {
         image: img("projects/footscray/robe-to-bedroom.jpg", "Walk-in robe leading to the main bedroom, Footscray"),

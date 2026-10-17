@@ -33,7 +33,7 @@ export const warrantyPage: WarrantyPage = {
     title: ["If we ever went under,", "you'd still be covered."],
     intro:
       "Victorian law requires domestic building insurance on building work over $16,000. Our jobs also carry a 7-year construction warranty and a 3-year maintenance warranty.",
-    image: { src: "/images/compare/craigieburn-kitchen-before.jpg", alt: "Kitchen mid-build, before benchtops and cabinetry, Craigieburn" },
+    image: { src: "/images/team/builders-van.jpg", alt: "Two Forefront Trades Co. builders beside the company van" },
     facts: [
       { label: "Registered Builder", value: "CDBU76389" },
       { label: "Insurance", value: "Jobs over $16,000" },

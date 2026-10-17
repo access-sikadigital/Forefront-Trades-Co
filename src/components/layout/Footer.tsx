@@ -9,6 +9,9 @@ import { accreditations, footerNav, legalNav, site } from "@/config/site";
 import { useLenis } from "@/components/providers/SmoothScroll";
 
 /** Site footer (static — no scroll-linked motion). */
+// Only marks the owner has approved (file + permission) are shown.
+const approvedMarks = accreditations.filter((a) => a.approved);
+
 export function Footer() {
   const lenis = useLenis();
 
@@ -60,16 +63,18 @@ export function Footer() {
         <div className="container-x relative mb-14">
           <div className="flex flex-col gap-5 border-t border-white/10 pt-10 lg:flex-row lg:items-center lg:gap-10">
             <div className="shrink-0">
-              <p className="label !text-[0.66rem] !tracking-[0.16em] text-orange">Registered &amp; accredited</p>
+              <p className="label !text-[0.66rem] !tracking-[0.16em] text-orange">{approvedMarks.length ? "Registered & accredited" : "Licence"}</p>
               <p className="mt-2 font-display text-lg font-semibold text-white">Registered Builder {site.registeredBuilder}</p>
             </div>
+            {approvedMarks.length > 0 && (
             <ul className="grid flex-1 grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
-              {accreditations.map((a) => (
+              {approvedMarks.map((a) => (
                 <li key={a.name} className="flex h-24 items-center justify-center rounded-[6px] bg-white px-5 sm:h-28">
                   <Image src={a.src} alt={a.name} width={a.width} height={a.height} sizes="220px" className={`${a.h} w-auto max-w-full object-contain`} />
                 </li>
               ))}
             </ul>
+            )}
           </div>
         </div>
 

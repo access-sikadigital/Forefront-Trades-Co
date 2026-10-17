@@ -82,7 +82,7 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
         "Butler's pantries, open-plan layouts and custom joinery across Melbourne's inner west and north.",
       image: { src: "/images/projects/footscray/kitchen.jpg", alt: "White kitchen with a long island, herringbone timber floor and round dining table, Footscray" },
       facts: [
-        { label: "Time on site", value: "4–6 weeks" },
+        { label: "Typical time on site", value: "4–6 weeks" },
         { label: "Contract", value: "Fixed price" },
         { label: "Finish date", value: "In writing" },
       ],
@@ -104,7 +104,6 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
       label: "Recent kitchens",
       title: "Kitchens we've built.",
       items: [
-        { image: { src: "/images/compare/craigieburn-kitchen-after.jpg", alt: "Stone island kitchen, Craigieburn" }, suburb: "Craigieburn", caption: "Two kitchens, two butler's pantries", href: "/projects/craigieburn/" },
         { image: { src: "/images/projects/footscray/kitchen-dining.jpg", alt: "White kitchen and timber dining setting, Footscray" }, suburb: "Footscray", caption: "Kitchen and dining, full renovation", href: "/projects/footscray/" },
         { image: { src: "/images/projects/altona/kitchen.jpg", alt: "Galley kitchen with induction cooktop and integrated oven, Altona" }, suburb: "Altona", caption: "Galley kitchen, integrated appliances", href: "/projects/altona/" },
       ],
@@ -148,7 +147,7 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
         "Ensuites, main bathrooms and powder rooms, one room at a time or several in the same job.",
       image: { src: "/images/projects/footscray/bathroom.jpg", alt: "Bathroom with freestanding bath, double vanity and pill-shaped mirrors, Footscray" },
       facts: [
-        { label: "Time on site", value: "4–6 weeks" },
+        { label: "Typical time on site", value: "4–6 weeks" },
         { label: "Contract", value: "Fixed price" },
         { label: "Finish date", value: "In writing" },
       ],
@@ -215,7 +214,7 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
         "A laundry on its own, or in the same job as your kitchen or bathroom.",
       image: { src: "/images/projects/footscray/laundry.jpg", alt: "Laundry with brushed brass tap, sage tiles and white stone bench, Footscray" },
       facts: [
-        { label: "Time on site", value: "4–6 weeks" },
+        { label: "Typical time on site", value: "4–6 weeks" },
         { label: "Contract", value: "Fixed price" },
         { label: "Finish date", value: "In writing" },
       ],
@@ -279,7 +278,7 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
         "Period homes and whole-house renovations in Melbourne's inner west and north.",
       image: { src: "/images/projects/footscray/open-living.jpg", alt: "Light-filled open-plan living room, Footscray" },
       facts: [
-        { label: "Time on site", value: "3–6 months" },
+        { label: "Typical time on site", value: "3–6 months" },
         { label: "Contract", value: "Fixed price" },
         { label: "Finish date", value: "In writing" },
       ],
@@ -302,7 +301,6 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
       title: "Whole homes we've renovated.",
       items: [
         { image: { src: "/images/projects/footscray/living-wide.jpg", alt: "Open-plan living with herringbone floor and two sofas, Footscray" }, suburb: "Footscray", caption: "Five bedrooms, a pool and a studio", href: "/projects/footscray/" },
-        { image: { src: "/images/compare/craigieburn-dining-after.jpg", alt: "Dining and kitchen after renovation, Craigieburn" }, suburb: "Craigieburn", caption: "Two kitchens, three bathrooms, an indoor pool", href: "/projects/craigieburn/" },
         { image: { src: "/images/projects/footscray/dining.jpg", alt: "Dining area with round timber table beside the kitchen, Footscray" }, suburb: "Footscray", caption: "Kitchen, dining and living, opened up", href: "/projects/footscray/" },
       ],
       quotes: [quotes.gary],
@@ -370,7 +368,6 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
       items: [
         { image: { src: "/images/projects/footscray/pool-extension.jpg", alt: "Rear extension and plunge pool with potted olive trees, Footscray" }, suburb: "Footscray", caption: "Rear extension, pool and studio", href: "/projects/footscray/" },
         { image: { src: "/images/projects/footscray/rear-alfresco.jpg", alt: "Covered alfresco on the rear extension, looking across the pool, Footscray" }, suburb: "Footscray", caption: "Alfresco off the rear extension", href: "/projects/footscray/" },
-        { image: { src: "/images/compare/craigieburn-dining-after.jpg", alt: "Dining and kitchen after renovation, Craigieburn" }, suburb: "Craigieburn", caption: "Renovations & Extensions", href: "/projects/craigieburn/" },
       ],
       quotes: [quotes.sabanaOam],
     },

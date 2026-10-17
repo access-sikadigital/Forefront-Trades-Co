@@ -3,7 +3,7 @@ import { FinalCta } from "@/components/sections/home/FinalCta";
 import { Testimonial } from "@/components/sections/home/Testimonial";
 import { ProjectGrid } from "@/components/sections/projects/ProjectSections";
 import { PageHero } from "@/components/sections/shared/PageHero";
-import { projectList, projectsHub } from "@/content/projects";
+import { publicProjects, projectsHub } from "@/content/projects";
 
 export const metadata: Metadata = {
   title: projectsHub.meta.title,
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHero hero={projectsHub.hero} />
-      <ProjectGrid projects={projectList} />
+      <ProjectGrid projects={publicProjects} />
       <Testimonial />
       <FinalCta />
     </>

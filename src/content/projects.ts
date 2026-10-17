@@ -13,6 +13,8 @@ const c = (path: string, alt: string): Img => ({ src: `/images/compare/${path}`,
 
 export type Project = {
   slug: string;
+  /** Publicly approved by the owner. Unapproved projects never reach a public page, list or sitemap. */
+  approved: boolean;
   suburb: string;
   title: string;
   scope: string;
@@ -48,6 +50,7 @@ export const projectsHub = {
 export const projectList: Project[] = [
   {
     slug: "footscray",
+    approved: true,
     suburb: "Footscray",
     title: "Pool out the back",
     scope: "Full renovation · Extension · Pool",
@@ -81,6 +84,7 @@ export const projectList: Project[] = [
   },
   {
     slug: "craigieburn",
+    approved: false, // private preview only (owner's brief, Oct 2026): photos and scope awaiting approval
     suburb: "Craigieburn",
     title: "Two kitchens",
     scope: "Renovations & Extensions",
@@ -128,6 +132,7 @@ export const projectList: Project[] = [
   },
   {
     slug: "altona",
+    approved: true,
     suburb: "Altona",
     title: "Black curved vanity",
     scope: "Kitchen · Bathroom · Laundry",
@@ -159,6 +164,7 @@ export const projectList: Project[] = [
   },
   {
     slug: "bentleigh",
+    approved: false, // private preview only (owner's brief, Oct 2026): photos and scope awaiting approval
     suburb: "Bentleigh",
     title: "Kitchen, pantry and a double shower",
     scope: "Kitchen · Bathroom · Robe",
@@ -190,6 +196,7 @@ export const projectList: Project[] = [
   },
   {
     slug: "brookfield",
+    approved: true, // TODO(client): confirm (stills from Nicole's published testimonial video)
     suburb: "Brookfield",
     title: "Nicole's laundry and kitchen",
     scope: "Laundry · Kitchen",
@@ -218,6 +225,7 @@ export const projectList: Project[] = [
   },
   {
     slug: "west-footscray",
+    approved: true, // TODO(client): confirm (from Cassandra's published testimonial video)
     suburb: "West Footscray",
     title: "Three bathrooms, a laundry and the drains",
     scope: "Bathrooms · Laundry · Drainage",
@@ -242,4 +250,7 @@ export const projectList: Project[] = [
   },
 ];
 
-export const projectBySlug = (slug: string) => projectList.find((x) => x.slug === slug);
+/** Only owner-approved projects are listed, linked or given a page. */
+export const publicProjects = projectList.filter((x) => x.approved);
+
+export const projectBySlug = (slug: string) => publicProjects.find((x) => x.slug === slug);

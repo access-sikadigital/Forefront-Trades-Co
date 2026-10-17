@@ -18,16 +18,16 @@ export function ServiceProof({ page }: { page: ServicePage }) {
         <SectionHeading label={proof.label} title={proof.title} action={<TextLink href="/projects/">All projects</TextLink>} />
 
         {proof.items.length > 0 && (
-          <Reveal as="ul" stagger={0.08} className="mt-12 grid grid-cols-2 gap-4 lg:mt-16 lg:grid-cols-3 lg:gap-6">
+          <Reveal as="ul" stagger={0.08} className={cn("mt-12 grid grid-cols-2 gap-4 lg:mt-16 lg:gap-6", proof.items.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2")}>
             {proof.items.map((p, i) => (
-              <li key={p.image.src} className={cn(i === 0 && "col-span-2 lg:col-span-1")}>
+              <li key={p.image.src} className={cn(i === 0 && proof.items.length % 2 === 1 && "col-span-2 lg:col-span-1")}>
                 <Link href={p.href ?? "/projects/"} className="group block">
-                  <div className={cn("relative overflow-hidden rounded-[6px] bg-purple/10", i === 0 ? "aspect-[4/3] lg:aspect-[4/5]" : "aspect-[4/5]")}>
+                  <div className={cn("relative overflow-hidden rounded-[6px] bg-purple/10", proof.items.length === 2 ? "aspect-[4/5] lg:aspect-[4/3]" : i === 0 ? "aspect-[4/3] lg:aspect-[4/5]" : "aspect-[4/5]")}>
                     <Photo
                       src={p.image.src}
                       alt={p.image.alt}
                       frame={4 / 5}
-                      vw={{ desktop: 31, breakpoint: 1024, mobile: i === 0 ? 92 : 46 }}
+                      vw={{ desktop: proof.items.length === 2 ? 46 : 31, breakpoint: 1024, mobile: i === 0 && proof.items.length % 2 === 1 ? 92 : 46 }}
                       className="transition-transform duration-[1.2s] ease-[var(--ease-expo)] group-hover:scale-[1.05]"
                     />
                     <span className="label absolute top-3 left-3 rounded-full bg-cream-50/90 px-3 py-1.5 !text-[0.6rem] !tracking-[0.12em] text-purple backdrop-blur sm:top-4 sm:left-4">

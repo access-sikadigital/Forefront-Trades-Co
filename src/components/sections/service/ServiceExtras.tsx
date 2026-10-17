@@ -168,6 +168,7 @@ function StepsSection({ extra }: { extra: Of<"steps"> }) {
               <span className="font-display text-2xl font-bold text-orange">{extra.total.value}</span>
             </li>
           )}
+          {extra.note && <li className="mt-4 text-sm leading-relaxed text-white/55">{extra.note}</li>}
         </Reveal>
       </div>
     </section>

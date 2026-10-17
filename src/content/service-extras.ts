@@ -14,7 +14,7 @@ type Img = { src: string; alt: string };
 export type ServiceExtra =
   | { type: "cards"; label: string; title: string; intro?: string; tone?: "white"; items: { title: string; text: string; image?: Img; tag?: string; href?: string }[] }
   | { type: "mosaic"; label: string; title: string; intro?: string; items: { image: Img; caption: string }[] }
-  | { type: "steps"; label: string; title: string; intro?: string; image?: Img; steps: { title: string; text: string }[]; total?: { label: string; value: string } }
+  | { type: "steps"; label: string; title: string; intro?: string; image?: Img; steps: { title: string; text: string }[]; total?: { label: string; value: string }; note?: string }
   | { type: "split"; label: string; title: string; intro?: string; options: { title: string; bestFor: string; image?: Img; points: string[]; href?: string }[] }
   | { type: "feature"; label: string; title: string; text: string; image: Img; points: string[] }
   | { type: "tour"; label: string; title: string; intro?: string; rooms: { room: string; text: string; image: Img }[] }
@@ -77,6 +77,8 @@ export const serviceExtras: Record<ServiceSlug, ServiceExtra[]> = {
         { title: "Handover", text: "We walk the finished room with you and hand over your warranty documents." },
       ],
       total: { label: "Most bathrooms, on site", value: "4–6 weeks" },
+      // Owner brief: every schedule is a sample, not a quote. TODO(client): confirm weeks (brief drafts 6–7).
+      note: "A typical order, not a quote. Your contract sets the real programme.",
     },
   ],
 

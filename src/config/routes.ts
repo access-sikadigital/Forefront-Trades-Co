@@ -92,7 +92,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: true
+    built: false
   },
   {
     path: "/projects/west-footscray/",
@@ -125,7 +125,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: true
+    built: false
   },
   {
     path: "/projects/clifton-hill/",

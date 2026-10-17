@@ -17,7 +17,7 @@ const blueprint: CSSProperties = {
 };
 
 /**
- * The five steps step down the page as a staircase, read top-left to bottom-right.
+ * The four stages step down the page as a staircase, read top-left to bottom-right.
  * Static orange stair lines; the steps fade up in order. Mobile: a vertical rail.
  */
 export function Process() {
@@ -46,7 +46,7 @@ export function Process() {
           intro={processHeading.intro}
         />
 
-        <ol data-stairs className="relative mt-16 grid gap-12 pl-8 xl:mt-24 xl:grid-cols-5 xl:items-start xl:gap-0 xl:pl-0">
+        <ol data-stairs className="relative mt-16 grid gap-12 pl-8 xl:mt-24 xl:grid-cols-4 xl:items-start xl:gap-0 xl:pl-0">
           {/* Mobile rail */}
           <span aria-hidden className="absolute top-2 bottom-2 left-[5px] w-0.5 bg-purple/12 xl:hidden" />
           <span aria-hidden data-rail className="absolute top-2 bottom-2 left-[5px] w-0.5 origin-top bg-orange xl:hidden" />

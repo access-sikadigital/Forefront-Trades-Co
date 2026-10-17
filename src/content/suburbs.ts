@@ -4,7 +4,7 @@
  * suburb-local.ts; the service angle and price factors come from the pillar page.
  */
 import { routes } from "@/config/routes";
-import { projectList } from "@/content/projects";
+import { publicProjects } from "@/content/projects";
 import { suburbLocal, type SuburbService } from "@/content/suburb-local";
 import { servicePages, type ServiceSlug } from "@/content/services";
 
@@ -50,7 +50,7 @@ export const findSuburbPage = (service: SuburbService, suburb: string) => suburb
 const nearestByCouncil: Record<string, string[]> = {
   Maribyrnong: ["footscray", "west-footscray"],
   "Moonee Valley": ["footscray", "west-footscray"],
-  "Merri-bek": ["footscray", "craigieburn"],
+  "Merri-bek": ["footscray", "west-footscray"],
   "Hobsons Bay": ["altona", "footscray"],
   Brimbank: ["west-footscray", "footscray"],
   "City of Melbourne": ["footscray", "west-footscray"],
@@ -59,5 +59,5 @@ const nearestByCouncil: Record<string, string[]> = {
 export const nearestProjects = (suburb: string) => {
   const council = suburbLocal[suburb]?.council ?? "Maribyrnong";
   const slugs = (nearestByCouncil[council] ?? ["footscray"]).filter((s) => s !== suburb);
-  return slugs.map((s) => projectList.find((p) => p.slug === s)).filter((p) => p !== undefined);
+  return slugs.map((s) => publicProjects.find((p) => p.slug === s)).filter((p) => p !== undefined);
 };

@@ -3,12 +3,12 @@ import { notFound } from "next/navigation";
 import { FinalCta } from "@/components/sections/home/FinalCta";
 import { BeforeAfterPairs, ProjectGallery, ProjectStory, ProjectVideo, RelatedServices } from "@/components/sections/projects/ProjectSections";
 import { PageHero } from "@/components/sections/shared/PageHero";
-import { projectBySlug, projectList } from "@/content/projects";
+import { projectBySlug, publicProjects } from "@/content/projects";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return projectList.map((pr) => ({ slug: pr.slug }));
+  return publicProjects.map((pr) => ({ slug: pr.slug }));
 }
 
 export async function generateMetadata(props: PageProps<"/projects/[slug]">): Promise<Metadata> {

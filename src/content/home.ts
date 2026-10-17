@@ -131,7 +131,7 @@ export const designConstruct = {
       title: "Architecture & drafting",
       text: "Drafting down to the steel-beam details, like the double-storey extension we built in Bundoora.",
       icon: "architecture",
-      image: { src: "/images/projects/footscray/facade-angle.jpg", alt: "Weatherboard period home facade" },
+      image: { src: "/images/projects/footscray/facade.jpg", alt: "Weatherboard home facade with picket fence, Footscray" },
     },
     {
       title: "Engineering & permits",
@@ -155,18 +155,19 @@ export const processHeading = {
   // Absorbs the old Design & Construct section (removed to shorten the page).
   label: "One team, from start to finish",
   title: "What happens after our free consultation call",
-  intro: "Five steps from first visit to handover. You see the fixed price and finish date before you sign anything to build.",
+  intro: "Four stages from first visit to handover. You see the fixed price and finish date before you sign anything to build.",
   link: { label: "Book a free consultation", href: "/book-a-consultation/" },
 };
 
+// Four stages, as in the owner's brief (Design · Contract & pre-construction · Construct · Handover).
 export const process = [
-  { step: "01", title: "Home visit", time: "First visit, free", text: "We walk your home with you and talk budget and timing honestly, including when the numbers don't stack up." },
   // TODO(client): state the design fee (or that it's free / credited to the build) — answers "paying for plans is a gamble".
-  { step: "02", title: "Design", time: "Plans & pricing", text: "Concepts, interior selections and a fixed-price proposal. You see the build price and the finish date before you commit to the build." },
-  { step: "03", title: "Permits", time: "Depends on council", text: "We lodge and chase engineering, planning and building permits. If your street is under a heritage overlay, we plan for it from the first drawing." },
+  { step: "01", title: "Design", time: "Free visit, then plans", text: "It starts with a free home visit. Then concepts, interior selections and a fixed-price proposal, so you see the build price and finish date before you commit." },
+  { step: "02", title: "Contract & pre-construction", time: "Contract & permits", text: "You sign one fixed-price contract with the finish date in it. We lodge and chase engineering, planning and building permits, and plan for any heritage overlay." },
   // TODO(client): confirm a project WhatsApp group runs on every job.
-  { step: "04", title: "Build", time: "4 weeks – 6 months", text: "We book and run every trade on site. Nicole in Brookfield had a WhatsApp group with our team and called it \u201Cvery, very important\u201D." },
-  { step: "05", title: "Handover", time: "Final walkthrough", text: "A final walkthrough, a clean home and your warranty documents." },
+  // TODO(client): confirm construction weeks (the owner's brief drafts 6–7 weeks for single rooms; the site says 4–6).
+  { step: "03", title: "Construct", time: "4 weeks – 6 months", text: "We book and run every trade on site. Nicole in Brookfield had a WhatsApp group with our team and called it \u201Cvery, very important\u201D." },
+  { step: "04", title: "Handover", time: "Final walkthrough", text: "A final walkthrough, a clean home and your warranty documents." },
 ];
 
 /**
@@ -175,7 +176,7 @@ export const process = [
  */
 export const projects = {
   label: "Recent projects",
-  title: "Recent work in Footscray, Altona and Craigieburn.",
+  title: "Recent work in Footscray, Altona and Brookfield.",
   intro: "Real projects, photographed after handover.",
   link: { label: "All projects", href: "/projects/" },
   // Four strong projects in one row (client feedback: page too long). The rest live on /projects/.
@@ -187,17 +188,18 @@ export const projects = {
       image: { src: "/images/projects/footscray/pool-extension.jpg", alt: "Rear extension and plunge pool, Footscray" },
       href: "/projects/footscray/",
     },
+    // Craigieburn and Bentleigh are private-preview only until the owner approves them (brief, Oct 2026).
     {
-      suburb: "Craigieburn",
-      title: "Two kitchens and an indoor pool",
-      scope: "Renovation & extension",
-      image: { src: "/images/compare/craigieburn-kitchen-after.jpg", alt: "Stone island kitchen, Craigieburn" },
-      href: "/projects/craigieburn/",
+      suburb: "Brookfield",
+      title: "Laundry and kitchen, on time",
+      scope: "Laundry · Kitchen",
+      image: { src: "/images/projects/brookfield/laundry-wide.jpg", alt: "Laundry with front loaders and timber-look cupboards, Brookfield" },
+      href: "/projects/brookfield/",
     },
     {
       suburb: "Altona",
       title: "Black vanity, terrazzo floor",
-      scope: "Bathroom · Powder room",
+      scope: "Bathroom · Kitchen · Laundry",
       image: { src: "/images/projects/altona/vanity.jpg", alt: "Black curved vanity with terrazzo, Altona" },
       href: "/projects/altona/",
     },
@@ -210,15 +212,6 @@ export const projects = {
     },
   ],
 
-};
-
-export const beforeAfter = {
-  label: "Before / After",
-  title: "Craigieburn, mid-build and finished.",
-  text: "The whole job included two kitchens, two butler's pantries, three bathrooms, an indoor pool and a six-person cedar sauna. Drag the handle to compare.",
-  before: { src: "/images/compare/craigieburn-dining-before.jpg", alt: "Craigieburn dining and kitchen during construction" },
-  after: { src: "/images/compare/craigieburn-dining-after.jpg", alt: "Craigieburn dining and kitchen after renovation" },
-  link: { label: "See the Craigieburn project", href: "/projects/craigieburn/" },
 };
 
 export const guaranteesHeading = {
