@@ -47,11 +47,12 @@ export function Guarantees() {
 
         <div data-bento className="mt-14 grid gap-4 md:grid-cols-2 lg:mt-20 lg:grid-cols-12 lg:gap-5">
           {/* A — the contract promises, over a finished kitchen */}
-          <article data-tile className="relative min-h-[440px] overflow-hidden rounded-[6px] bg-purple-950 text-white md:col-span-2 lg:col-span-7 lg:row-span-2 lg:min-h-[520px]">
+          <article data-tile className="relative min-h-[440px] overflow-hidden rounded-[6px] bg-ink-950 text-white md:col-span-2 lg:col-span-7 lg:row-span-2 lg:min-h-[520px]">
             <div data-bento-img className="absolute inset-0">
               <Photo src="/images/projects/footscray/kitchen.jpg" alt="" frame={1} vw={{ desktop: 56, mobile: 100 }} bleed={1.2} />
             </div>
-            <div className="absolute inset-0 bg-linear-to-t from-purple-950 via-purple-950/80 to-purple-950/25" />
+            {/* Charcoal scrim to match the hero (client: purple scrims looked off) */}
+            <div className="absolute inset-0 bg-linear-to-t from-ink-950 via-ink-950/80 to-ink-950/25" />
             <div className="relative flex h-full flex-col justify-end gap-8 p-6 sm:p-9 lg:p-11">
               <span className="label w-fit rounded-full bg-orange px-3.5 py-2 !text-[0.66rem] !tracking-[0.14em] text-white">In your contract</span>
               <ul className="grid gap-6 sm:grid-cols-2 sm:gap-8">
