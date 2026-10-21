@@ -20,12 +20,17 @@ if (typeof window !== "undefined") {
   ScrollTrigger.config({ ignoreMobileResize: true });
 }
 
-/** Shared motion constants. */
+/**
+ * Shared motion constants — ONE motion language for the whole site:
+ * everything enters by fading up (rise px) with the same ease and duration.
+ * Only the hero entrance and the stat counters are allowed to be louder.
+ */
 export const MOTION = {
   stagger: 0.08,
-  reveal: 1.1,
+  reveal: 1,
+  rise: 32,
   wipe: 0.9,
-  start: "top 92%",
+  start: "top 90%",
 } as const;
 
 export { gsap, ScrollTrigger, SplitText, Draggable, useGSAP };

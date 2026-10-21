@@ -22,7 +22,7 @@ type Props = Omit<ComponentProps<typeof Link>, "className"> & {
 };
 
 /** Brand CTA (Guidelines §04: labels & CTAs set in Graphik Regular, +20% tracking). */
-export function Button({ children, variant = "primary", className, magnetic = true, arrow = true, ...props }: Props) {
+export function Button({ children, variant = "primary", className, magnetic = false, arrow = true, ...props }: Props) {
   const button = (
     <Link
       {...props}
@@ -61,7 +61,7 @@ export function PhoneButton({
   variant = "light",
   size = "md",
   className,
-  magnetic = true,
+  magnetic = false,
 }: {
   variant?: PhoneVariant;
   size?: "sm" | "md";

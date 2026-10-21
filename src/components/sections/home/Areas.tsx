@@ -1,40 +1,41 @@
 import Link from "next/link";
-import { Marquee } from "@/components/motion/Marquee";
-import { TextLink } from "@/components/ui/Button";
+import { Reveal } from "@/components/motion/Reveal";
+import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { serviceArea, suburbSlug } from "@/content/areas";
 import { areas } from "@/content/home";
 
-/** Service area: suburb hubs in a velocity-reactive marquee (each a real link). */
+/**
+ * Service area, placed high on the page (it's one of the first questions people
+ * ask). Six councils with their suburbs as a static, scannable grid, and a
+ * button through to the full "Check your suburb" page.
+ */
 export function Areas() {
-  const half = Math.ceil(areas.suburbs.length / 2);
-  const rows = [areas.suburbs.slice(0, half), areas.suburbs.slice(half)];
-
   return (
-    <section className="relative overflow-hidden bg-cream-50 py-section">
+    <section className="relative bg-cream py-section">
       <div className="container-x">
-        <SectionHeading label={areas.label} title={areas.title} intro={areas.text} action={<TextLink href={areas.link.href}>{areas.link.label}</TextLink>} />
-      </div>
+        <SectionHeading label={areas.label} title={areas.title} intro={areas.text} action={<Button href={areas.link.href}>{areas.link.label}</Button>} />
 
-      <div className="mt-16 space-y-2 lg:mt-24">
-        {rows.map((row, r) => (
-          <Marquee key={r} speed={r ? 46 : 38} reverse={r === 1}>
-            {row.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="group flex items-center gap-[clamp(1.25rem,3vw,3rem)] pr-[clamp(1.25rem,3vw,3rem)] font-display text-[clamp(2.75rem,1.5rem+5.5vw,7.5rem)] leading-[1.15] font-bold tracking-[-0.035em]"
-              >
-                <span className={r ? "text-transparent [-webkit-text-stroke:1.5px_var(--color-purple)] transition-colors duration-500 group-hover:text-purple" : "text-purple transition-colors duration-500 group-hover:text-orange"}>
-                  {s.name}
-                </span>
-                <svg viewBox="0 0 12 12" className="size-[0.32em] shrink-0 text-orange" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
-                  <path d="M.8.8h10.4v10.4H.8z" />
-                  <path d="M6 11.2A5.2 5.2 0 0 1 11.2 6" />
-                </svg>
-              </Link>
-            ))}
-          </Marquee>
-        ))}
+        <Reveal as="ul" stagger={0.06} className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-[6px] bg-purple/10 lg:mt-16 lg:grid-cols-3">
+          {serviceArea.map((c) => (
+            <li key={c.council} className="bg-cream-50 p-4 sm:p-6 lg:p-7">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <h3 className="font-display text-base font-semibold text-purple sm:text-lg">{c.council}</h3>
+                <span className="label !text-[0.62rem] !tracking-[0.14em] text-orange tabular">{c.suburbs.length} suburbs</span>
+              </div>
+              <p className="mt-3 hidden text-base leading-relaxed text-ink/70 sm:block">
+                {c.suburbs.map((s, i) => (
+                  <span key={s}>
+                    {i > 0 && " · "}
+                    <Link href={`/home-renovations/${suburbSlug(s)}/`} className="underline-offset-4 transition-colors hover:text-orange hover:underline">
+                      {s}
+                    </Link>
+                  </span>
+                ))}
+              </p>
+            </li>
+          ))}
+        </Reveal>
       </div>
     </section>
   );

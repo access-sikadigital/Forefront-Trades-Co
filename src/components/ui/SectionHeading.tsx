@@ -18,7 +18,7 @@ type Props = {
 export function SectionHeading({ label, title, intro, action, light = false, className, titleClassName }: Props) {
   return (
     <div className={cn("grid gap-8 lg:grid-cols-12 lg:items-end", className)}>
-      <div className="lg:col-span-7">
+      <div className="lg:col-span-8">
         <Reveal>
           <Eyebrow light={light}>{label}</Eyebrow>
         </Reveal>
@@ -27,7 +27,7 @@ export function SectionHeading({ label, title, intro, action, light = false, cla
         </SplitLines>
       </div>
       {(intro || action) && (
-        <Reveal className="space-y-6 lg:col-span-4 lg:col-start-9" stagger={0.1}>
+        <Reveal className={cn("space-y-6 lg:col-span-4 lg:col-start-9", !intro && "lg:flex lg:justify-end")} stagger={0.1}>
           {intro && <p className={cn("text-lead", light ? "text-white/75" : "text-ink/75")}>{intro}</p>}
           {action && <div>{action}</div>}
         </Reveal>

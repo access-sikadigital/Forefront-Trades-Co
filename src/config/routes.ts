@@ -37,7 +37,7 @@ export const routes: Route[] = [
     kd: 25,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/design-and-construct/",
@@ -48,7 +48,7 @@ export const routes: Route[] = [
     kd: 12,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/projects/",
@@ -59,7 +59,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/projects/footscray/",
@@ -70,7 +70,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/projects/altona/",
@@ -81,7 +81,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/projects/bentleigh/",
@@ -103,7 +103,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/projects/brookfield/",
@@ -114,7 +114,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/projects/craigieburn/",
@@ -147,7 +147,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/warranty-and-insurance/",
@@ -158,7 +158,7 @@ export const routes: Route[] = [
     kd: 18,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/faqs/",
@@ -169,7 +169,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/contact/",
@@ -180,7 +180,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/book-a-consultation/",
@@ -191,7 +191,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-extensions/",
@@ -202,7 +202,7 @@ export const routes: Route[] = [
     kd: 24,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-extensions/second-storey/",
@@ -213,7 +213,7 @@ export const routes: Route[] = [
     kd: 17,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-extensions/ground-floor/",
@@ -224,7 +224,7 @@ export const routes: Route[] = [
     kd: 13,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/",
@@ -235,7 +235,7 @@ export const routes: Route[] = [
     kd: 36,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/",
@@ -246,7 +246,7 @@ export const routes: Route[] = [
     kd: 44,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/ensuites/",
@@ -257,7 +257,7 @@ export const routes: Route[] = [
     kd: 10,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/",
@@ -268,7 +268,7 @@ export const routes: Route[] = [
     kd: 54,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/laundry-renovations/",
@@ -279,7 +279,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/heritage-renovations/",
@@ -290,7 +290,7 @@ export const routes: Route[] = [
     kd: 18,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/knock-down-rebuild/",
@@ -334,18 +334,51 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
-    path: "/guides/",
+    path: "/blog/",
     section: "Content",
-    template: "Guides hub",
+    template: "Blog hub",
     keyword: null,
     volume: null,
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
+  },
+  {
+    path: "/blog/how-long-does-a-bathroom-renovation-take/",
+    section: "Content",
+    template: "Blog post",
+    keyword: "how long does a bathroom renovation take",
+    volume: 320,
+    kd: 6,
+    tier: 1,
+    noindex: false,
+    built: true
+  },
+  {
+    path: "/blog/laundry-renovation-ideas/",
+    section: "Content",
+    template: "Blog post",
+    keyword: "laundry renovation ideas",
+    volume: 880,
+    kd: 14,
+    tier: 1,
+    noindex: false,
+    built: true
+  },
+  {
+    path: "/blog/renovating-under-a-heritage-overlay/",
+    section: "Content",
+    template: "Blog post",
+    keyword: "heritage overlay renovation melbourne",
+    volume: null,
+    kd: null,
+    tier: 1,
+    noindex: false,
+    built: true
   },
   {
     path: "/privacy-policy/",
@@ -356,7 +389,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/terms/",
@@ -367,7 +400,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/brunswick/",
@@ -378,7 +411,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/yarraville/",
@@ -389,7 +422,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/essendon/",
@@ -400,7 +433,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/newport/",
@@ -411,7 +444,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/maribyrnong/",
@@ -422,7 +455,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/moonee-ponds/",
@@ -433,7 +466,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/ascot-vale/",
@@ -444,7 +477,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/footscray/",
@@ -455,7 +488,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-extensions/yarraville/",
@@ -466,7 +499,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-extensions/ascot-vale/",
@@ -477,7 +510,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-extensions/brunswick/",
@@ -488,7 +521,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-extensions/maribyrnong/",
@@ -499,7 +532,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/essendon/",
@@ -510,7 +543,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/yarraville/",
@@ -521,7 +554,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/moonee-ponds/",
@@ -532,7 +565,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/footscray/",
@@ -543,7 +576,7 @@ export const routes: Route[] = [
     kd: 8,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/brunswick/",
@@ -554,7 +587,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/newport/",
@@ -565,7 +598,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/spotswood/",
@@ -576,7 +609,7 @@ export const routes: Route[] = [
     kd: 8,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/maribyrnong/",
@@ -587,7 +620,7 @@ export const routes: Route[] = [
     kd: 9,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/footscray/",
@@ -598,7 +631,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/brunswick/",
@@ -609,7 +642,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/maribyrnong/",
@@ -620,7 +653,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 1,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/pascoe-vale/",
@@ -631,7 +664,7 @@ export const routes: Route[] = [
     kd: 4,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/albion/",
@@ -642,7 +675,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/seddon/",
@@ -653,7 +686,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/sunshine/",
@@ -664,7 +697,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/spotswood/",
@@ -675,7 +708,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/flemington/",
@@ -686,7 +719,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/kensington/",
@@ -697,7 +730,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-extensions/albion/",
@@ -708,7 +741,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/ascot-vale/",
@@ -719,7 +752,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/seddon/",
@@ -730,7 +763,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/kensington/",
@@ -741,7 +774,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/flemington/",
@@ -752,7 +785,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/pascoe-vale/",
@@ -763,7 +796,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/sunshine/",
@@ -774,7 +807,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/essendon/",
@@ -785,7 +818,7 @@ export const routes: Route[] = [
     kd: 9,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/ascot-vale/",
@@ -796,7 +829,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/yarraville/",
@@ -807,7 +840,7 @@ export const routes: Route[] = [
     kd: 8,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/flemington/",
@@ -818,7 +851,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/kensington/",
@@ -829,7 +862,7 @@ export const routes: Route[] = [
     kd: 14,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/moonee-ponds/",
@@ -840,7 +873,7 @@ export const routes: Route[] = [
     kd: 8,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/laundry-renovations/essendon/",
@@ -851,7 +884,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/laundry-renovations/brunswick/",
@@ -862,7 +895,7 @@ export const routes: Route[] = [
     kd: 4,
     tier: 2,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/kingsville/",
@@ -873,7 +906,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/melbourne-cbd/",
@@ -884,7 +917,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/maidstone/",
@@ -895,7 +928,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/west-footscray/",
@@ -906,7 +939,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/tottenham/",
@@ -917,7 +950,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/braybrook/",
@@ -928,7 +961,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/sunshine-north/",
@@ -939,7 +972,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/sunshine-west/",
@@ -950,7 +983,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/avondale-heights/",
@@ -961,7 +994,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/essendon-west/",
@@ -972,7 +1005,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/aberfeldie/",
@@ -983,7 +1016,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/essendon-north/",
@@ -994,7 +1027,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/travancore/",
@@ -1005,7 +1038,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/niddrie/",
@@ -1016,7 +1049,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/airport-west/",
@@ -1027,7 +1060,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/keilor-east/",
@@ -1038,7 +1071,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/strathmore/",
@@ -1049,7 +1082,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/strathmore-heights/",
@@ -1060,7 +1093,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/pascoe-vale-south/",
@@ -1071,7 +1104,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/brunswick-west/",
@@ -1082,7 +1115,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/north-melbourne/",
@@ -1093,7 +1126,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/west-melbourne/",
@@ -1104,7 +1137,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/parkville/",
@@ -1115,7 +1148,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/docklands/",
@@ -1126,7 +1159,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/south-kingsville/",
@@ -1137,7 +1170,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/brooklyn/",
@@ -1148,7 +1181,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/home-renovations/altona-north/",
@@ -1159,7 +1192,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/albion/",
@@ -1170,7 +1203,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/maidstone/",
@@ -1181,7 +1214,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/kingsville/",
@@ -1192,7 +1225,7 @@ export const routes: Route[] = [
     kd: 14,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/strathmore/",
@@ -1203,7 +1236,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/parkville/",
@@ -1214,7 +1247,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/brooklyn/",
@@ -1225,7 +1258,7 @@ export const routes: Route[] = [
     kd: 13,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/avondale-heights/",
@@ -1236,7 +1269,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/keilor-east/",
@@ -1247,7 +1280,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/bathroom-renovations/north-melbourne/",
@@ -1258,7 +1291,7 @@ export const routes: Route[] = [
     kd: 4,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/sunshine/",
@@ -1269,7 +1302,7 @@ export const routes: Route[] = [
     kd: 13,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/pascoe-vale/",
@@ -1280,7 +1313,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/newport/",
@@ -1291,7 +1324,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/spotswood/",
@@ -1302,7 +1335,7 @@ export const routes: Route[] = [
     kd: 5,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/maidstone/",
@@ -1313,7 +1346,7 @@ export const routes: Route[] = [
     kd: 7,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/seddon/",
@@ -1324,7 +1357,7 @@ export const routes: Route[] = [
     kd: 6,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/avondale-heights/",
@@ -1335,7 +1368,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/keilor-east/",
@@ -1346,7 +1379,7 @@ export const routes: Route[] = [
     kd: 4,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/strathmore/",
@@ -1357,7 +1390,7 @@ export const routes: Route[] = [
     kd: 0,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/parkville/",
@@ -1368,7 +1401,7 @@ export const routes: Route[] = [
     kd: 4,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/kitchen-renovations/brooklyn/",
@@ -1379,7 +1412,7 @@ export const routes: Route[] = [
     kd: 23,
     tier: 3,
     noindex: false,
-    built: false
+    built: true
   },
   {
     path: "/lp/home-extensions/",
@@ -1390,7 +1423,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: true,
-    built: false
+    built: true
   },
   {
     path: "/lp/bathroom-renovations/",
@@ -1401,7 +1434,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: true,
-    built: false
+    built: true
   },
   {
     path: "/lp/kitchen-renovations/",
@@ -1412,7 +1445,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: true,
-    built: false
+    built: true
   },
   {
     path: "/lp/laundry-renovations/",
@@ -1423,7 +1456,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 2,
     noindex: true,
-    built: false
+    built: true
   },
   {
     path: "/lp/full-home-renovation/",
@@ -1434,6 +1467,6 @@ export const routes: Route[] = [
     kd: null,
     tier: 2,
     noindex: true,
-    built: false
+    built: true
   }
 ];

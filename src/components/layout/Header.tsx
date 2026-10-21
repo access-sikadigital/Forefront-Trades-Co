@@ -19,6 +19,9 @@ export function Header() {
   const ref = useRef<HTMLElement>(null);
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
+  // Dropdown that was just used: kept shut until the pointer comes back onto it (it opens on
+  // hover/focus, so without this it stays open after a click while the mouse is still over it).
+  const [dismissed, setDismissed] = useState<string | null>(null);
   const pathname = usePathname();
 
   // Close the menu on navigation.
@@ -93,22 +96,44 @@ export function Header() {
           <nav aria-label="Primary" className="hidden xl:block">
             <ul className="flex items-center gap-1">
               {mainNav.map((item) => (
-                <li key={item.href} className="group relative">
+                <li key={item.href} className="group relative" onPointerEnter={() => dismissed === item.href && setDismissed(null)}>
                   <Link
                     href={item.href}
-                    className="label relative inline-flex h-11 items-center px-3.5 !text-[0.74rem] !tracking-[0.14em] opacity-90 transition-opacity hover:opacity-100"
+                    aria-haspopup={item.children ? "true" : undefined}
+                    onClick={(e) => {
+                      if (!item.children) return;
+                      setDismissed(item.href);
+                      e.currentTarget.blur();
+                    }}
+                    className="label relative inline-flex h-11 items-center gap-1.5 px-3.5 !text-[0.74rem] !tracking-[0.14em] opacity-90 transition-opacity hover:opacity-100"
                   >
                     {item.label}
+                    {item.children && (
+                      <svg viewBox="0 0 12 12" aria-hidden className="size-2.5 transition-transform duration-300 group-hover:rotate-180">
+                        <path d="M2 4.5 6 8l4-3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
                     <span className="absolute inset-x-3.5 bottom-2 h-px origin-right scale-x-0 bg-orange transition-transform duration-500 ease-[var(--ease-expo)] group-hover:origin-left group-hover:scale-x-100" />
                   </Link>
                   {item.children && (
-                    <div className="invisible absolute top-full left-0 pt-3 opacity-0 transition-all duration-300 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                    <div
+                      className={cn(
+                        "invisible absolute top-full left-0 pt-3 opacity-0 transition-all duration-300",
+                        // Keyboard focus (focus-visible) opens it; a mouse click never leaves it stuck open.
+                        dismissed === item.href ? "pointer-events-none" : "group-hover:visible group-hover:opacity-100 group-has-[:focus-visible]:visible group-has-[:focus-visible]:opacity-100",
+                      )}
+                    >
                       <ul className="min-w-64 translate-y-2 rounded-[3px] bg-white p-2 text-purple shadow-[0_20px_60px_-20px_rgb(29_7_40/0.35)] transition-transform duration-300 group-hover:translate-y-0">
                         {item.children.map((child) => (
                           <li key={child.href}>
                             <Link
                               href={child.href}
-                              className="flex items-center justify-between rounded-[2px] px-4 py-3 font-display text-[0.95rem] font-medium transition-colors hover:bg-cream"
+                              onClick={(e) => {
+                                setDismissed(item.href);
+                                e.currentTarget.blur();
+                              }}
+                              aria-current={pathname === child.href ? "page" : undefined}
+                              className="flex items-center justify-between rounded-[2px] px-4 py-3 font-display text-[0.95rem] font-medium transition-colors hover:bg-cream aria-[current=page]:text-orange"
                             >
                               {child.label}
                             </Link>

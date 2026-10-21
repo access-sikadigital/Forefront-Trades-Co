@@ -7,7 +7,7 @@ import { Icon, type BrandIcon } from "@/components/ui/Icon";
 import { Photo } from "@/components/ui/Photo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { guarantees, guaranteesHeading } from "@/content/home";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP, MOTION } from "@/lib/gsap";
 import { cn, prefersReducedMotion } from "@/lib/utils";
 
 const [fixedPrice, onTime, construction, maintenance, insurance] = guarantees;
@@ -25,27 +25,11 @@ export function Guarantees() {
     () => {
       if (prefersReducedMotion()) return;
       const q = gsap.utils.selector(root);
+      // Site-wide motion: one fade-up, same ease and timing everywhere.
       gsap.fromTo(
         q("[data-tile]"),
-        { clipPath: "inset(100% 0% 0% 0% round 6px)", y: 40 },
-        {
-          clipPath: "inset(0% 0% 0% 0% round 6px)",
-          y: 0,
-          duration: 1.2,
-          ease: "ftc.inOut",
-          stagger: 0.12,
-          scrollTrigger: { trigger: q("[data-bento]")[0], start: "top 88%", once: true },
-        },
-      );
-      gsap.fromTo(
-        q("[data-tick]"),
-        { drawSVG: "0%" },
-        { drawSVG: "100%", duration: 0.6, ease: "power2.out", stagger: 0.2, delay: 0.7, scrollTrigger: { trigger: q("[data-bento]")[0], start: "top 88%", once: true } },
-      );
-      gsap.fromTo(
-        q("[data-bento-img]"),
-        { scale: 1.2 },
-        { scale: 1, ease: "none", scrollTrigger: { trigger: q("[data-bento]")[0], start: "top bottom", end: "bottom top", scrub: 0.8 } },
+        { autoAlpha: 0, y: MOTION.rise },
+        { autoAlpha: 1, y: 0, duration: MOTION.reveal, ease: "ftc.out", stagger: 0.1, scrollTrigger: { trigger: q("[data-bento]")[0], start: MOTION.start, once: true } },
       );
     },
     { scope: root },
@@ -63,7 +47,7 @@ export function Guarantees() {
 
         <div data-bento className="mt-14 grid gap-4 md:grid-cols-2 lg:mt-20 lg:grid-cols-12 lg:gap-5">
           {/* A — the contract promises, over a finished kitchen */}
-          <article data-tile className="relative min-h-[520px] overflow-hidden rounded-[6px] bg-purple-950 text-white md:col-span-2 lg:col-span-7 lg:row-span-2 lg:min-h-[640px]">
+          <article data-tile className="relative min-h-[440px] overflow-hidden rounded-[6px] bg-purple-950 text-white md:col-span-2 lg:col-span-7 lg:row-span-2 lg:min-h-[520px]">
             <div data-bento-img className="absolute inset-0">
               <Photo src="/images/projects/footscray/kitchen.jpg" alt="" frame={1} vw={{ desktop: 56, mobile: 100 }} bleed={1.2} />
             </div>
@@ -126,7 +110,7 @@ function WarrantyTile({ g, value, tone }: { g: (typeof guarantees)[number]; valu
     <article
       data-tile
       className={cn(
-        "relative flex min-h-[300px] flex-col justify-between overflow-hidden rounded-[6px] p-6 sm:p-9 lg:col-span-5",
+        "relative flex min-h-[200px] flex-col justify-between gap-6 overflow-hidden rounded-[6px] p-6 sm:p-8 lg:col-span-5 lg:min-h-0",
         orange ? "bg-orange text-purple-950" : "bg-purple text-white",
       )}
     >

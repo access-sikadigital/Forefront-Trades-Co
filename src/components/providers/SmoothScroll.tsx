@@ -75,5 +75,17 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     lenis?.scrollTo(0, { immediate: true, force: true });
   }, [pathname, lenis]);
 
+  // After each page mounts, re-measure every ScrollTrigger once the section
+  // components have created theirs (the ResizeObserver above misses client-side
+  // navigations between pages of similar height).
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => ScrollTrigger.refresh());
+    const t = setTimeout(() => ScrollTrigger.refresh(), 350);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(t);
+    };
+  }, [pathname]);
+
   return <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>;
 }

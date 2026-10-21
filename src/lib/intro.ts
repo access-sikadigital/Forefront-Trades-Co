@@ -3,7 +3,9 @@
  * so the hero plays exactly as the preloader finishes (or immediately on
  * repeat visits / reduced motion, when the preloader is skipped).
  */
-let done = false;
+// The first-visit preloader was removed (client feedback: fewer animations),
+// so the intro is complete from the start and hero copy plays on load.
+let done = true;
 const listeners = new Set<() => void>();
 
 export function completeIntro() {
