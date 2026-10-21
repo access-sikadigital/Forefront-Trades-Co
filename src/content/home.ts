@@ -29,7 +29,7 @@ export const hero = {
 
 export const statement = {
   label: "Why homeowners call us",
-  title: "Achieve Your Dream Renovation. On-Time & On-Budget.",
+  title: "Achieve your dream renovation. On time and on budget.",
   text: [
     "Quotes that blow out. A final price that only exists in an email. Tradies who don't show, and nobody who can say when they will.",
     "We work the other way: a fixed price, and a finish date agreed up front.",
