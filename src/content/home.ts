@@ -36,7 +36,7 @@ export const statement = {
   ],
   quote: { text: "We were kept in the loop as to the day and time each tradie would be onsite.", name: "Chris Williams", source: "Google review" },
   link: { label: "Read our story", href: "/about/" },
-  image: { src: "/images/team/founders.jpg", alt: "The founders of Forefront Trades Co." },
+  image: { src: "/images/projects/footscray/kitchen-dining.jpg", alt: "Open-plan kitchen and dining with herringbone timber floors, Footscray" },
   detail: { src: "/images/projects/altona/kitchen.jpg", alt: "Galley kitchen with integrated oven, Altona" },
   badge: "30+ years · Design · Construct · ",
 };
