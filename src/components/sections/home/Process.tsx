@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef, type CSSProperties } from "react";
+import { useId, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { TextLink } from "@/components/ui/Button";
+import { Photo } from "@/components/ui/Photo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { process, processHeading } from "@/content/home";
-import { gsap, useGSAP, MOTION } from "@/lib/gsap";
-import { prefersReducedMotion } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 /** Faint drafting grid — the section reads like a sheet of plans. */
 const blueprint: CSSProperties = {
@@ -17,75 +17,100 @@ const blueprint: CSSProperties = {
 };
 
 /**
- * The four stages step down the page as a staircase, read top-left to bottom-right.
- * Static orange stair lines; the steps fade up in order. Mobile: a vertical rail.
+ * The four stages as tabs (owner preview r5.2): 1 Design → 2 Contract and
+ * pre-construction readiness → 3 Construct → 4 Handover. One stage shows at a time.
  */
 export function Process() {
-  const root = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(0);
+  const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const id = useId();
+  const stage = process[active];
 
-  useGSAP(
-    () => {
-      if (prefersReducedMotion()) return;
-      const q = gsap.utils.selector(root);
-      // Lines are static; the steps simply fade up in order (site-wide motion).
-      gsap.fromTo(
-        q("[data-body]"),
-        { autoAlpha: 0, y: MOTION.rise },
-        { autoAlpha: 1, y: 0, duration: MOTION.reveal, ease: "ftc.out", stagger: 0.12, scrollTrigger: { trigger: q("[data-stairs]")[0], start: MOTION.start, once: true } },
-      );
-    },
-    { scope: root },
-  );
+  function onKey(e: KeyboardEvent<HTMLButtonElement>) {
+    const next = e.key === "ArrowRight" ? active + 1 : e.key === "ArrowLeft" ? active - 1 : e.key === "Home" ? 0 : e.key === "End" ? process.length - 1 : null;
+    if (next === null) return;
+    e.preventDefault();
+    const i = (next + process.length) % process.length;
+    setActive(i);
+    tabs.current[i]?.focus();
+  }
 
   return (
-    <section ref={root} className="relative overflow-hidden bg-white py-section" style={blueprint}>
+    <section className="relative overflow-hidden bg-white py-section" style={blueprint}>
       <div className="container-x">
-        <SectionHeading
-          label={processHeading.label}
-          title={processHeading.title}
-          intro={processHeading.intro}
-        />
+        <SectionHeading label={processHeading.label} title={processHeading.title} intro={processHeading.intro} />
 
-        <ol data-stairs className="relative mt-16 grid gap-12 pl-8 xl:mt-24 xl:grid-cols-4 xl:items-start xl:gap-0 xl:pl-0">
-          {/* Mobile rail */}
-          <span aria-hidden className="absolute top-2 bottom-2 left-[5px] w-0.5 bg-purple/12 xl:hidden" />
-          <span aria-hidden data-rail className="absolute top-2 bottom-2 left-[5px] w-0.5 origin-top bg-orange xl:hidden" />
-
-          {process.map((s, i) => (
-            <li
-              key={s.step}
-              data-step
-              className="relative xl:mt-[calc(var(--lift)*4.5rem)] xl:pt-10 xl:pr-8"
-              style={{ "--lift": i } as CSSProperties}
-            >
-              {/* Stair lines (desktop): faint track + orange draw */}
-              <span aria-hidden className="absolute top-0 left-0 hidden h-0.5 w-full bg-purple/12 xl:block" />
-              <span aria-hidden data-tread className="absolute top-0 left-0 hidden h-0.5 w-full origin-left bg-orange xl:block" />
-              {i > 0 && (
-                <>
-                  <span aria-hidden className="absolute -top-[4.5rem] left-0 hidden h-[4.5rem] w-0.5 bg-purple/12 xl:block" />
-                  <span aria-hidden data-riser className="absolute -top-[4.5rem] left-0 hidden h-[4.5rem] w-0.5 origin-top bg-orange xl:block" />
-                </>
-              )}
-              <span
-                aria-hidden
-                data-node
-                className="absolute top-2 -left-8 block size-3 bg-orange xl:-top-[5px] xl:left-[-5px]"
-              />
-
-              <div data-body>
-                <span className="font-display text-[clamp(3rem,2rem+2.5vw,4.5rem)] leading-none font-bold tracking-[-0.05em] text-purple/12 tabular">
-                  {s.step}
-                </span>
-                <p className="label mt-4 text-orange">{s.time}</p>
-                <h3 className="mt-2 text-h3 text-purple">{s.title}</h3>
-                <p className="mt-3 max-w-xs text-base leading-snug text-ink/70">{s.text}</p>
+        <Reveal className="mt-10 lg:mt-14">
+          <div role="tablist" aria-label="Process stages" className="flex flex-wrap items-center gap-2 sm:gap-3">
+            {process.map((s, i) => (
+              <div key={s.step} className="flex items-center gap-2 sm:gap-3">
+                {i > 0 && (
+                  <span aria-hidden className="hidden text-purple/40 sm:inline">
+                    &rarr;
+                  </span>
+                )}
+                <button
+                  ref={(el) => {
+                    tabs.current[i] = el;
+                  }}
+                  type="button"
+                  role="tab"
+                  id={`${id}-tab-${i}`}
+                  aria-selected={i === active}
+                  aria-controls={`${id}-panel`}
+                  tabIndex={i === active ? 0 : -1}
+                  onClick={() => setActive(i)}
+                  onKeyDown={onKey}
+                  className={cn(
+                    "flex items-center gap-2.5 rounded-full py-2 pr-4 pl-2 text-left font-sans text-[0.95rem] font-semibold transition-colors sm:text-base",
+                    i === active ? "bg-purple text-white" : "bg-white text-purple ring-1 ring-purple/20 hover:ring-purple/50",
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "flex size-7 shrink-0 items-center justify-center rounded-full text-sm tabular",
+                      i === active ? "bg-white text-purple" : "bg-purple/8 text-purple",
+                    )}
+                  >
+                    {s.step}
+                  </span>
+                  {s.title}
+                </button>
               </div>
-            </li>
-          ))}
-        </ol>
+            ))}
+          </div>
+        </Reveal>
 
-        <Reveal className="mt-14 xl:mt-20">
+        <div
+          role="tabpanel"
+          id={`${id}-panel`}
+          aria-labelledby={`${id}-tab-${active}`}
+          className="mt-6 grid gap-8 rounded-[6px] bg-white p-5 ring-1 ring-purple/10 sm:p-7 lg:grid-cols-12 lg:gap-10"
+        >
+          <figure className="lg:col-span-6">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[4px] bg-purple/10">
+              <Photo key={stage.image.src + active} src={stage.image.src} alt={stage.image.alt} frame={4 / 3} vw={{ desktop: 45, mobile: 90 }} />
+            </div>
+            <figcaption className="mt-3 text-sm text-ink/60">{stage.caption}</figcaption>
+          </figure>
+
+          <div className="lg:col-span-6">
+            <p className="label !text-[0.66rem] !tracking-[0.16em] text-purple/60">
+              0{active + 1} / 0{process.length} · {stage.title}
+            </p>
+            <h3 className="mt-3 font-display text-[clamp(1.5rem,1.2rem+1vw,2.1rem)] leading-tight font-bold text-purple">{stage.heading}</h3>
+            <ul className="mt-6 space-y-4">
+              {stage.points.map((pt) => (
+                <li key={pt.title} className="border-l-[3px] border-orange pl-4">
+                  <p className="font-display text-lg leading-snug font-semibold text-purple">{pt.title}</p>
+                  <p className="mt-1 text-base leading-relaxed text-ink/70">{pt.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <Reveal className="mt-10">
           <TextLink href={processHeading.link.href}>{processHeading.link.label}</TextLink>
         </Reveal>
       </div>

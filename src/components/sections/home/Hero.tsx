@@ -133,9 +133,9 @@ export function Hero() {
             </Eyebrow>
           </div>
 
-          <p data-hero-title data-reveal className="mt-6 font-display font-bold text-hero text-white [text-shadow:0_2px_40px_rgb(0_0_0/0.35)]">
+          <p data-hero-title data-reveal className="mt-6 font-display text-[clamp(2.2rem,1rem+4vw,4.75rem)] leading-[0.98] font-bold tracking-[-0.03em] text-white [text-shadow:0_2px_40px_rgb(0_0_0/0.35)]">
             {hero.title.map((line) => (
-              <span key={line} className="block lg:whitespace-nowrap">
+              <span key={line} className="block xl:whitespace-nowrap">
                 {line}
               </span>
             ))}

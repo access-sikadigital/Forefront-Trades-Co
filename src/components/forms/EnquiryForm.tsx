@@ -128,52 +128,58 @@ export function EnquiryForm({ defaultService, className, compact = false }: { de
   return (
     <form onSubmit={onSubmit} className={cn("rounded-[6px] bg-white p-6 font-sans text-ink ring-1 ring-ink/10 sm:p-8", className)}>
       <div className="grid gap-x-4 gap-y-5 sm:grid-cols-2">
-        {/* 1. Name | Phone */}
+        {/* Required: name, suburb, phone or email, project (owner preview r5.2 order) */}
         <Field id={`${id}-name`} label="Name">
           <input id={`${id}-name`} name="name" required autoComplete="name" className={control} />
-        </Field>
-        <Field id={`${id}-phone`} label="Phone" optional="phone or email">
-          <input id={`${id}-phone`} name="phone" type="tel" autoComplete="tel" inputMode="tel" className={control} />
-        </Field>
-
-        {/* 2. Email | Suburb */}
-        <Field id={`${id}-email`} label="Email" optional="phone or email">
-          <input id={`${id}-email`} name="email" type="email" autoComplete="email" className={control} />
         </Field>
         <Field id={`${id}-suburb`} label="Suburb">
           <input id={`${id}-suburb`} name="suburb" required autoComplete="address-level2" placeholder="e.g. Yarraville" className={control} />
         </Field>
-
-        {/* 3. What are you planning | When to start */}
+        <Field id={`${id}-phone`} label="Phone" optional="phone or email">
+          <input id={`${id}-phone`} name="phone" type="tel" autoComplete="tel" inputMode="tel" className={control} />
+        </Field>
+        <Field id={`${id}-email`} label="Email" optional="phone or email">
+          <input id={`${id}-email`} name="email" type="email" autoComplete="email" className={control} />
+        </Field>
         <Field id={`${id}-service`} label="Project">
           <Select id={`${id}-service`} name="service" required defaultValue={defaultService} placeholder="Choose…" options={enquiryServices} />
         </Field>
-        <Field id={`${id}-timeframe`} label="Preferred timing" optional hint="A preference, not a booking.">
-          <Select id={`${id}-timeframe`} name="timeframe" placeholder="Choose…" options={timeframes} />
-        </Field>
 
-        {!compact && (
-          <>
-            {/* 4. Where you're up to | Budget */}
-            <Field id={`${id}-plans`} label="Where are you up to?" optional>
-              <Select id={`${id}-plans`} name="plans" placeholder="Choose…" options={planningStages} />
-            </Field>
-            <Field id={`${id}-budget`} label="Approximate budget" optional hint="Helps us understand the project. It isn’t used to set the estimate.">
-              <Select id={`${id}-budget`} name="budget" placeholder="Choose…" options={budgets} />
-            </Field>
-
-            {/* 5. Range */}
-            <Field id={`${id}-range`} label="Range you’re interested in" optional hint="Interest only, not a selection or a quote.">
-              <Select id={`${id}-range`} name="range" placeholder="Choose…" options={rangeOptions} />
-            </Field>
-
-            {/* 6. Message */}
-            <div className="sm:col-span-2">
-              <Field id={`${id}-message`} label="About the project" optional>
-                <textarea id={`${id}-message`} name="message" rows={4} className={cn(control, "h-auto resize-y py-3 leading-relaxed")} />
+        {compact ? (
+          <Field id={`${id}-timeframe`} label="Preferred timing" optional>
+            <Select id={`${id}-timeframe`} name="timeframe" placeholder="Choose…" options={timeframes} />
+          </Field>
+        ) : (
+          <details className="group rounded-md border border-ink/12 sm:col-span-2 [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3.5">
+              <span className="font-sans text-[1.0625rem] font-semibold text-purple">
+                Add more detail <span className="ml-1 font-normal text-ink/50">(optional)</span>
+              </span>
+              <span aria-hidden className="relative size-4 shrink-0 text-orange">
+                <span className="absolute top-1/2 left-0 h-0.5 w-4 -translate-y-1/2 bg-current" />
+                <span className="absolute top-0 left-1/2 h-4 w-0.5 -translate-x-1/2 bg-current transition-transform duration-300 group-open:scale-y-0" />
+              </span>
+            </summary>
+            <div className="grid gap-x-4 gap-y-5 border-t border-ink/10 p-4 sm:grid-cols-2">
+              <div className="sm:col-span-2">
+                <Field id={`${id}-message`} label="About the project" optional>
+                  <textarea id={`${id}-message`} name="message" rows={4} className={cn(control, "h-auto resize-y py-3 leading-relaxed")} />
+                </Field>
+              </div>
+              <Field id={`${id}-plans`} label="Where are you up to?" optional>
+                <Select id={`${id}-plans`} name="plans" placeholder="Choose…" options={planningStages} />
+              </Field>
+              <Field id={`${id}-timeframe`} label="Preferred timing" optional hint="A preference, not a booking.">
+                <Select id={`${id}-timeframe`} name="timeframe" placeholder="Choose…" options={timeframes} />
+              </Field>
+              <Field id={`${id}-budget`} label="Approximate budget" optional hint="Helps us understand the project. It isn’t used to set the estimate.">
+                <Select id={`${id}-budget`} name="budget" placeholder="Choose…" options={budgets} />
+              </Field>
+              <Field id={`${id}-range`} label="Range you’re interested in" optional hint="Interest only, not a selection or a quote.">
+                <Select id={`${id}-range`} name="range" placeholder="Choose…" options={rangeOptions} />
               </Field>
             </div>
-          </>
+          </details>
         )}
 
         {/* Honeypot */}
