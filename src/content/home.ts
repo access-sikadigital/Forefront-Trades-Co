@@ -187,8 +187,8 @@ export const process = [
       { title: "Scheduling", text: "Materials pre-purchased, trades booked, and start and end dates allocated." },
       { title: "Site preparation", text: "Access, parking and protection agreed." },
     ],
-    image: { src: "/images/generated/design-construct-hero.jpg", alt: "Renovation plans with material samples, ready to be priced and contracted" },
-    caption: "Two checkpoints before building: an agreed contract, then everything ready to start.",
+    image: { src: "/images/team/builders-van.jpg", alt: "Two of the Forefront team beside the company van", position: "50% 42%" },
+    caption: "Contract signed, trades booked: the team ready to start on site.",
   },
   {
     step: "3",

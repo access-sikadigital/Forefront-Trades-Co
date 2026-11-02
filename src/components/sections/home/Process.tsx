@@ -89,9 +89,16 @@ export function Process() {
         >
           <figure className="lg:col-span-6">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[4px] bg-purple/10">
-              <Photo key={stage.image.src + active} src={stage.image.src} alt={stage.image.alt} frame={4 / 3} vw={{ desktop: 45, mobile: 90 }} />
+              <Photo
+                key={stage.image.src + active}
+                src={stage.image.src}
+                alt={stage.image.alt}
+                frame={4 / 3}
+                vw={{ desktop: 45, mobile: 90 }}
+                className={"position" in stage.image ? "object-[50%_42%]" : undefined}
+              />
             </div>
-            <figcaption className="mt-3 text-sm text-ink/60">{stage.caption}</figcaption>
+            <figcaption className="mt-3 font-display text-sm font-normal text-ink/65">{stage.caption}</figcaption>
           </figure>
 
           <div className="lg:col-span-6">
@@ -102,8 +109,8 @@ export function Process() {
             <ul className="mt-6 space-y-4">
               {stage.points.map((pt) => (
                 <li key={pt.title} className="border-l-[3px] border-orange pl-4">
-                  <p className="font-display text-lg leading-snug font-semibold text-purple">{pt.title}</p>
-                  <p className="mt-1 text-base leading-relaxed text-ink/70">{pt.text}</p>
+                  <p className="font-display text-xl leading-snug font-semibold text-purple">{pt.title}</p>
+                  <p className="mt-1.5 font-display text-[1.0625rem] leading-relaxed font-normal text-ink/75 sm:text-lg">{pt.text}</p>
                 </li>
               ))}
             </ul>
