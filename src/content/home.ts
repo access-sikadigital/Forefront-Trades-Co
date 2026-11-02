@@ -12,7 +12,7 @@ export const hero = {
   // Rendered as the page <h1> (keyword line); the display headline below sells.
   h1: "Renovation & extension builders in Melbourne",
   // Display headline from the owner's preview r5.2 (Oct 2026).
-  title: ["Design and construct renovations", "and extensions across Melbourne"],
+  title: ["Design & Construct Renovations", "& Extensions Across Melbourne"],
   intro:
     "Kitchens, bathrooms, laundries, full renovations and extensions across Melbourne's inner west and north. One fixed-price contract covers design, permits and build, with the finish date written in.",
   primaryCta: { label: "Explore our services", href: "#services" },
