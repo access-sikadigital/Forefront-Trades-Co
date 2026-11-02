@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     images: [{ url: "/images/projects/footscray/pool-extension.jpg", width: 2400, height: 1600, alt: "Forefront Trades Co. rear extension and pool, Footscray" }],
   },
   twitter: { card: "summary_large_image" },
+  // Google Search Console ownership (keep, even after verification succeeds). The HTML-file method is public/google46a453612aa98ad8.html.
+  verification: { google: "Wx0X8T7T9tDIJCp667Zi0mL_S7lnxBPHBTfeikzH_NU" },
 };
 
 export const viewport: Viewport = {
