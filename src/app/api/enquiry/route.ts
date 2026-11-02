@@ -8,7 +8,18 @@
  * call, so no enquiry is silently lost.
  */
 
-const SERVICES = ["Kitchen", "Bathroom", "Laundry", "Full home renovation", "Extension", "Heritage / period home", "Not sure yet"];
+// Keep in step with enquiryServices in components/forms/EnquiryForm.tsx.
+const SERVICES = [
+  "Not sure yet",
+  "Bathroom",
+  "Kitchen",
+  "Laundry",
+  "Full home renovation",
+  "Ground-floor extension",
+  "Second-storey extension",
+  "Heritage restoration",
+  "More than one space",
+];
 
 type Enquiry = {
   name: string;
@@ -19,6 +30,7 @@ type Enquiry = {
   budget?: string;
   timeframe?: string;
   plans?: string;
+  range?: string;
   message?: string;
   source?: { page?: string; utm?: Record<string, string> };
 };
@@ -45,13 +57,16 @@ export async function POST(request: Request) {
     budget: clean(body.budget, 60),
     timeframe: clean(body.timeframe, 60),
     plans: clean(body.plans, 60),
+    range: clean(body.range, 60),
     message: clean(body.message, 2000),
     source: typeof body.source === "object" && body.source ? (body.source as Enquiry["source"]) : undefined,
   };
 
-  const missing = (["name", "phone", "email", "suburb", "service"] as const).filter((k) => !lead[k]);
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email);
-  const phoneOk = lead.phone.replace(/\D/g, "").length >= 8;
+  // Name, suburb and project are required, plus a phone number or an email (either is enough).
+  const missing: string[] = (["name", "suburb", "service"] as const).filter((k) => !lead[k]);
+  if (!lead.phone && !lead.email) missing.push("phone or email");
+  const emailOk = !lead.email || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email);
+  const phoneOk = !lead.phone || lead.phone.replace(/\D/g, "").length >= 8;
   if (missing.length || !emailOk || !phoneOk || !SERVICES.includes(lead.service)) {
     return Response.json({ ok: false, error: "validation", missing }, { status: 422 });
   }

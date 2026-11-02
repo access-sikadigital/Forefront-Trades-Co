@@ -6,7 +6,7 @@
  * Every fact traces to the homepage proof ledger (see home.ts): fixed price, finish
  * date in the contract, 4–6 weeks on site per room, 3–6 months per full home, the
  * named projects and the clients' own video words. TODO(client) marks anything
- * still to confirm. No prices are published until the client supplies ranges.
+ * still to confirm. Starting prices live in pricing.ts (owner preview r5.2).
  */
 
 type Img = { src: string; alt: string };
@@ -73,7 +73,7 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
     meta: {
       title: "Kitchen Renovations Melbourne",
       description:
-        "Kitchen renovations in Melbourne's inner west and north: butler's pantries, open-plan layouts and custom joinery, on a fixed-price contract. Free home visit.",
+        "Kitchen renovations in Melbourne's inner west and north: butler's pantries, open-plan layouts and custom joinery, on a fixed-price contract. Free first call.",
     },
     hero: {
       h1: "Kitchen renovations in Melbourne",

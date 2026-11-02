@@ -52,7 +52,7 @@ export const stats = [
 export const servicesHeading = {
   label: "What we build",
   title: "From a new laundry to a second storey.",
-  // TODO(client): add ballpark price ranges per service (biggest gap vs competitors).
+  // Starting prices: see PriceGuide / content/pricing.ts (owner preview r5.2).
   intro: "Every job goes on a fixed-price contract. Single rooms take 4–6 weeks on site. Full homes take 3–6 months.",
   link: { label: "All services", href: "/home-renovations/" },
 };
@@ -153,21 +153,20 @@ export const designConstruct = {
 
 export const processHeading = {
   // Absorbs the old Design & Construct section (removed to shorten the page).
-  label: "One team, from start to finish",
-  title: "What happens after our free consultation call",
-  intro: "Four stages from first visit to handover. You see the fixed price and finish date before you sign anything to build.",
-  link: { label: "Book a free consultation", href: "/book-a-consultation/" },
+  // Stages and wording follow the owner's preview r5.2 (Oct 2026).
+  label: "Our process",
+  title: "Design, construct, handover",
+  intro: "From the first conversation to the final walkthrough, with two checkpoints before building: an agreed contract, then everything ready to start.",
+  link: { label: "See the full process, step by step", href: "/design-and-construct/" },
 };
 
 // Four stages, as in the owner's brief (Design · Contract & pre-construction · Construct · Handover).
 export const process = [
-  // TODO(client): state the design fee (or that it's free / credited to the build) — answers "paying for plans is a gamble".
-  { step: "01", title: "Design", time: "Free visit, then plans", text: "It starts with a free home visit. Then concepts, interior selections and a fixed-price proposal, so you see the build price and finish date before you commit." },
-  { step: "02", title: "Contract & pre-construction", time: "Contract & permits", text: "You sign one fixed-price contract with the finish date in it. We lodge and chase engineering, planning and building permits, and plan for any heritage overlay." },
+  { step: "01", title: "Design", time: "Drafted and selected first", text: "Brief and concept, fixtures and finishes chosen with you, plans and elevations drafted, then a final estimate priced from the documented scope." },
+  { step: "02", title: "Contract and pre-construction readiness", time: "Two checkpoints", text: "Scope, drawings, selections and price in one contract package you review before signing. Then approvals if needed, materials pre-purchased, trades booked and dates allocated." },
   // TODO(client): confirm a project WhatsApp group runs on every job.
-  // TODO(client): confirm construction weeks (the owner's brief drafts 6–7 weeks for single rooms; the site says 4–6).
-  { step: "03", title: "Construct", time: "4 weeks – 6 months", text: "We book and run every trade on site. Nicole in Brookfield had a WhatsApp group with our team and called it \u201Cvery, very important\u201D." },
-  { step: "04", title: "Handover", time: "Final walkthrough", text: "A final walkthrough, a clean home and your warranty documents." },
+  { step: "03", title: "Construct", time: "Built in stages", text: "Each stage is checked before it's covered. Nicole in Brookfield had a WhatsApp group with our team and called it \u201Cvery, very important\u201D." },
+  { step: "04", title: "Handover", time: "Walked through with you", text: "A final walkthrough, outstanding items listed with how and when they'll be closed out, a final clean and your handover pack." },
 ];
 
 /**
@@ -309,9 +308,9 @@ export const areas = {
 };
 
 export const finalCta = {
-  label: "Start your project",
-  title: ["Start with a", "free home visit."],
-  // TODO(client): say what happens after booking (who confirms, how fast).
-  text: "The first visit is free. We walk the house with you and talk budget, and if what you want won't fit, we say so then. You only sign once you've seen the fixed price and the finish date.",
+  label: "Enquire",
+  title: ["Tell us about", "your project."],
+  // Steps and fees from the owner's preview r5.2 (content/pricing.ts).
+  text: "A short form or a phone call to start. Here's what happens next.",
   primaryCta: { label: "Book a free consultation", href: "/book-a-consultation/" },
 };

@@ -11,7 +11,7 @@ export type LandingPage = {
   /** The matching service pillar, e.g. "/bathroom-renovations/". */
   servicePath: string;
   /** Pre-selects the service in the enquiry form. */
-  formService: "Kitchen" | "Bathroom" | "Laundry" | "Full home renovation" | "Extension";
+  formService: "Kitchen" | "Bathroom" | "Laundry" | "Full home renovation" | "Not sure yet";
   meta: { title: string; description: string };
   hero: HeroData;
   form: { title: string; intro: string };
@@ -24,7 +24,7 @@ export type LandingPage = {
 /*
  * Written with the Copy Machine (direct-response-copy → copy-chief) for warm,
  * product-aware visitors from Google Ads and Meta. One action per page: book the
- * free first home visit. Each page takes its own angle so no sentence is shared:
+ * free first consultation (phone or video; the in-depth home consult is paid, owner preview r5.2). Each page takes its own angle so no sentence is shared:
  *   extensions  → we carry the drawings, engineering and council
  *   bathroom    → how long you're without it, and the order it's built in
  *   kitchen     → every finish chosen and priced before you sign (design offer)
@@ -41,7 +41,7 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
   "home-extensions": {
     slug: "home-extensions",
     servicePath: "/home-extensions/",
-    formService: "Extension",
+    formService: "Not sure yet", // up-or-out page: the visitor may not know which extension yet
     meta: {
       title: "Home Extensions Melbourne",
       description:
@@ -60,9 +60,9 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
       ],
     },
     form: {
-      title: "Book a free visit to your block",
+      title: "Book a free extension consultation",
       intro:
-        "Tell us what you need more room for. We'll come out, look over the house and the block, and tell you whether going up or out makes more sense. The visit is free.",
+        "Tell us what you need more room for. The first phone or video conversation is free, and we'll talk through whether going up or out makes more sense. If you go ahead, the in-depth home consult is from $350 + GST (free in postcode 3012).",
     },
     benefits: [
       {
@@ -96,7 +96,7 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
     faqs: [
       {
         q: "Should we go up or build out the back?",
-        a: "That's the main question we answer at the free visit. It comes down to your block, your budget and whether the house can carry a second storey, and we'll tell you which one we'd build.",
+        a: "That's the main question we answer at the in-depth consult. It comes down to your block, your budget and whether the house can carry a second storey, and we'll tell you which one we'd build.",
       },
       {
         q: "Who handles the engineering and permits?",
@@ -134,14 +134,14 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
       // TODO(client): confirm the 4.9★ rating (public widget shows 39 reviews).
       facts: [
         { label: "On site", value: "4–6 weeks" },
-        { label: "First home visit", value: "Free" },
+        { label: "First consultation", value: "Free" },
         { label: "Google rating", value: "4.9★, 39 reviews" },
       ],
     },
     form: {
-      title: "Book a free bathroom home visit",
+      title: "Book a free bathroom consultation",
       intro:
-        "Tell us which bathroom and what's wrong with it. We'll come and measure up, and tell you how long you'd be without it. The first visit costs nothing.",
+        "Tell us which bathroom and what's wrong with it. The first phone or video conversation is free. If you go ahead, the in-depth home consult is from $250 + GST (free in postcode 3012).",
     },
     benefits: [
       {
@@ -224,7 +224,7 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
     form: {
       title: "Book a free kitchen consultation",
       intro:
-        "Tell us what isn't working in your kitchen now. We'll come and see it, talk layout and budget, and tell you how long you'd be cooking without it. There's no charge for the visit.",
+        "Tell us what isn't working in your kitchen now. The first phone or video conversation is free, and we'll talk layout and budget. If you go ahead, the in-depth home consult is from $250 + GST (free in postcode 3012).",
     },
     benefits: [
       // TODO(client): confirm the interior design offer (Open Question #5) before launch.
@@ -299,9 +299,9 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
       ],
     },
     form: {
-      title: "Book a free laundry home visit",
+      title: "Book a free laundry consultation",
       intro:
-        "Tell us what the laundry has to hold. We'll come out, measure up and talk through layout and budget with you. The first visit is free.",
+        "Tell us what the laundry has to hold. The first phone or video conversation is free, and we'll talk through layout and budget with you. If you go ahead, the in-depth home consult is from $250 + GST (free in postcode 3012).",
     },
     benefits: [
       {
@@ -378,9 +378,9 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
       ],
     },
     form: {
-      title: "Book a free whole-house walk-through",
+      title: "Book a free whole-house consultation",
       intro:
-        "Tell us about the house and what you'd change. We'll walk every room with you and talk budget and timing. If the plans and the budget don't match, we'll say so then. That first walk-through costs nothing.",
+        "Tell us about the house and what you'd change. The first phone or video conversation is free, and if the plans and the budget don't match, we'll say so. If you go ahead, the in-depth home consult is from $350 + GST (free in postcode 3012).",
     },
     benefits: [
       {
