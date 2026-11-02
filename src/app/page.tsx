@@ -5,7 +5,7 @@ import { Guarantees } from "@/components/sections/home/Guarantees";
 import { Hero } from "@/components/sections/home/Hero";
 import { PriceGuide } from "@/components/sections/home/PriceGuide";
 import { Process } from "@/components/sections/home/Process";
-import { Projects } from "@/components/sections/home/Projects";
+import { CompletedProjects } from "@/components/sections/home/CompletedProjects";
 import { Services } from "@/components/sections/home/Services";
 import { Statement } from "@/components/sections/home/Statement";
 import { Testimonial } from "@/components/sections/home/Testimonial";
@@ -38,13 +38,14 @@ export default function HomePage() {
   return (
     <>
       {/* Order follows client feedback: shorter page, service area higher up. */}
+      {/* Order follows the owner's preview r5.2 (process up top, completed projects after services, prices, questions, enquiry). */}
       <Hero />
+      <Process />
       <Statement />
       <Services />
+      <CompletedProjects />
       <PriceGuide />
       <Areas />
-      <Projects />
-      <Process />
       <Guarantees />
       <Testimonial />
       <FaqSection faqs={commonFaqs} title="Common questions." />
