@@ -5,11 +5,13 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Icon } from "@/components/ui/Icon";
 import { Photo } from "@/components/ui/Photo";
 import { finalCta, offer } from "@/content/home";
+import { nextSteps } from "@/content/pricing";
 
 const money = (n: number) => n.toLocaleString("en-AU");
 
 /**
- * Closing section — the free home visit and the $10,000 interior design offer
+ * Closing section — what happens after an enquiry (free first call, then the
+ * paid in-depth consult if you go ahead) and the $10,000 interior design offer
  * in one light section (client feedback: the separate purple offer band and dark
  * CTA stacked three dark blocks into the footer). Static, same fade-up as the rest.
  */
@@ -27,6 +29,17 @@ export function FinalCta() {
           </SplitLines>
           <Reveal className="mt-6">
             <p className="max-w-lg text-lead text-ink/75">{finalCta.text}</p>
+          </Reveal>
+          <Reveal as="ol" stagger={0.06} className="mt-8 grid max-w-2xl gap-5 sm:grid-cols-2">
+            {nextSteps.map((s, i) => (
+              <li key={s.title} className="flex gap-4">
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-purple font-display text-sm font-semibold text-white tabular">{i + 1}</span>
+                <div>
+                  <p className="font-display text-[1.05rem] leading-snug font-semibold text-purple">{s.title}</p>
+                  <p className="mt-1 text-[0.95rem] leading-relaxed text-ink/70">{s.text}</p>
+                </div>
+              </li>
+            ))}
           </Reveal>
           <Reveal stagger={0.08} className="mt-9 flex flex-wrap items-center gap-3 sm:gap-4">
             <div>

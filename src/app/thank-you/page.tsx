@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 // TODO: fire the GA4 / Google Ads / Meta "Lead" conversion on this page once tracking is set up.
 const next = [
   { title: "We read your enquiry", text: "Your details and the job you described come straight to our team." },
-  { title: "We call to book a visit", text: "We'll arrange a time that suits you to come and see the house." },
-  { title: "Free home visit", text: "We walk the house with you and talk budget and timing honestly." },
+  { title: "A free phone or video conversation", text: "About the project, the location, where you're up to and your priorities." },
+  { title: "In-depth consult, if you go ahead", text: "A consult at your home, from $250 + GST ($350 + GST for full homes and extensions), free in postcode 3012." },
 ];
 
 const reading = [

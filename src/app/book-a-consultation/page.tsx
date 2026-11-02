@@ -10,22 +10,19 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Icon } from "@/components/ui/Icon";
 import { Photo } from "@/components/ui/Photo";
 import { site } from "@/config/site";
+import { consult, nextSteps } from "@/content/pricing";
 import { googleReviews } from "@/content/reviews";
 
 export const metadata: Metadata = {
   title: "Book a Free Consultation",
-  description: "Book a free home visit with Forefront Trades Co. Tell us about your renovation or extension and we'll come and see the house. Melbourne's inner west and north.",
+  description: "Book a free phone or video consultation with Forefront Trades Co. Tell us about your renovation or extension and we'll talk it through. Melbourne's inner west and north.",
   alternates: { canonical: "/book-a-consultation/" },
 };
 
-// TODO(client): confirm what happens after an enquiry (who calls, how fast).
-const steps = [
-  { title: "Send the form", text: "Two minutes. Tell us what you're planning." },
-  { title: "We call you", text: "We book a time that suits you, at the house." },
-  { title: "Free home visit", text: "We walk the house with you. No cost, no obligation." },
-];
+// What happens after an enquiry: owner preview r5.2 (content/pricing.ts).
+const steps = nextSteps;
 
-// From the site's own copy: what the first visit covers.
+// What the in-depth home consult covers (from the site's own copy); its fee is stated under the list.
 const atVisit = [
   "We walk the house with you and look at what you want to change",
   "An honest talk about budget and timing, including when the numbers don't stack up",
@@ -34,7 +31,7 @@ const atVisit = [
 ];
 
 const quick = [
-  { q: "Is the visit really free?", a: "Yes. The first home visit costs nothing and there's no obligation to go ahead.", href: "/faqs/", link: "More questions" },
+  { q: "Is the consultation free?", a: "The first phone or video conversation is free. The in-depth home consult is from $250 + GST ($350 + GST for full homes and extensions), free in postcode 3012, and credited against your total bill if you build with us.", href: "/faqs/", link: "More questions" },
   { q: "Do I need plans first?", a: "No. Plenty of people start with an idea. We handle design, drafting and permits.", href: "/design-and-construct/", link: "Design & construct" },
   { q: "Do you build in my suburb?", a: "We build across 42 suburbs in Melbourne's inner west and north.", href: "/areas/", link: "Check your suburb" },
 ];
@@ -54,14 +51,14 @@ export default function BookPage() {
               </Eyebrow>
             </Reveal>
             <SplitLines as="p" className="mt-6 font-display text-h2 font-bold text-pretty text-white max-sm:text-[length:min(2.5rem,9.2vw)]">
-              {"Your free home visit starts here."}
+              {"Your free consultation starts here."}
             </SplitLines>
             <Reveal className="mt-6">
-              <p className="max-w-2xl text-lead text-white/80">Tell us about the job and we&rsquo;ll come and see the house. If what you want won&rsquo;t fit the budget, we&rsquo;ll say so on the day.</p>
+              <p className="max-w-2xl text-lead text-white/80">Tell us about the job and we&rsquo;ll talk it through by phone or video, free. If what you want won&rsquo;t fit the budget, we&rsquo;ll say so.</p>
             </Reveal>
           </div>
 
-          <Reveal as="ol" stagger={0.08} className="mt-12 grid gap-3 sm:grid-cols-3 lg:mt-16 lg:max-w-[75%] lg:gap-4">
+          <Reveal as="ol" stagger={0.08} className="mt-12 grid gap-3 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-4">
             {steps.map((s, i) => (
               <li key={s.title} className="flex items-start gap-4 rounded-[6px] bg-white/[0.07] p-5 ring-1 ring-white/12 backdrop-blur-md">
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-orange font-display text-base font-bold text-white tabular">{i + 1}</span>
@@ -81,7 +78,7 @@ export default function BookPage() {
           <Reveal className="overflow-hidden rounded-[8px] bg-white shadow-[0_30px_70px_-40px_rgb(61_17_82/0.45)] ring-1 ring-purple/8 lg:col-span-7">
             <div className="border-b border-ink/8 px-6 pt-7 pb-6 sm:px-8 sm:pt-9">
               <p className="font-display text-[clamp(1.6rem,1.3rem+1vw,2.25rem)] leading-tight font-bold text-purple">Tell us about your project</p>
-              <p className="mt-2 font-sans text-[1.0625rem] text-ink/65">The more you tell us, the more useful the first visit is.</p>
+              <p className="mt-2 font-sans text-[1.0625rem] text-ink/65">The more you tell us, the more useful the first conversation is.</p>
             </div>
             <EnquiryForm className="rounded-none ring-0" />
           </Reveal>
@@ -93,7 +90,7 @@ export default function BookPage() {
                 <div className="absolute inset-0 bg-linear-to-t from-purple via-purple/10 to-transparent" />
               </div>
               <div className="px-6 pb-7 sm:px-8">
-                <p className="font-display text-2xl leading-tight font-bold">At your free home visit</p>
+                <p className="font-display text-2xl leading-tight font-bold">At your in-depth home consult</p>
                 <ul className="mt-5 space-y-3.5">
                   {atVisit.map((item) => (
                     <li key={item} className="flex items-start gap-3 font-sans text-[1.0625rem] leading-snug text-white/90">
@@ -104,6 +101,9 @@ export default function BookPage() {
                     </li>
                   ))}
                 </ul>
+                <p className="mt-5 font-sans text-[0.9375rem] leading-relaxed text-white/70">
+                  {consult.summary} {consult.credit}
+                </p>
               </div>
             </Reveal>
 

@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { FinalCta } from "@/components/sections/home/FinalCta";
-import { Process } from "@/components/sections/home/Process";
 import { DcCompare, DcPillars } from "@/components/sections/pages/DesignConstructSections";
+import { DcSteps } from "@/components/sections/pages/DcSteps";
 import { FaqSection } from "@/components/sections/shared/FaqSection";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { designAndConstruct as dc } from "@/content/pages";
+import { commonFaqs } from "@/content/pricing";
+
+// The page's own questions, then the shared ones from the owner preview (r5.2), minus the design question it already answers.
+const faqs = [...dc.faqs, ...commonFaqs.filter((f) => f.q !== "Can you help with the design?")];
 
 export const metadata: Metadata = {
   title: dc.meta.title,
@@ -20,8 +24,8 @@ export default function DesignAndConstructPage() {
       <PageHero hero={dc.hero} />
       <DcPillars />
       <DcCompare />
-      <Process />
-      <FaqSection faqs={dc.faqs} title="Questions about design & construct." />
+      <DcSteps />
+      <FaqSection faqs={faqs} title="Questions about design & construct." />
       <FinalCta />
     </>
   );

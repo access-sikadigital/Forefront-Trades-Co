@@ -5,9 +5,11 @@ import { ServiceCost } from "@/components/sections/service/ServiceCost";
 import { ServiceExtras } from "@/components/sections/service/ServiceExtras";
 import { ServiceFocus } from "@/components/sections/service/ServiceFocus";
 import { ServiceHero } from "@/components/sections/service/ServiceHero";
+import { ServicePricing } from "@/components/sections/service/ServicePricing";
 import { ServiceProof } from "@/components/sections/service/ServiceProof";
 import { SuburbLinks } from "@/components/sections/service/SuburbLinks";
 import type { SuburbService } from "@/content/suburb-local";
+import { commonFaqs } from "@/content/pricing";
 import { serviceExtras } from "@/content/service-extras";
 import type { ServiceExtra } from "@/content/service-extras";
 import { servicePages, type ServicePage, type ServiceSlug } from "@/content/services";
@@ -37,6 +39,8 @@ export function pageMetadata(page: ServicePage, noindex = false): Metadata {
  * service page repeated the same content); the hero facts carry the fixed price
  * and finish date, and each page keeps its own client quote.
  */
+const feesQuestion = "Are there fees before the contract?";
+
 const suburbServiceFor: Partial<Record<ServiceSlug, SuburbService>> = {
   kitchen: "kitchen-renovations",
   bathroom: "bathroom-renovations",
@@ -51,19 +55,22 @@ export function ServicePageTemplate({ slug }: { slug: ServiceSlug }) {
 
 /** The same page layout for any service-shaped page (sub-services, suburb pages). */
 export function ServicePageView({ page, extras = [], suburbService }: { page: ServicePage; extras?: ServiceExtra[]; suburbService?: SuburbService }) {
+  // Every service page answers the fee question (owner preview r5.2).
+  const faqs = [...page.faqs, ...commonFaqs.filter((f) => f.q === feesQuestion && !page.faqs.some((p) => p.q === f.q))];
   return (
     <>
       <ServiceHero page={page} />
       <ServiceFocus page={page} />
       <ServiceExtras extras={extras} />
       <ServiceProof page={page} />
+      <ServicePricing path={page.path} />
       <ServiceCost page={page} />
       {suburbService && <SuburbLinks service={suburbService} />}
-      <FaqSection faqs={page.faqs} path={page.path} />
+      <FaqSection faqs={faqs} path={page.path} />
       <FinalCta />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({ name: page.name, path: page.path, description: page.meta.description, faqs: page.faqs })) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({ name: page.name, path: page.path, description: page.meta.description, faqs })) }}
       />
     </>
   );

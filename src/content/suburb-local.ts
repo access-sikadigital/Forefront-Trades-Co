@@ -126,7 +126,7 @@ export const suburbLocal: Record<string, SuburbLocal> = {
     },
     faq: {
       q: "A previous owner redid our bathroom. How can we tell if it was done properly?",
-      a: "Loose or hollow-sounding tiles, cracked grout along the floor line and stains on the skirting or ceiling nearby are the usual signs. We look for all of them at the free home visit, and if the waterproofing has failed, we tell you before you get a price.",
+      a: "Loose or hollow-sounding tiles, cracked grout along the floor line and stains on the skirting or ceiling nearby are the usual signs. We look for all of them at the in-depth home consult, and if the waterproofing has failed, we tell you before you get a price.",
     },
   },
 
@@ -642,7 +642,7 @@ export const suburbLocal: Record<string, SuburbLocal> = {
     },
     faq: {
       q: "Our house is 1950s cream brick. Is it worth renovating?",
-      a: "Usually. Cream brick homes from that era often have a sound structure, and the layout can be opened up with the right engineering. The first visit is free, and we'll tell you honestly whether a renovation makes sense for your house.",
+      a: "Usually. Cream brick homes from that era often have a sound structure, and the layout can be opened up with the right engineering. The first phone or video conversation is free, and we'll tell you honestly whether a renovation makes sense for your house.",
     },
   },
 
@@ -718,7 +718,7 @@ export const suburbLocal: Record<string, SuburbLocal> = {
     },
     faq: {
       q: "We have a long wish list for our Newport home. Where do we start?",
-      a: "Start with the free home visit. We walk through the house with you, talk about what isn't working and what you'd like, and give you an honest view of what fits the budget. You don't need plans or a finished brief to get going.",
+      a: "Start with a free phone or video conversation about what isn't working and what you'd like. If you go ahead, we walk through the house with you at the in-depth home consult and give you an honest view of what fits the budget. You don't need plans or a finished brief to get going.",
     },
   },
 
@@ -842,7 +842,7 @@ export const suburbLocal: Record<string, SuburbLocal> = {
     },
     faq: {
       q: "We've bought an older house in Sunshine. What should we fix first?",
-      a: "Anything structural, wet or electrical usually comes first: stumps, roof leaks, failed waterproofing and old wiring. Then the kitchen and bathroom. We walk through the house with you at the free first visit and give you an order of work that suits your budget.",
+      a: "Anything structural, wet or electrical usually comes first: stumps, roof leaks, failed waterproofing and old wiring. Then the kitchen and bathroom. We walk through the house with you at the in-depth home consult and give you an order of work that suits your budget.",
     },
   },
 
