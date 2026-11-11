@@ -1,3 +1,4 @@
+import { HeroBackdrop } from "@/components/sections/shared/HeroBackdrop";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -36,13 +37,7 @@ export default async function LandingPage(props: Props) {
   return (
     <>
       <section className="relative overflow-hidden bg-ink-950 text-white">
-        {hero.image && (
-          <div aria-hidden className="absolute inset-0">
-            <Photo src={hero.image.src} alt="" frame={16 / 9} vw={{ desktop: 100, mobile: 100 }} preload />
-            <div className="absolute inset-0 bg-ink-950/70" />
-            <div className="absolute inset-0 bg-linear-to-r from-ink-950 via-ink-950/85 to-ink-950/50" />
-          </div>
-        )}
+        {hero.image && <HeroBackdrop src={hero.image.src} />}
         <div className="container-x relative grid gap-12 pt-24 pb-16 sm:pt-28 lg:grid-cols-12 lg:items-start lg:gap-12 lg:pt-32 lg:pb-24">
           <div className="lg:col-span-6">
             <Reveal>

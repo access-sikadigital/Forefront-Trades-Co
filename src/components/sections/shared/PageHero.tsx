@@ -3,7 +3,6 @@ import { Reveal } from "@/components/motion/Reveal";
 import { SplitLines } from "@/components/motion/SplitLines";
 import { Button, PhoneButton } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { hero as homeHero } from "@/content/home";
 import { HeroBackdrop } from "@/components/sections/shared/HeroBackdrop";
 
 export type HeroData = {
@@ -20,12 +19,8 @@ export type HeroData = {
 /**
  * Inner-page hero, shared by every page below the home page: keyword H1 as the
  * eyebrow (same pattern as the home hero), a selling headline, both CTAs and a
- * real project photo.
- *
- * One photo layer. Phones & tablets: it's the whole background under an even
- * charcoal veil. Desktop: it bleeds off the right edge, full height, and the
- * charcoal fades in from the left so copy and photo read as one surface.
- * No relevant photo yet: plain charcoal rather than an unrelated image.
+ * real project photo, full-bleed under the home hero's charcoal scrims
+ * (HeroBackdrop). No relevant photo yet: plain charcoal rather than an unrelated image.
  */
 export function PageHero({ hero, children }: { hero: HeroData; children?: ReactNode }) {
   return (
@@ -51,7 +46,7 @@ export function PageHero({ hero, children }: { hero: HeroData; children?: ReactN
           {children ?? (
             <Reveal stagger={0.08} className="mt-9 flex flex-wrap items-center gap-3 sm:gap-4">
               <div>
-                <Button href={homeHero.primaryCta.href}>{homeHero.primaryCta.label}</Button>
+                <Button href="/book-a-consultation/">Book a free consultation</Button>
               </div>
               <div>
                 <PhoneButton variant="glass" />
