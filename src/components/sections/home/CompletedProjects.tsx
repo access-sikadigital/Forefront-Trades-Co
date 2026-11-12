@@ -8,7 +8,11 @@ import { useLenis } from "@/components/providers/SmoothScroll";
 import { ArrowIcon } from "@/components/ui/Button";
 import { Photo } from "@/components/ui/Photo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { copyFor } from "@/content/page-copy";
 import { projectList } from "@/content/projects";
+
+// Intro from the homepage copy (content/page-copy.ts).
+const seeTheWork = copyFor("/")?.sections.find((x) => x.title === "See the work, not just the promises")?.paras.join(" ") ?? "Real Forefront projects.";
 
 // Shown on the homepage as in the owner's preview r5.2 (Craigieburn and Bentleigh).
 const featured = ["craigieburn", "bentleigh"]
@@ -37,7 +41,7 @@ export function CompletedProjects() {
         <SectionHeading
           label="Completed projects"
           title="Completed projects."
-          intro="Real Forefront projects. Tap a project to see its photos. Prices and ranges aren’t assigned to these photos."
+          intro={`${seeTheWork} Tap a project to see its photos.`}
         />
 
         <Reveal

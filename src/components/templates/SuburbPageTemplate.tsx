@@ -14,6 +14,9 @@ import { Photo } from "@/components/ui/Photo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { suburbLocal, type SuburbService } from "@/content/suburb-local";
 import { findSuburbPage, nearestProjects, pagesForSuburb, pillarPage, serviceLabel, suburbHubPath, suburbName } from "@/content/suburbs";
+import { CopySections } from "@/components/sections/shared/CopySections";
+import { copyFor } from "@/content/page-copy";
+import { withCopyMeta } from "@/lib/copy-meta";
 import { serviceJsonLd } from "@/lib/seo";
 
 const heading = (service: SuburbService, name: string) => (service === "home-renovations" ? `Home Renovations & Extensions in ${name}` : `${serviceLabel[service]} in ${name}`);
@@ -24,11 +27,12 @@ export function suburbMetadata(service: SuburbService, suburb: string): Metadata
   const local = suburbLocal[suburb];
   const title = service === "home-renovations" ? `Renovations & Extensions ${name}` : `${serviceLabel[service]} ${name}`;
   const lead = service === "home-renovations" ? local?.intro : local?.angles[service];
-  return {
+  const base: Metadata = {
     title,
     description: (lead ?? `${heading(service, name)} by Forefront Trades Co., a Registered Builder based in Maribyrnong.`).slice(0, 158),
     alternates: { canonical: ref?.path },
   };
+  return ref ? withCopyMeta(ref.path, base) : base;
 }
 
 /**
@@ -42,17 +46,19 @@ export function SuburbPageTemplate({ service, suburb }: { service: SuburbService
   const name = suburbName(suburb);
   const pillar = pillarPage(service);
   const isHub = service === "home-renovations";
-  const intro = (isHub ? local?.intro : local?.angles[service]) ?? pillar.hero.intro;
+  // Page copy (content/page-copy.ts) takes over the hero, the local sections, the questions and the closing heading.
+  const copy = ref ? copyFor(ref.path) : undefined;
+  const intro = copy ? copy.intro.join(" ") : ((isHub ? local?.intro : local?.angles[service]) ?? pillar.hero.intro);
   const siblings = pagesForSuburb(suburb).filter((p) => p.service !== service);
   const neighbours = (local?.nearby ?? []).filter((s) => suburbLocal[s]);
   const projects = nearestProjects(suburb);
-  const faqs = [...(local ? [local.faq] : []), ...pillar.faqs.slice(0, 4)];
+  const faqs = copy ? [...copy.faqs, ...pillar.faqs.slice(0, 3)] : [...(local ? [local.faq] : []), ...pillar.faqs.slice(0, 4)];
 
   return (
     <>
       <PageHero
         hero={{
-          h1: heading(service, name),
+          h1: copy?.h1 ?? heading(service, name),
           title: isHub ? ["Renovations & Extensions", `in ${name}.`] : [serviceLabel[service], `in ${name}.`],
           intro,
           image: pillar.hero.image,
@@ -60,8 +66,10 @@ export function SuburbPageTemplate({ service, suburb }: { service: SuburbService
         }}
       />
 
+      {copy && <CopySections sections={copy.sections} />}
+
       {/* Local housing stock + council & overlays (Blueprint §3–4) */}
-      {local && (
+      {!copy && local && (
         <section className="relative bg-white py-section">
           <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
@@ -90,7 +98,7 @@ export function SuburbPageTemplate({ service, suburb }: { service: SuburbService
       )}
 
       {/* The service angle (Blueprint §5), from the pillar page */}
-      <ServiceFocus page={pillar} />
+      {!copy && <ServiceFocus page={pillar} />}
 
       {/* Nearest real projects, said plainly (Blueprint §2) */}
       {projects.length > 0 && (
@@ -118,7 +126,7 @@ export function SuburbPageTemplate({ service, suburb }: { service: SuburbService
         </section>
       )}
 
-      <ServiceCost page={pillar} />
+      {!copy && <ServiceCost page={pillar} />}
 
       {/* Links across (Blueprint §6): the suburb's other pages, the pillar, the neighbours */}
       <section className="relative bg-white py-section">
@@ -168,7 +176,7 @@ export function SuburbPageTemplate({ service, suburb }: { service: SuburbService
       </section>
 
       <FaqSection faqs={faqs} path={pillar.path} title={`Questions from ${name}.`} />
-      <FinalCta />
+      <FinalCta title={copy?.cta?.title} text={copy?.cta?.text} />
       {ref && (
         <script
           type="application/ld+json"
