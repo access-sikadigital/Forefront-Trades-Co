@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { copyFor } from "@/content/page-copy";
+import { withCopyMeta } from "@/lib/copy-meta";
 import Link from "next/link";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { Reveal } from "@/components/motion/Reveal";
@@ -13,11 +15,13 @@ import { site } from "@/config/site";
 import { consult, nextSteps } from "@/content/pricing";
 import { googleReviews } from "@/content/reviews";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCopyMeta("/book-a-consultation/", {
   title: "Book a Free Consultation",
   description: "Book a free phone or video consultation with Forefront Trades Co. Tell us about your renovation or extension and we'll talk it through. Melbourne's inner west and north.",
   alternates: { canonical: "/book-a-consultation/" },
-};
+});
+
+const copy = copyFor("/book-a-consultation/")!;
 
 // What happens after an enquiry: owner preview r5.2 (content/pricing.ts).
 const steps = nextSteps;
@@ -31,6 +35,7 @@ const atVisit = [
 ];
 
 const quick = [
+  ...copy.faqs.map((f) => ({ ...f, href: "/design-and-construct/", link: "How design & construct works" })),
   { q: "Is the consultation free?", a: "The first phone or video conversation is free. The in-depth home consult is from $250 + GST ($350 + GST for full homes and extensions), free in postcode 3012, and credited against your total bill if you build with us.", href: "/faqs/", link: "More questions" },
   { q: "Do I need plans first?", a: "No. Plenty of people start with an idea. We handle design, drafting and permits.", href: "/design-and-construct/", link: "Design & construct" },
   { q: "Do you build in my suburb?", a: "We build across 42 suburbs in Melbourne's inner west and north.", href: "/areas/", link: "Check your suburb" },
@@ -51,10 +56,10 @@ export default function BookPage() {
               </Eyebrow>
             </Reveal>
             <SplitLines as="p" className="mt-6 font-display text-h2 font-bold text-pretty text-white max-sm:text-[length:min(2.5rem,9.2vw)]">
-              {"Your free consultation starts here."}
+              {copy.h1}
             </SplitLines>
             <Reveal className="mt-6">
-              <p className="max-w-2xl text-lead text-white/80">Tell us about the job and we&rsquo;ll talk it through by phone or video, free. If what you want won&rsquo;t fit the budget, we&rsquo;ll say so.</p>
+              <p className="max-w-2xl text-lead text-white/80">{copy.intro.join(" ")} The first phone or video conversation is free.</p>
             </Reveal>
           </div>
 

@@ -13,7 +13,7 @@ const money = (n: number) => n.toLocaleString("en-AU");
  * next on the left (free first call, then the paid in-depth consult if you go
  * ahead), the enquiry form on the right, on deep purple.
  */
-export function FinalCta() {
+export function FinalCta({ title, text }: { title?: string; text?: string } = {}) {
   return (
     <section id="enquire" className="relative scroll-mt-24 overflow-hidden bg-purple-900 py-section text-white">
       <div className="container-x grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-12">
@@ -22,10 +22,10 @@ export function FinalCta() {
             <Eyebrow light>{finalCta.label}</Eyebrow>
           </Reveal>
           <SplitLines as="h2" className="mt-6 text-h2 text-white">
-            {finalCta.title.join(" ")}
+            {title ?? finalCta.title.join(" ")}
           </SplitLines>
           <Reveal className="mt-5">
-            <p className="max-w-lg text-lead text-white/80">{finalCta.text}</p>
+            <p className="max-w-lg text-lead text-white/80">{text || finalCta.text}</p>
           </Reveal>
 
           <Reveal as="ol" stagger={0.06} className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">

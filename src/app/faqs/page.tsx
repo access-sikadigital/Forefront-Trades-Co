@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { CopySections } from "@/components/sections/shared/CopySections";
+import { copyFor } from "@/content/page-copy";
+import { withCopyMeta } from "@/lib/copy-meta";
 import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { FinalCta } from "@/components/sections/home/FinalCta";
@@ -7,17 +10,20 @@ import { ArrowIcon } from "@/components/ui/Button";
 import { designAndConstruct } from "@/content/pages";
 import { servicePages, type ServiceSlug } from "@/content/services";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCopyMeta("/faqs/", {
   title: "Renovation FAQs",
   description: "Answers to the questions Melbourne homeowners ask Forefront Trades Co. most: timelines, fixed prices, permits, design and living through a renovation.",
   alternates: { canonical: "/faqs/" },
-};
+});
+
+const copy = copyFor("/faqs/")!;
 
 const order: ServiceSlug[] = ["kitchen", "bathroom", "laundry", "home", "extensions", "heritage"];
 
 // Every FAQ on the site, grouped by the page it belongs to; repeated questions appear once.
 const seen = new Set<string>();
 const groups = [
+  { id: "before-you-renovate", title: "Before you renovate", href: "/book-a-consultation/", faqs: copy.faqs },
   { id: "design-and-construct", title: "Design & construct", href: designAndConstruct.path, faqs: designAndConstruct.faqs },
   ...order.map((slug) => ({ id: servicePages[slug].path.replace(/\//g, ""), title: servicePages[slug].name, href: servicePages[slug].path, faqs: servicePages[slug].faqs })),
 ].map((g) => ({ ...g, faqs: g.faqs.filter((f) => (seen.has(f.q) ? false : (seen.add(f.q), true))) }));
@@ -35,11 +41,12 @@ export default function FaqsPage() {
       <PageHero
         hero={{
           h1: "Renovation FAQs",
-          title: ["Asked at every", "first visit."],
-          intro: "Timelines, fixed prices, permits and living through the build, grouped by the kind of job.",
+          title: [copy.h1],
+          intro: copy.intro.join(" "),
           image: { src: "/images/projects/footscray/kitchen-island-run.jpg", alt: "White island kitchen with gas cooktop and herringbone floor, Footscray" },
         }}
       />
+      <CopySections sections={copy.sections} />
 
       <section className="relative bg-white py-section">
         <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-12">
@@ -89,7 +96,7 @@ export default function FaqsPage() {
         </div>
       </section>
 
-      <FinalCta />
+      <FinalCta title={copy.cta?.title} text={copy.cta?.text} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );

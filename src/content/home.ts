@@ -8,13 +8,20 @@
  * quality craftsmanship, stress-free, seamless, end-to-end, under one roof (as a headline).
  */
 
+import { copyFor } from "@/content/page-copy";
+
+// Homepage copy from the client's copy set (content/page-copy.ts). The display headline stays the one the owner approved.
+const homeCopy = copyFor("/")!;
+const homeSection = (title: string) => homeCopy.sections.find((x) => x.title === title)!;
+const serviceBlurb = (title: string) => homeSection("Home renovations and extensions, planned as one project").items.find((i) => i.title === title)?.text;
+
 export const hero = {
   // Rendered as the page <h1> (keyword line); the display headline below sells.
   h1: "Renovation & extension builders in Melbourne",
   // Display headline from the owner's preview r5.2 (Oct 2026).
   title: ["Design & Construct Renovations", "& Extensions Across Melbourne"],
   intro:
-    "Kitchens, bathrooms, laundries, full renovations and extensions across Melbourne's inner west and north. One fixed-price contract covers design, permits and build, with the finish date written in.",
+    homeCopy.intro[0],
   primaryCta: { label: "Explore our services", href: "#services" },
   secondaryCta: { label: "Book a consultation", href: "/book-a-consultation/" },
   // TODO(client): confirm 4.9★ (public widget shows 39 reviews). Master Builders Victoria membership is stated in the owner's preview r5.2.
@@ -30,11 +37,8 @@ export const hero = {
 
 export const statement = {
   label: "Why homeowners call us",
-  title: "Achieve your dream renovation. On time and on budget.",
-  text: [
-    "Quotes that blow out. A final price that only exists in an email. Tradies who don't show, and nobody who can say when they will.",
-    "We work the other way: a fixed price, and a finish date agreed up front.",
-  ],
+  title: homeSection("Make the most of the home you have").title,
+  text: homeSection("Make the most of the home you have").paras,
   quote: { text: "We were kept in the loop as to the day and time each tradie would be onsite.", name: "Chris Williams", source: "Google review" },
   link: { label: "Read our story", href: "/about/" },
   image: { src: "/images/projects/footscray/kitchen-dining.jpg", alt: "Open-plan kitchen and dining with herringbone timber floors, Footscray" },
@@ -52,7 +56,7 @@ export const stats = [
 
 export const servicesHeading = {
   label: "What we build",
-  title: "From a new laundry to a second storey.",
+  title: homeSection("Home renovations and extensions, planned as one project").title,
   // Starting prices: see PriceGuide / content/pricing.ts (owner preview r5.2).
   intro: "Every job goes on a fixed-price contract. Single rooms take 4–6 weeks on site. Full homes take 3–6 months.",
   link: { label: "All services", href: "/home-renovations/" },
@@ -64,7 +68,7 @@ export const services = [
     index: "01",
     title: "Kitchen renovations",
     href: "/kitchen-renovations/",
-    summary: "Storage worked out at design stage: butler's pantries like the two we built in Craigieburn, internal bins, spice racks and profiled cabinetry.",
+    summary: serviceBlurb("Kitchen renovations") ?? "Storage worked out at design stage: butler's pantries like the two we built in Craigieburn, internal bins, spice racks and profiled cabinetry.",
     tags: ["Butler's pantry", "Custom joinery", "Open plan"],
     image: { src: "/images/projects/footscray/kitchen-dining.jpg", alt: "White kitchen with timber dining setting" },
     tone: "purple",
@@ -73,7 +77,7 @@ export const services = [
     index: "02",
     title: "Bathroom renovations",
     href: "/bathroom-renovations/",
-    summary: "Ensuites, main bathrooms and powder rooms. In West Footscray we redid three bathrooms, the laundry and the drainage in one job.",
+    summary: serviceBlurb("Bathroom renovations") ?? "Ensuites, main bathrooms and powder rooms. In West Footscray we redid three bathrooms, the laundry and the drainage in one job.",
     tags: ["Ensuites", "Freestanding baths", "Waterproofing"],
     image: { src: "/images/projects/footscray/bathroom-vanity.jpg", alt: "Bathroom vanity with brushed brass tapware" },
     tone: "cream",
@@ -82,7 +86,7 @@ export const services = [
     index: "03",
     title: "Laundry renovations",
     href: "/laundry-renovations/",
-    summary: "Joinery built around how you use the room, down to a built-in ironing board.",
+    summary: serviceBlurb("Laundry renovations") ?? "Joinery built around how you use the room, down to a built-in ironing board.",
     tags: ["Storage", "Stone benchtops", "Tiling"],
     image: { src: "/images/projects/footscray/laundry.jpg", alt: "Laundry with brushed brass tap, sage tiles and white stone bench, Footscray" },
     tone: "deep",
@@ -91,7 +95,7 @@ export const services = [
     index: "04",
     title: "Full home renovations",
     href: "/home-renovations/",
-    summary: "Period homes and whole-house renovations, staged where it helps. At the first visit we'll tell you how long you'd be without a kitchen or bathroom.",
+    summary: serviceBlurb("Full home renovations") ?? "Period homes and whole-house renovations, staged where it helps. At the first visit we'll tell you how long you'd be without a kitchen or bathroom.",
     tags: ["Period homes", "Open-plan living", "Staged builds"],
     image: { src: "/images/projects/footscray/open-living.jpg", alt: "Light-filled open-plan living room" },
     tone: "orange",
@@ -100,7 +104,7 @@ export const services = [
     index: "05",
     title: "Home extensions",
     href: "/home-extensions/",
-    summary: "Second storey or ground floor. We handle the engineering, steel and permits on the same contract as the build.",
+    summary: serviceBlurb("Home extensions") ?? "Second storey or ground floor. We handle the engineering, steel and permits on the same contract as the build.",
     tags: ["Second storey", "Ground floor", "Rear extensions"],
     image: { src: "/images/projects/footscray/rear-extension.jpg", alt: "Rear extension with pool in Footscray" },
     tone: "purple",
@@ -238,7 +242,7 @@ export const guarantees = [
   // TODO(client): state what each warranty covers (e.g. structural and workmanship defects).
   { icon: "license", title: "7-year construction warranty", text: "Seven years on the construction work, from a Registered Builder." },
   { icon: "handyman", title: "3-year maintenance warranty", text: "Three years of maintenance cover once the job is handed over." },
-  { icon: "gavel", title: "If a builder goes under", text: "Jobs over $16,000 carry domestic building insurance, which protects you if a builder dies, disappears or becomes insolvent. Registered Builder CDBU76389." },
+  { icon: "gavel", title: "If a builder goes under", text: "Eligible jobs over $20,000 contracted from 1 July 2026 are covered by Victoria's Home Warranty scheme (domestic building insurance before that), which can help if work is left incomplete or defective. Registered Builder CDBU76389." },
 ];
 
 export const offer = {
@@ -308,8 +312,8 @@ export const testimonial = {
 
 export const areas = {
   label: "Where we build",
-  title: "Renovation builders for Melbourne's inner west & north.",
-  text: "Our base is in Maribyrnong. Most of our work is in 42 suburbs across six councils, and we take on larger jobs further out too, like Craigieburn and Point Cook.",
+  title: homeSection("Built for Melbourne homes").title,
+  text: homeSection("Built for Melbourne homes").paras.join(" ").replace(" Visit our Areas We Service page for the full suburb list.", ""),
   link: { label: "Check your suburb", href: "/areas/" },
 };
 

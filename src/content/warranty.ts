@@ -14,7 +14,7 @@ export type WarrantyPage = {
  * Written with the Copy Machine (direct-response-copy → copy-chief).
  * Keyword: "domestic building insurance victoria" (140/mo).
  * Known facts only (proof ledger, home.ts): domestic building insurance on jobs over
- * $16,000 under Victorian law, covering the owner if the builder dies, disappears or
+ * $16,000 under Victorian law (superseded: Home Warranty applies to eligible contracts over $20,000 signed from 1 July 2026; the page now runs on content/page-copy.ts), covering the owner if the builder dies, disappears or
  * becomes insolvent; 7-year construction warranty; 3-year maintenance warranty;
  * fixed price and completion date in the contract; Registered Builder CDBU76389;
  * warranty documents handed over at the final walkthrough. How the insurance works
@@ -36,7 +36,7 @@ export const warrantyPage: WarrantyPage = {
     image: { src: "/images/team/builders-van.jpg", alt: "Two Forefront Trades Co. builders beside the company van" },
     facts: [
       { label: "Registered Builder", value: "CDBU76389" },
-      { label: "Insurance", value: "Jobs over $16,000" },
+      { label: "Home Warranty", value: "Jobs over $20,000" },
       { label: "Construction warranty", value: "7 years" },
     ],
   },
