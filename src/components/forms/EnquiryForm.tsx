@@ -141,9 +141,12 @@ export function EnquiryForm({ defaultService, className, compact = false }: { de
         <Field id={`${id}-email`} label="Email" optional="phone or email">
           <input id={`${id}-email`} name="email" type="email" autoComplete="email" className={control} />
         </Field>
-        <Field id={`${id}-service`} label="Project">
-          <Select id={`${id}-service`} name="service" required defaultValue={defaultService} placeholder="Choose…" options={enquiryServices} />
-        </Field>
+        {/* Full width when it has no partner on its row (no half-empty row) */}
+        <div className={cn(!compact && "sm:col-span-2")}>
+          <Field id={`${id}-service`} label="Project">
+            <Select id={`${id}-service`} name="service" required defaultValue={defaultService} placeholder="Choose…" options={enquiryServices} />
+          </Field>
+        </div>
 
         {compact ? (
           <Field id={`${id}-timeframe`} label="Preferred timing" optional>

@@ -8,6 +8,59 @@ type Block = { kind: "short"; sections: CopySection[] } | { kind: "full"; sectio
 /** Short sections (a paragraph or two, no sub-points) read better side by side than one band each. */
 const isShort = (s: CopySection) => !s.items.length && !s.steps.length && s.paras.join(" ").split(/\s+/).length <= 110;
 
+const wordCount = (s: CopySection) => s.paras.join(" ").split(/\s+/).filter(Boolean).length;
+
+/**
+ * Heading + paragraphs sized to each other so neither side leaves a hole:
+ * a short heading sits beside its text (6 / 6); a long heading runs across the
+ * page and the text follows underneath, in two columns when there is enough of it.
+ */
+function SectionHead({ s }: { s: CopySection }) {
+  const words = wordCount(s);
+  const split = s.paras.length > 0 && s.title.length <= 40 && words <= 150;
+  const para = "text-lg leading-relaxed text-ink/80 sm:text-xl";
+
+  if (split) {
+    return (
+      <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
+        <SplitLines as="h2" className="text-h2 text-pretty text-purple lg:col-span-6">
+          {s.title}
+        </SplitLines>
+        <Reveal stagger={0.06} className="space-y-5 lg:col-span-6 lg:col-start-7 lg:pt-3">
+          {s.paras.map((t) => (
+            <p key={t} className={para}>
+              {t}
+            </p>
+          ))}
+        </Reveal>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <SplitLines as="h2" className="max-w-6xl text-h2 text-pretty text-purple">
+        {s.title}
+      </SplitLines>
+      {s.paras.length > 0 && (
+        <Reveal
+          stagger={0.06}
+          className={cn(
+            "mt-8 lg:mt-12",
+            words > 70 ? "border-t border-purple/15 pt-8 md:columns-2 md:gap-12 lg:gap-16 lg:pt-10 [&>p]:mb-5" : "max-w-3xl space-y-5",
+          )}
+        >
+          {s.paras.map((t) => (
+            <p key={t} className={para}>
+              {t}
+            </p>
+          ))}
+        </Reveal>
+      )}
+    </div>
+  );
+}
+
 function group(sections: CopySection[]): Block[] {
   const out: Block[] = [];
   for (const s of sections) {
@@ -20,8 +73,8 @@ function group(sections: CopySection[]): Block[] {
 
 /**
  * Renders a page's copy sections (content/page-copy.ts) in the site's style.
- * Runs of short sections sit side by side in one band; longer ones get the
- * heading-left, text-right layout; sub-points become a card grid and steps a
+ * Runs of short sections sit side by side in one band; a lone or longer one
+ * gets SectionHead; sub-points become a card grid and steps a
  * numbered row. Backgrounds alternate so long pages keep their rhythm.
  */
 export function CopySections({ sections, startTone = "white" }: { sections: CopySection[]; startTone?: "white" | "cream" }) {
@@ -36,21 +89,10 @@ export function CopySections({ sections, startTone = "white" }: { sections: Copy
           const one = b.sections.length === 1;
           return (
             <section key={b.sections[0].title} className={cn("relative py-section", tone)}>
-              <div className={cn("container-x grid gap-10 lg:gap-12", one ? "lg:grid-cols-12" : b.sections.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3")}>
+              <div className={cn("container-x grid gap-10 lg:gap-12", one ? "" : b.sections.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3")}>
                 {b.sections.map((s) =>
                   one ? (
-                    <div key={s.title} className="contents">
-                      <SplitLines as="h2" className="text-h2 text-pretty text-purple lg:col-span-5">
-                        {s.title}
-                      </SplitLines>
-                      <Reveal stagger={0.06} className="space-y-5 lg:col-span-7 lg:col-start-6 lg:pt-2">
-                        {s.paras.map((t) => (
-                          <p key={t} className="text-lg leading-relaxed text-ink/80 sm:text-xl">
-                            {t}
-                          </p>
-                        ))}
-                      </Reveal>
-                    </div>
+                    <SectionHead key={s.title} s={s} />
                   ) : (
                     <Reveal key={s.title} className="border-t-2 border-orange pt-6">
                       <h2 className="font-display text-[clamp(1.5rem,1.2rem+1vw,2.1rem)] leading-tight font-bold tracking-[-0.02em] text-pretty text-purple">{s.title}</h2>
@@ -73,18 +115,7 @@ export function CopySections({ sections, startTone = "white" }: { sections: Copy
         return (
           <section key={s.title} className={cn("relative py-section", tone)}>
             <div className="container-x grid gap-8 lg:gap-12">
-              <SplitLines as="h2" className="max-w-4xl text-h2 text-pretty text-purple">
-                {s.title}
-              </SplitLines>
-              {s.paras.length > 0 && (
-                <Reveal stagger={0.06} className="max-w-3xl space-y-5">
-                  {s.paras.map((t) => (
-                    <p key={t} className="text-lg leading-relaxed text-ink/80 sm:text-xl">
-                      {t}
-                    </p>
-                  ))}
-                </Reveal>
-              )}
+              <SectionHead s={s} />
               {s.items.length > 0 && (
                 <Reveal as="ul" stagger={0.06} className={cn("grid gap-4 sm:grid-cols-2 lg:gap-6", s.items.length % 3 === 0 || s.items.length === 5 ? "lg:grid-cols-3" : "lg:grid-cols-2")}>
                   {s.items.map((it, n) => (

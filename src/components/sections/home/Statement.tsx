@@ -15,7 +15,7 @@ export function Statement() {
     <section className="relative overflow-hidden bg-cream-50 py-section">
       <div className="container-x">
         {/* 50 / 50: copy | photo (client feedback: the photo took too much width) */}
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-stretch lg:gap-16">
           <div>
             <Reveal>
               <Eyebrow>{statement.label}</Eyebrow>
@@ -41,12 +41,12 @@ export function Statement() {
             </Reveal>
           </div>
 
-          {/* Project photo with the brand badge from md up */}
-          <div className="relative aspect-[4/3]">
+          {/* Project photo with the brand badge from md up; on desktop it runs the full height of the copy (no gap under it) */}
+          <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[32rem]">
             <ImageReveal
               src={statement.image.src}
               alt={statement.image.alt}
-              frame={4 / 3}
+              frame={0.8} // portrait-ish on desktop, where it runs the copy's height
               vw={{ desktop: 46, mobile: 100 }}
               className="absolute inset-0 rounded-[3px]"
             />
