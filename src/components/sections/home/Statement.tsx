@@ -9,13 +9,13 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Logomark } from "@/components/ui/Logomark";
 import { statement, stats } from "@/content/home";
 
-/** Brand statement: copy and client quote beside the team photo (static brand badge), then count-up stats. */
+/** Brand statement: copy and client quote beside a project photo (brand badge with spinning text), then count-up stats. */
 export function Statement() {
   return (
     <section className="relative overflow-hidden bg-cream-50 py-section">
       <div className="container-x">
         {/* 50 / 50: copy | photo (client feedback: the photo took too much width) */}
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-stretch lg:gap-16">
           <div>
             <Reveal>
               <Eyebrow>{statement.label}</Eyebrow>
@@ -41,21 +41,21 @@ export function Statement() {
             </Reveal>
           </div>
 
-          {/* Team photo with the static brand badge from md up */}
-          <div className="relative aspect-[4/3]">
+          {/* Project photo with the brand badge from md up; on desktop it runs the full height of the copy (no gap under it) */}
+          <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[32rem]">
             <ImageReveal
               src={statement.image.src}
               alt={statement.image.alt}
-              frame={4 / 3}
+              frame={0.8} // portrait-ish on desktop, where it runs the copy's height
               vw={{ desktop: 46, mobile: 100 }}
               className="absolute inset-0 rounded-[3px]"
             />
-            {/* Static brand badge (no motion) */}
+            {/* Brand badge: only the ring text spins; the logomark stays still */}
             <div className="absolute -bottom-8 -left-6 hidden md:block lg:-left-10">
               <div
                 className="relative flex size-[clamp(96px,11vw,168px)] items-center justify-center rounded-full bg-orange text-white shadow-[0_20px_50px_-20px_rgb(255_80_0/0.6)]"
               >
-                <svg viewBox="0 0 120 120" className="absolute inset-0 size-full" aria-hidden>
+                <svg viewBox="0 0 120 120" className="absolute inset-0 size-full animate-[spin_24s_linear_infinite]" aria-hidden>
                   <defs>
                     <path id="badge-circle" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" />
                   </defs>

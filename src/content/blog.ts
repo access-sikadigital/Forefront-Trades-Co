@@ -80,7 +80,7 @@ export const posts: Post[] = [
       },
       { type: "h2", text: "How long you'll be without a bathroom" },
       { type: "p", text: "Usually the real question. If it's your only bathroom, you'll be without it for most of the build, so work out early where you'll shower for those weeks. If there's a second toilet or shower in the house, ask us at the first visit whether it can stay in use." },
-      { type: "note", text: "Planning a bathroom? Book a free home visit and we'll tell you how long yours would take, and how long you'd be without it." },
+      { type: "note", text: "Planning a bathroom? Book a free consultation and we'll talk through how long yours would take, and how long you'd be without it." },
     ],
   },
   {
@@ -111,7 +111,7 @@ export const posts: Post[] = [
       { type: "p", text: "A laundry often sits next to the kitchen or bathroom, so doing them together means one round of trades and disruption instead of two. Nicole in Brookfield did her laundry with her kitchen." },
       { type: "h2", text: "Before you start" },
       { type: "p", text: "Moving the washer or tub means moving water and waste pipes, which adds to the price. If they can stay where they are, more of your budget goes into the joinery." },
-      { type: "note", text: "Planning a laundry? Book a free home visit, and bring the list of everything it has to hold." },
+      { type: "note", text: "Planning a laundry? Book a free consultation, and bring the list of everything it has to hold." },
     ],
   },
   {
@@ -150,7 +150,7 @@ export const posts: Post[] = [
       { type: "p", text: "A planning permit adds time before the build can start, and how long depends on your council and how complete the application is. That's why the overlay shapes our first drawings, rather than sending us back to redraw after council replies." },
       { type: "h2", text: "Check the house, not just the overlay" },
       { type: "p", text: "The overlay tells you what council will allow. It says nothing about what's under the floor or behind the walls, and in a Victorian or Edwardian house that can need as much planning as the permit." },
-      { type: "note", text: "Renovating under an overlay? Book a free home visit and we'll look up your overlay and tell you what it's likely to mean for your plans." },
+      { type: "note", text: "Renovating under an overlay? Book a free consultation and we'll look up your overlay and tell you what it's likely to mean for your plans." },
     ],
   },
 ];

@@ -10,7 +10,7 @@ export const site = {
     "Design & construct renovation and extension builders for Melbourne's inner west and north. Fixed-price contracts with the finish date written in. 30+ years building in Melbourne.",
   // TODO(client): confirm tracked number — 1300 909 808 vs mobile (Open Question #8)
   phone: { display: "1300 909 808", href: "tel:1300909808" },
-  email: "hello@forefronttrades.com.au", // TODO(client): confirm enquiry inbox
+  email: "admin@forefronttrades.com.au", // From the client's V2 copy set (contact, privacy). Was hello@ (unconfirmed).
   address: {
     street: "181 Rosamond Rd",
     suburb: "Maribyrnong",

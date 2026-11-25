@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import type { ServicePage } from "@/content/services";
 
 /**
- * Cost guidance (Page Blueprint §7). No published prices yet (client feedback:
- * don't promise numbers we don't show), so this explains what moves the price.
+ * Cost guidance (Page Blueprint §7): what moves the price. The starting prices
+ * themselves sit in ServicePricing, just above.
  */
 export function ServiceCost({ page }: { page: ServicePage }) {
   const { cost } = page;

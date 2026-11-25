@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
+import { CopySections } from "@/components/sections/shared/CopySections";
+import { copyFor } from "@/content/page-copy";
+import { withCopyMeta } from "@/lib/copy-meta";
 import { FinalCta } from "@/components/sections/home/FinalCta";
 import { Testimonial } from "@/components/sections/home/Testimonial";
 import { PageHero } from "@/components/sections/shared/PageHero";
 import { site } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCopyMeta("/reviews/", {
   title: "Reviews",
   description: `What Forefront Trades Co. clients say: video stories filmed in their finished homes, and ${site.rating.score}★ Google reviews. Renovations & Extensions in Melbourne.`,
   alternates: { canonical: "/reviews/" },
-};
+});
+
+const copy = copyFor("/reviews/")!;
 
 export default function ReviewsPage() {
   return (
@@ -16,8 +21,8 @@ export default function ReviewsPage() {
       <PageHero
         hero={{
           h1: "Forefront Trades Co. reviews",
-          title: ["In our clients'", "own words."],
-          intro: "Filmed in their finished homes, and left on Google. Read them before you call anyone.",
+          title: [copy.h1],
+          intro: copy.intro.join(" "),
           image: { src: "/images/projects/footscray/dining.jpg", alt: "Dining area with a round timber table beside the kitchen, Footscray" },
           facts: [
             { label: "Google rating", value: `${site.rating.score} out of 5` },
@@ -26,8 +31,9 @@ export default function ReviewsPage() {
           ],
         }}
       />
+      <CopySections sections={copy.sections} />
       <Testimonial />
-      <FinalCta />
+      <FinalCta title={copy.cta?.title} text={copy.cta?.text} />
     </>
   );
 }

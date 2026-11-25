@@ -1,6 +1,9 @@
+import { HeroBackdrop } from "@/components/sections/shared/HeroBackdrop";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { copyFor } from "@/content/page-copy";
+import { withCopyMeta } from "@/lib/copy-meta";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitLines } from "@/components/motion/SplitLines";
@@ -25,24 +28,22 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const lp = pageFor((await props.params).slug);
   if (!lp) return {};
   // Paid traffic only (Sitemap: noindex). The service pillar is the canonical page for search.
-  return { title: lp.meta.title, description: lp.meta.description, robots: { index: false, follow: true }, alternates: { canonical: lp.servicePath } };
+  return withCopyMeta(`/lp/${(await props.params).slug}/`, { title: lp.meta.title, description: lp.meta.description, robots: { index: false, follow: true }, alternates: { canonical: lp.servicePath } });
 }
 
 /** Paid landing page: one service, one action. Form beside the headline, proof, questions, form again. */
 export default async function LandingPage(props: Props) {
   const lp = pageFor((await props.params).slug);
   if (!lp) notFound();
-  const { hero } = lp;
+  // Page copy (content/page-copy.ts) takes over the headline, intro, three benefit cards, questions and closing heading.
+  const copy = copyFor(`/lp/${(await props.params).slug}/`);
+  const hero = copy ? { ...lp.hero, title: [copy.h1], intro: copy.intro.join(" ") } : lp.hero;
+  const benefits = copy ? copy.sections.map((s) => ({ title: s.title, text: s.paras.join(" ") })) : lp.benefits;
+  const faqs = copy ? [...copy.faqs, ...lp.faqs.filter((f) => !copy.faqs.some((c) => c.q === f.q))] : lp.faqs;
   return (
     <>
       <section className="relative overflow-hidden bg-ink-950 text-white">
-        {hero.image && (
-          <div aria-hidden className="absolute inset-0">
-            <Photo src={hero.image.src} alt="" frame={16 / 9} vw={{ desktop: 100, mobile: 100 }} preload />
-            <div className="absolute inset-0 bg-ink-950/70" />
-            <div className="absolute inset-0 bg-linear-to-r from-ink-950 via-ink-950/85 to-ink-950/50" />
-          </div>
-        )}
+        {hero.image && <HeroBackdrop src={hero.image.src} />}
         <div className="container-x relative grid gap-12 pt-24 pb-16 sm:pt-28 lg:grid-cols-12 lg:items-start lg:gap-12 lg:pt-32 lg:pb-24">
           <div className="lg:col-span-6">
             <Reveal>
@@ -86,7 +87,7 @@ export default async function LandingPage(props: Props) {
       <section className="relative bg-white py-section">
         <div className="container-x">
           <Reveal as="ul" stagger={0.08} className="grid gap-4 md:grid-cols-3 lg:gap-6">
-            {lp.benefits.map((b, i) => (
+            {benefits.map((b, i) => (
               <li key={b.title} className="rounded-[6px] bg-cream-50 p-7 ring-1 ring-purple/8 lg:p-8">
                 <span className="font-display text-sm font-semibold text-orange tabular">{String(i + 1).padStart(2, "0")}</span>
                 <h2 className="mt-3 text-h3 text-purple">{b.title}</h2>
@@ -128,13 +129,13 @@ export default async function LandingPage(props: Props) {
         </div>
       </section>
 
-      <FaqSection faqs={lp.faqs} path={lp.servicePath} title="Before you book." />
+      <FaqSection faqs={faqs} path={lp.servicePath} title="Before you book." />
 
       <section className="relative bg-ink-950 py-section text-white">
         <div className="container-x grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-12">
           <div className="lg:col-span-5">
             <SplitLines as="h2" className="text-h2 text-white">
-              {lp.form.title}
+              {copy?.cta?.title ?? lp.form.title}
             </SplitLines>
             <Reveal className="mt-5">
               <p className="text-lead text-white/75">{lp.form.intro}</p>

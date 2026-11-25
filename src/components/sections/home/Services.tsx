@@ -11,7 +11,7 @@ import { services, servicesHeading } from "@/content/home";
  */
 export function Services() {
   return (
-    <section className="relative bg-cream-50 pb-section">
+    <section id="services" className="relative scroll-mt-24 bg-cream-50 pb-section">
       <div className="container-x">
         <SectionHeading
           label={servicesHeading.label}

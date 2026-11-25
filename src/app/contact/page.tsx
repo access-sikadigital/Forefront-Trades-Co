@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { CopySections } from "@/components/sections/shared/CopySections";
+import { copyFor } from "@/content/page-copy";
+import { withCopyMeta } from "@/lib/copy-meta";
 import Link from "next/link";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { Reveal } from "@/components/motion/Reveal";
@@ -9,11 +12,13 @@ import { Icon } from "@/components/ui/Icon";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCopyMeta("/contact/", {
   title: "Contact Us",
   description: `Call Forefront Trades Co. on ${site.phone.display}, email us, or send an enquiry. Office at ${site.address.full}. Renovations & Extensions across Melbourne's inner west and north.`,
   alternates: { canonical: "/contact/" },
-};
+});
+
+const copy = copyFor("/contact/")!;
 
 const ways = [
   { icon: "handshake" as const, label: "Call", value: site.phone.display, href: site.phone.href, note: "The quickest way to reach us." },
@@ -27,8 +32,8 @@ export default function ContactPage() {
       <PageHero
         hero={{
           h1: "Contact Forefront Trades Co.",
-          title: ["Call, email or", "send us the details."],
-          intro: "We're based in Maribyrnong and build across Melbourne's inner west and north.",
+          title: [copy.h1],
+          intro: copy.intro.join(" "),
           image: { src: "/images/projects/altona/living.jpg", alt: "Living room with a white sofa and timber chairs, Altona" },
           facts: [
             { label: "Phone", value: site.phone.display },
@@ -79,6 +84,7 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <CopySections sections={copy.sections} startTone="cream" />
       <Areas />
     </>
   );

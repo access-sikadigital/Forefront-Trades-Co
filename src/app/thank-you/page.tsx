@@ -1,10 +1,10 @@
+import { HeroBackdrop } from "@/components/sections/shared/HeroBackdrop";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitLines } from "@/components/motion/SplitLines";
 import { ArrowIcon, PhoneButton } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Photo } from "@/components/ui/Photo";
 
 export const metadata: Metadata = {
   title: "Thank You",
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 // TODO: fire the GA4 / Google Ads / Meta "Lead" conversion on this page once tracking is set up.
 const next = [
   { title: "We read your enquiry", text: "Your details and the job you described come straight to our team." },
-  { title: "We call to book a visit", text: "We'll arrange a time that suits you to come and see the house." },
-  { title: "Free home visit", text: "We walk the house with you and talk budget and timing honestly." },
+  { title: "A free phone or video conversation", text: "About the project, the location, where you're up to and your priorities." },
+  { title: "In-depth consult, if you go ahead", text: "A consult at your home, from $250 + GST ($350 + GST for full homes and extensions), free in postcode 3012." },
 ];
 
 const reading = [
@@ -31,11 +31,7 @@ export default function ThankYouPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink-950 text-white">
-        <div aria-hidden className="absolute inset-0">
-          <Photo src="/images/projects/footscray/living-wide.jpg" alt="" frame={16 / 9} vw={{ desktop: 100, mobile: 100 }} quality={75} />
-          <div className="absolute inset-0 bg-ink-950/80" />
-          <div className="absolute inset-0 bg-linear-to-r from-ink-950 via-ink-950/85 to-ink-950/60" />
-        </div>
+        <HeroBackdrop src="/images/projects/footscray/living-wide.jpg" quality={75} />
         <div className="container-x relative grid gap-12 pt-24 pb-16 sm:pt-28 lg:grid-cols-12 lg:gap-12 lg:pt-32 lg:pb-24">
           <div className="lg:col-span-6">
             <Reveal>

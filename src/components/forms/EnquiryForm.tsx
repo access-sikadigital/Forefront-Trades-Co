@@ -7,12 +7,23 @@ import { ArrowIcon, PhoneButton } from "@/components/ui/Button";
 import { site } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-export const enquiryServices = ["Kitchen", "Bathroom", "Laundry", "Full home renovation", "Extension", "Heritage / period home", "Not sure yet"] as const;
+// Options follow the owner's preview r5.2 (Oct 2026). Keep in step with /api/enquiry/.
+export const enquiryServices = [
+  "Not sure yet",
+  "Bathroom",
+  "Kitchen",
+  "Laundry",
+  "Full home renovation",
+  "Ground-floor extension",
+  "Second-storey extension",
+  "Heritage restoration",
+  "More than one space",
+] as const;
 
-// TODO(client): confirm budget bands (Open Question #6: minimum job value / what a good lead is).
-const budgets = ["Under $50,000", "$50,000 – $150,000", "$150,000 – $400,000", "Over $400,000", "Not sure yet"];
-const timeframes = ["As soon as possible", "Within 3 months", "3–6 months", "6–12 months", "Just exploring"];
-const plansOptions = ["Yes, I have plans", "No, starting from scratch", "Not sure"];
+const budgets = ["Not sure yet", "Under $30k", "$30k–$50k", "$50k–$100k", "$100k–$250k", "$250k or more"];
+const timeframes = ["Not sure yet", "As soon as possible", "Within 3 months", "3–6 months", "6–12 months", "12 months or more"];
+const planningStages = ["Just ideas", "I have inspiration", "I have a concept", "I have drawings", "I have permits"];
+const rangeOptions = ["No preference", "Entry Range", "Premium Range", "Signature Range", "Platinum Range"];
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -21,14 +32,15 @@ const control =
   "mt-2 block h-[3.25rem] w-full rounded-md border border-ink/20 bg-white px-4 font-sans text-[1.0625rem] text-ink shadow-[inset_0_1px_2px_rgb(0_0_0/0.04)] outline-none transition-colors placeholder:text-ink/40 hover:border-ink/35 focus:border-orange focus:ring-4 focus:ring-orange/15";
 const labelClass = "block font-sans text-[0.9375rem] font-medium text-ink";
 
-function Field({ id, label, optional, children }: { id: string; label: string; optional?: boolean; children: ReactNode }) {
+function Field({ id, label, optional, hint, children }: { id: string; label: string; optional?: boolean | string; hint?: string; children: ReactNode }) {
   return (
     <div>
       <label htmlFor={id} className={labelClass}>
         {label}
-        {optional && <span className="ml-1.5 font-normal text-ink/50">(optional)</span>}
+        {optional && <span className="ml-1.5 font-normal text-ink/50">({optional === true ? "optional" : optional})</span>}
       </label>
       {children}
+      {hint && <p className="mt-1.5 text-sm text-ink/55">{hint}</p>}
     </div>
   );
 }
@@ -71,6 +83,12 @@ export function EnquiryForm({ defaultService, className, compact = false }: { de
     e.preventDefault();
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    // Phone or email: one is enough (owner preview r5.2).
+    if (!String(data.phone ?? "").trim() && !String(data.email ?? "").trim()) {
+      setError("Add a phone number or an email address.");
+      setStatus("error");
+      return;
+    }
     const params = new URLSearchParams(window.location.search);
     const utm = Object.fromEntries([...params.entries()].filter(([k]) => k.startsWith("utm_") || k === "gclid" || k === "fbclid"));
     setStatus("sending");
@@ -89,7 +107,7 @@ export function EnquiryForm({ defaultService, className, compact = false }: { de
         router.push("/thank-you/");
         return;
       }
-      setError(json.error === "validation" ? "Please check your name, phone, email, suburb and service." : `We couldn't send that just now. Please call us on ${site.phone.display}.`);
+      setError(json.error === "validation" ? "Please check your name, suburb, project, and your phone number or email." : `We couldn't send that just now. Please call us on ${site.phone.display}.`);
       setStatus("error");
     } catch {
       setError(`We couldn't send that just now. Please call us on ${site.phone.display}.`);
@@ -110,47 +128,61 @@ export function EnquiryForm({ defaultService, className, compact = false }: { de
   return (
     <form onSubmit={onSubmit} className={cn("rounded-[6px] bg-white p-6 font-sans text-ink ring-1 ring-ink/10 sm:p-8", className)}>
       <div className="grid gap-x-4 gap-y-5 sm:grid-cols-2">
-        {/* 1. Name | Phone */}
+        {/* Required: name, suburb, phone or email, project (owner preview r5.2 order) */}
         <Field id={`${id}-name`} label="Name">
           <input id={`${id}-name`} name="name" required autoComplete="name" className={control} />
-        </Field>
-        <Field id={`${id}-phone`} label="Phone">
-          <input id={`${id}-phone`} name="phone" type="tel" required autoComplete="tel" inputMode="tel" className={control} />
-        </Field>
-
-        {/* 2. Email | Suburb */}
-        <Field id={`${id}-email`} label="Email">
-          <input id={`${id}-email`} name="email" type="email" required autoComplete="email" className={control} />
         </Field>
         <Field id={`${id}-suburb`} label="Suburb">
           <input id={`${id}-suburb`} name="suburb" required autoComplete="address-level2" placeholder="e.g. Yarraville" className={control} />
         </Field>
-
-        {/* 3. What are you planning | When to start */}
-        <Field id={`${id}-service`} label="What are you planning?">
-          <Select id={`${id}-service`} name="service" required defaultValue={defaultService} placeholder="Choose a service" options={enquiryServices} />
+        <Field id={`${id}-phone`} label="Phone" optional="phone or email">
+          <input id={`${id}-phone`} name="phone" type="tel" autoComplete="tel" inputMode="tel" className={control} />
         </Field>
-        <Field id={`${id}-timeframe`} label="When do you want to start?">
-          <Select id={`${id}-timeframe`} name="timeframe" placeholder="Choose one" options={timeframes} />
+        <Field id={`${id}-email`} label="Email" optional="phone or email">
+          <input id={`${id}-email`} name="email" type="email" autoComplete="email" className={control} />
         </Field>
+        {/* Full width when it has no partner on its row (no half-empty row) */}
+        <div className={cn(!compact && "sm:col-span-2")}>
+          <Field id={`${id}-service`} label="Project">
+            <Select id={`${id}-service`} name="service" required defaultValue={defaultService} placeholder="Choose…" options={enquiryServices} />
+          </Field>
+        </div>
 
-        {!compact && (
-          <>
-            {/* 4. Budget | Plans */}
-            <Field id={`${id}-budget`} label="Rough budget">
-              <Select id={`${id}-budget`} name="budget" placeholder="Choose one" options={budgets} />
-            </Field>
-            <Field id={`${id}-plans`} label="Do you have plans?">
-              <Select id={`${id}-plans`} name="plans" placeholder="Choose one" options={plansOptions} />
-            </Field>
-
-            {/* 5. Message */}
-            <div className="sm:col-span-2">
-              <Field id={`${id}-message`} label="Anything else we should know?" optional>
-                <textarea id={`${id}-message`} name="message" rows={4} className={cn(control, "h-auto resize-y py-3 leading-relaxed")} />
+        {compact ? (
+          <Field id={`${id}-timeframe`} label="Preferred timing" optional>
+            <Select id={`${id}-timeframe`} name="timeframe" placeholder="Choose…" options={timeframes} />
+          </Field>
+        ) : (
+          <details className="group rounded-md border border-ink/12 sm:col-span-2 [&_summary::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3.5">
+              <span className="font-sans text-[1.0625rem] font-semibold text-purple">
+                Add more detail <span className="ml-1 font-normal text-ink/50">(optional)</span>
+              </span>
+              <span aria-hidden className="relative size-4 shrink-0 text-orange">
+                <span className="absolute top-1/2 left-0 h-0.5 w-4 -translate-y-1/2 bg-current" />
+                <span className="absolute top-0 left-1/2 h-4 w-0.5 -translate-x-1/2 bg-current transition-transform duration-300 group-open:scale-y-0" />
+              </span>
+            </summary>
+            <div className="grid gap-x-4 gap-y-5 border-t border-ink/10 p-4 sm:grid-cols-2">
+              <div className="sm:col-span-2">
+                <Field id={`${id}-message`} label="About the project" optional>
+                  <textarea id={`${id}-message`} name="message" rows={4} className={cn(control, "h-auto resize-y py-3 leading-relaxed")} />
+                </Field>
+              </div>
+              <Field id={`${id}-plans`} label="Where are you up to?" optional>
+                <Select id={`${id}-plans`} name="plans" placeholder="Choose…" options={planningStages} />
+              </Field>
+              <Field id={`${id}-timeframe`} label="Preferred timing" optional hint="A preference, not a booking.">
+                <Select id={`${id}-timeframe`} name="timeframe" placeholder="Choose…" options={timeframes} />
+              </Field>
+              <Field id={`${id}-budget`} label="Approximate budget" optional hint="Helps us understand the project. It isn’t used to set the estimate.">
+                <Select id={`${id}-budget`} name="budget" placeholder="Choose…" options={budgets} />
+              </Field>
+              <Field id={`${id}-range`} label="Range you’re interested in" optional hint="Interest only, not a selection or a quote.">
+                <Select id={`${id}-range`} name="range" placeholder="Choose…" options={rangeOptions} />
               </Field>
             </div>
-          </>
+          </details>
         )}
 
         {/* Honeypot */}
@@ -165,7 +197,7 @@ export function EnquiryForm({ defaultService, className, compact = false }: { de
         disabled={status === "sending"}
         className="group mt-7 inline-flex h-14 w-full items-center justify-center gap-3 rounded-md bg-orange px-6 font-sans text-[1.0625rem] font-semibold text-white transition-colors duration-300 hover:bg-purple disabled:opacity-60"
       >
-        {status === "sending" ? "Sending…" : "Book my free home visit"}
+        {status === "sending" ? "Sending…" : "Send my enquiry"}
         <ArrowIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
       </button>
       <p aria-live="polite" className={cn("mt-3 text-[0.9375rem]", status === "error" ? "font-medium text-orange-600" : "text-ink/60")}>
@@ -173,7 +205,7 @@ export function EnquiryForm({ defaultService, className, compact = false }: { de
           error
         ) : (
           <>
-            No obligation. See our{" "}
+            The first phone or video conversation is free. See our{" "}
             <Link href="/privacy-policy/" className="underline underline-offset-2 hover:text-orange">
               privacy policy
             </Link>

@@ -8,16 +8,24 @@
  * quality craftsmanship, stress-free, seamless, end-to-end, under one roof (as a headline).
  */
 
+import { copyFor } from "@/content/page-copy";
+
+// Homepage copy from the client's copy set (content/page-copy.ts). The display headline stays the one the owner approved.
+const homeCopy = copyFor("/")!;
+const homeSection = (title: string) => homeCopy.sections.find((x) => x.title === title)!;
+const serviceBlurb = (title: string) => homeSection("Home renovations and extensions, planned as one project").items.find((i) => i.title === title)?.text;
+
 export const hero = {
   // Rendered as the page <h1> (keyword line); the display headline below sells.
   h1: "Renovation & extension builders in Melbourne",
-  title: ["Melbourne's Premier Home", "Renovations & Extensions"],
+  // Display headline from the owner's preview r5.2 (Oct 2026).
+  title: ["Design & Construct Renovations", "& Extensions Across Melbourne"],
   intro:
-    "Kitchens, bathrooms, laundries, full renovations and extensions across Melbourne's inner west and north. One fixed-price contract covers design, permits and build, with the finish date written in.",
-  primaryCta: { label: "Book a free consultation", href: "/book-a-consultation/" },
-  secondaryCta: { label: "View our projects", href: "/projects/" },
-  // TODO(client): confirm 4.9★ (public widget shows 39 reviews) and 30+ years.
-  proof: ["4.9★ from 39 Google reviews", "Registered Builder CDBU76389", "\u201CCompleted on time\u201D \u2014 Nicole, Brookfield"],
+    homeCopy.intro[0],
+  primaryCta: { label: "Explore our services", href: "#services" },
+  secondaryCta: { label: "Book a consultation", href: "/book-a-consultation/" },
+  // TODO(client): confirm 4.9★ (public widget shows 39 reviews). Master Builders Victoria membership is stated in the owner's preview r5.2.
+  proof: ["Registered Builder CDBU76389", "Master Builders Victoria member", "4.9★ from 39 Google reviews"],
   video: {
     sources: [
       { src: "/videos/hero-720.mp4", media: "(max-width: 900px)" },
@@ -29,14 +37,11 @@ export const hero = {
 
 export const statement = {
   label: "Why homeowners call us",
-  title: "Achieve Your Dream Renovation. On-Time & On-Budget.",
-  text: [
-    "Quotes that blow out. A final price that only exists in an email. Tradies who don't show, and nobody who can say when they will.",
-    "We work the other way: a fixed price, and a finish date agreed up front.",
-  ],
+  title: homeSection("Make the most of the home you have").title,
+  text: homeSection("Make the most of the home you have").paras,
   quote: { text: "We were kept in the loop as to the day and time each tradie would be onsite.", name: "Chris Williams", source: "Google review" },
   link: { label: "Read our story", href: "/about/" },
-  image: { src: "/images/team/founders.jpg", alt: "The founders of Forefront Trades Co." },
+  image: { src: "/images/projects/footscray/kitchen-dining.jpg", alt: "Open-plan kitchen and dining with herringbone timber floors, Footscray" },
   detail: { src: "/images/projects/altona/kitchen.jpg", alt: "Galley kitchen with integrated oven, Altona" },
   badge: "30+ years · Design · Construct · ",
 };
@@ -51,8 +56,8 @@ export const stats = [
 
 export const servicesHeading = {
   label: "What we build",
-  title: "From a new laundry to a second storey.",
-  // TODO(client): add ballpark price ranges per service (biggest gap vs competitors).
+  title: homeSection("Home renovations and extensions, planned as one project").title,
+  // Starting prices: see PriceGuide / content/pricing.ts (owner preview r5.2).
   intro: "Every job goes on a fixed-price contract. Single rooms take 4–6 weeks on site. Full homes take 3–6 months.",
   link: { label: "All services", href: "/home-renovations/" },
 };
@@ -63,7 +68,7 @@ export const services = [
     index: "01",
     title: "Kitchen renovations",
     href: "/kitchen-renovations/",
-    summary: "Storage worked out at design stage: butler's pantries like the two we built in Craigieburn, internal bins, spice racks and profiled cabinetry.",
+    summary: serviceBlurb("Kitchen renovations") ?? "Storage worked out at design stage: butler's pantries like the two we built in Craigieburn, internal bins, spice racks and profiled cabinetry.",
     tags: ["Butler's pantry", "Custom joinery", "Open plan"],
     image: { src: "/images/projects/footscray/kitchen-dining.jpg", alt: "White kitchen with timber dining setting" },
     tone: "purple",
@@ -72,7 +77,7 @@ export const services = [
     index: "02",
     title: "Bathroom renovations",
     href: "/bathroom-renovations/",
-    summary: "Ensuites, main bathrooms and powder rooms. In West Footscray we redid three bathrooms, the laundry and the drainage in one job.",
+    summary: serviceBlurb("Bathroom renovations") ?? "Ensuites, main bathrooms and powder rooms. In West Footscray we redid three bathrooms, the laundry and the drainage in one job.",
     tags: ["Ensuites", "Freestanding baths", "Waterproofing"],
     image: { src: "/images/projects/footscray/bathroom-vanity.jpg", alt: "Bathroom vanity with brushed brass tapware" },
     tone: "cream",
@@ -81,7 +86,7 @@ export const services = [
     index: "03",
     title: "Laundry renovations",
     href: "/laundry-renovations/",
-    summary: "Joinery built around how you use the room, down to a built-in ironing board.",
+    summary: serviceBlurb("Laundry renovations") ?? "Joinery built around how you use the room, down to a built-in ironing board.",
     tags: ["Storage", "Stone benchtops", "Tiling"],
     image: { src: "/images/projects/footscray/laundry.jpg", alt: "Laundry with brushed brass tap, sage tiles and white stone bench, Footscray" },
     tone: "deep",
@@ -90,7 +95,7 @@ export const services = [
     index: "04",
     title: "Full home renovations",
     href: "/home-renovations/",
-    summary: "Period homes and whole-house renovations, staged where it helps. At the first visit we'll tell you how long you'd be without a kitchen or bathroom.",
+    summary: serviceBlurb("Full home renovations") ?? "Period homes and whole-house renovations, staged where it helps. At the first visit we'll tell you how long you'd be without a kitchen or bathroom.",
     tags: ["Period homes", "Open-plan living", "Staged builds"],
     image: { src: "/images/projects/footscray/open-living.jpg", alt: "Light-filled open-plan living room" },
     tone: "orange",
@@ -99,7 +104,7 @@ export const services = [
     index: "05",
     title: "Home extensions",
     href: "/home-extensions/",
-    summary: "Second storey or ground floor. We handle the engineering, steel and permits on the same contract as the build.",
+    summary: serviceBlurb("Home extensions") ?? "Second storey or ground floor. We handle the engineering, steel and permits on the same contract as the build.",
     tags: ["Second storey", "Ground floor", "Rear extensions"],
     image: { src: "/images/projects/footscray/rear-extension.jpg", alt: "Rear extension with pool in Footscray" },
     tone: "purple",
@@ -153,66 +158,70 @@ export const designConstruct = {
 
 export const processHeading = {
   // Absorbs the old Design & Construct section (removed to shorten the page).
-  label: "One team, from start to finish",
-  title: "What happens after our free consultation call",
-  intro: "Four stages from first visit to handover. You see the fixed price and finish date before you sign anything to build.",
-  link: { label: "Book a free consultation", href: "/book-a-consultation/" },
+  // Stages and wording follow the owner's preview r5.2 (Oct 2026).
+  label: "Our process",
+  title: "Design, construct, handover",
+  intro: "From the first drawings to the final walkthrough, with two checkpoints before building. Choose a stage.",
+  link: { label: "See the full process, step by step", href: "/design-and-construct/" },
 };
 
-// Four stages, as in the owner's brief (Design · Contract & pre-construction · Construct · Handover).
+// Four stages, as in the owner's preview r5.2: choose a stage to see what it covers.
 export const process = [
-  // TODO(client): state the design fee (or that it's free / credited to the build) — answers "paying for plans is a gamble".
-  { step: "01", title: "Design", time: "Free visit, then plans", text: "It starts with a free home visit. Then concepts, interior selections and a fixed-price proposal, so you see the build price and finish date before you commit." },
-  { step: "02", title: "Contract & pre-construction", time: "Contract & permits", text: "You sign one fixed-price contract with the finish date in it. We lodge and chase engineering, planning and building permits, and plan for any heritage overlay." },
-  // TODO(client): confirm a project WhatsApp group runs on every job.
-  // TODO(client): confirm construction weeks (the owner's brief drafts 6–7 weeks for single rooms; the site says 4–6).
-  { step: "03", title: "Construct", time: "4 weeks – 6 months", text: "We book and run every trade on site. Nicole in Brookfield had a WhatsApp group with our team and called it \u201Cvery, very important\u201D." },
-  { step: "04", title: "Handover", time: "Final walkthrough", text: "A final walkthrough, a clean home and your warranty documents." },
+  {
+    step: "1",
+    title: "Design",
+    heading: "Design: drafted and selected before it\u2019s priced to build",
+    points: [
+      { title: "Brief and concept", text: "What you want to change, measured and drawn." },
+      { title: "Selections", text: "Fixtures, fittings and finishes chosen with you." },
+      { title: "Architectural drafting", text: "Plans, elevations and set-out documented." },
+      { title: "Final estimate", text: "Priced from the documented scope." },
+    ],
+    // Generated atmosphere image (not a Forefront project).
+    image: { src: "/images/generated/design-construct-hero.jpg", alt: "Renovation plans with tile, timber, stone and tapware samples on a design table" },
+    caption: "Illustrative: plans and selections, not a client\u2019s home.",
+  },
+  {
+    step: "2",
+    title: "Contract and pre-construction readiness",
+    heading: "Contract, then everything ready to start",
+    points: [
+      { title: "Contract preparation", text: "Scope, drawings, selections and price in one package you review before signing." },
+      { title: "Approvals", text: "Building or planning approvals and reports, if the project needs them." },
+      { title: "Scheduling", text: "Materials pre-purchased, trades booked, and start and end dates allocated." },
+      { title: "Site preparation", text: "Access, parking and protection agreed." },
+    ],
+    image: { src: "/images/team/builders-van.jpg", alt: "Two of the Forefront team beside the company van", position: "50% 42%" },
+    caption: "Contract signed, trades booked: the team ready to start on site.",
+  },
+  {
+    step: "3",
+    title: "Construct",
+    heading: "Construct: built in stages, each checked before it\u2019s covered",
+    // TODO(client): confirm a project WhatsApp group runs on every job.
+    points: [
+      { title: "Built in stages", text: "Each stage is checked before it\u2019s covered." },
+      { title: "Trades run for you", text: "We book and run every trade on site." },
+      { title: "Kept in the loop", text: "Nicole in Brookfield had a WhatsApp group with our team and called it \u201Cvery, very important\u201D." },
+      { title: "Your timeframe", text: "Your programme, with dates, is set out in your contract." },
+    ],
+    image: { src: "/images/compare/craigieburn-kitchen-before.jpg", alt: "Kitchen during construction, Craigieburn" },
+    caption: "Craigieburn kitchen, during construction.",
+  },
+  {
+    step: "4",
+    title: "Handover",
+    heading: "Handover: walked through with you",
+    points: [
+      { title: "Final walkthrough", text: "The finished work inspected together." },
+      { title: "Outstanding items", text: "Listed, with how and when they\u2019ll be closed out." },
+      { title: "Final clean", text: "Before you move back in." },
+      { title: "Handover pack", text: "Certificates that apply, product and care information." },
+    ],
+    image: { src: "/images/compare/craigieburn-kitchen-after.jpg", alt: "Finished stone island kitchen with timber cabinetry, Craigieburn" },
+    caption: "The same Craigieburn kitchen, finished.",
+  },
 ];
-
-/**
- * Masonry gallery: real handover photography, laid out in three columns
- * (column 2 sits lower). "ratio" is the frame aspect (w/h) — images crop to fit.
- */
-export const projects = {
-  label: "Recent projects",
-  title: "Recent work in Footscray, Altona and Brookfield.",
-  intro: "Real projects, photographed after handover.",
-  link: { label: "All projects", href: "/projects/" },
-  // Four strong projects in one row (client feedback: page too long). The rest live on /projects/.
-  items: [
-    {
-      suburb: "Footscray",
-      title: "Five bedrooms, a pool and a studio",
-      scope: "Full renovation · Extension · Pool",
-      image: { src: "/images/projects/footscray/pool-extension.jpg", alt: "Rear extension and plunge pool, Footscray" },
-      href: "/projects/footscray/",
-    },
-    // Craigieburn and Bentleigh are private-preview only until the owner approves them (brief, Oct 2026).
-    {
-      suburb: "Brookfield",
-      title: "Laundry and kitchen, on time",
-      scope: "Laundry · Kitchen",
-      image: { src: "/images/projects/brookfield/laundry-wide.jpg", alt: "Laundry with front loaders and timber-look cupboards, Brookfield" },
-      href: "/projects/brookfield/",
-    },
-    {
-      suburb: "Altona",
-      title: "Black vanity, terrazzo floor",
-      scope: "Bathroom · Kitchen · Laundry",
-      image: { src: "/images/projects/altona/vanity.jpg", alt: "Black curved vanity with terrazzo, Altona" },
-      href: "/projects/altona/",
-    },
-    {
-      suburb: "Footscray",
-      title: "The weatherboard front, restored",
-      scope: "Facade · Landscaping",
-      image: { src: "/images/projects/footscray/facade.jpg", alt: "Restored weatherboard facade with picket fence, Footscray" },
-      href: "/projects/footscray/",
-    },
-  ],
-
-};
 
 export const guaranteesHeading = {
   label: "Our guarantees",
@@ -233,7 +242,7 @@ export const guarantees = [
   // TODO(client): state what each warranty covers (e.g. structural and workmanship defects).
   { icon: "license", title: "7-year construction warranty", text: "Seven years on the construction work, from a Registered Builder." },
   { icon: "handyman", title: "3-year maintenance warranty", text: "Three years of maintenance cover once the job is handed over." },
-  { icon: "gavel", title: "If a builder goes under", text: "Jobs over $16,000 carry domestic building insurance, which protects you if a builder dies, disappears or becomes insolvent. Registered Builder CDBU76389." },
+  { icon: "gavel", title: "If a builder goes under", text: "Eligible jobs over $20,000 contracted from 1 July 2026 are covered by Victoria's Home Warranty scheme (domestic building insurance before that), which can help if work is left incomplete or defective. Registered Builder CDBU76389." },
 ];
 
 export const offer = {
@@ -303,15 +312,15 @@ export const testimonial = {
 
 export const areas = {
   label: "Where we build",
-  title: "Renovation builders for Melbourne's inner west & north.",
-  text: "Our base is in Maribyrnong. Most of our work is in 42 suburbs across six councils, and we take on larger jobs further out too, like Craigieburn and Point Cook.",
+  title: homeSection("Built for Melbourne homes").title,
+  text: homeSection("Built for Melbourne homes").paras.join(" ").replace(" Visit our Areas We Service page for the full suburb list.", ""),
   link: { label: "Check your suburb", href: "/areas/" },
 };
 
 export const finalCta = {
-  label: "Start your project",
-  title: ["Start with a", "free home visit."],
-  // TODO(client): say what happens after booking (who confirms, how fast).
-  text: "The first visit is free. We walk the house with you and talk budget, and if what you want won't fit, we say so then. You only sign once you've seen the fixed price and the finish date.",
+  label: "Enquire",
+  title: ["Tell us about", "your project."],
+  // Steps and fees from the owner's preview r5.2 (content/pricing.ts).
+  text: "A short form to start. Here's what happens next.",
   primaryCta: { label: "Book a free consultation", href: "/book-a-consultation/" },
 };

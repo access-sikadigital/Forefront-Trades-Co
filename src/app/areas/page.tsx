@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { copyFor } from "@/content/page-copy";
+import { withCopyMeta } from "@/lib/copy-meta";
 import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitLines } from "@/components/motion/SplitLines";
@@ -11,12 +13,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { outsideArea, serviceArea, suburbCount, suburbSlug } from "@/content/areas";
 import { pagesForSuburb } from "@/content/suburbs";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCopyMeta("/areas/", {
   title: "Areas We Service | Renovation Builders Melbourne",
   description:
     "Forefront Trades Co. builds across 42 suburbs in Melbourne's inner west and north: Maribyrnong, Moonee Valley, Merri-bek, Hobsons Bay, Brimbank and the City of Melbourne.",
   alternates: { canonical: "/areas/" },
-};
+});
+
+const copy = copyFor("/areas/")!;
 
 const short: Record<string, string> = {
   "kitchen-renovations": "Kitchen",
@@ -39,11 +43,11 @@ export default function AreasPage() {
               </Eyebrow>
             </Reveal>
             <SplitLines as="h1" className="mt-6 font-display text-h2 font-bold text-pretty text-white max-sm:text-[length:min(2.5rem,9.2vw)]">
-              {"Do we build in your suburb?"}
+              {copy.h1}
             </SplitLines>
             <Reveal className="mt-6">
               <p className="text-lead text-white/80">
-                Our base is in Maribyrnong. We build across {suburbCount} suburbs in Melbourne&rsquo;s inner west and north, in six councils.
+                {copy.intro.join(" ")} We build across {suburbCount} suburbs in six councils.
               </p>
             </Reveal>
           </div>
