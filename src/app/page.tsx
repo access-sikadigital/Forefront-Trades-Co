@@ -38,7 +38,7 @@ export default function HomePage() {
       <Areas />
       <Guarantees />
       <Testimonial />
-      <FaqSection faqs={[...copy.faqs, ...commonFaqs]} title="Common questions." />
+      <FaqSection faqs={[...copy.faqs, ...commonFaqs]} title="Common questions." showServices={false} />
       <FinalCta title={copy.cta?.title} text={copy.cta?.text} />
     </>
   );

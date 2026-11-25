@@ -17,14 +17,14 @@ export const about = {
   meta: {
     title: "About Us",
     description:
-      "A Maribyrnong design & construct builder doing Renovations & Extensions across Melbourne's inner west and north on a fixed price. Registered Builder CDBU76389.",
+      "A Maribyrnong design & construct builder doing renovations and extensions across Melbourne's inner west and north on a fixed price. Registered Builder CDBU76389.",
   },
   hero: {
     h1: "About Forefront Trades Co.",
     title: ["Builders who sign", "up to a finish date."],
     intro:
-      "We design and build Renovations & Extensions across Melbourne's inner west and north, on a fixed-price contract.",
-    image: { src: "/images/team/builders-van.jpg", alt: "Two Forefront Trades Co. builders beside the company van" },
+      "We design and build renovations and extensions across Melbourne's inner west and north, on a fixed-price contract.",
+    // No background photo (owner's feedback): plain charcoal hero.
     // TODO(client): confirm 30+ years.
     facts: [
       { label: "Based in", value: "Maribyrnong" },
@@ -60,7 +60,7 @@ export const designAndConstruct = {
   meta: {
     title: "Design & Construct Builders Melbourne",
     description:
-      "Design and construct Renovations & Extensions across Melbourne's inner west and north. Design, engineering, permits and build on one fixed-price contract.",
+      "Design and construct renovations and extensions across Melbourne's inner west and north. Design, engineering, permits and build on one fixed-price contract.",
   },
   hero: {
     h1: "Design and construct builders in Melbourne",

@@ -83,7 +83,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Built for Melbourne homes",
         paras: [
-          "Forefront Trades Co. is based in Maribyrnong and works across its defined Melbourne service area, including neighbourhoods such as Footscray, Yarraville, Essendon, Brunswick and Newport. Older homes, changing family needs and site constraints call for decisions that suit the individual property.",
+          "Forefront Trades Co. is based in Maribyrnong and works across Melbourne’s inner west and north, in suburbs such as Footscray, Yarraville, Essendon, Brunswick and Newport. Older homes, changing family needs and site constraints call for decisions that suit the individual property.",
           "We consider the existing building, access, structural requirements and any applicable planning controls before suggesting a way forward. Visit our Areas We Service page for the full suburb list.",
         ],
         items: [],
@@ -92,7 +92,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See the work, not just the promises",
         paras: [
-          "Explore our project gallery to get a feel for the types of spaces and finishes we work with. Project photographs are most useful when paired with a clear explanation of the original brief, the construction scope and the outcome.",
+          "Real jobs we’ve finished across Melbourne, from single rooms to whole homes.",
         ],
         items: [],
         steps: [],
@@ -302,7 +302,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See the details in a finished room",
         paras: [
-          "Use the Altona gallery to get a sense of how the finishes and fittings meet. Make a note of what you want to use as a reference and bring a photo of the space you have now.",
+          "Our Altona bathroom shows how the finishes and fittings meet up close. Note the details you like and bring a photo of the room you have now.",
         ],
         items: [],
         steps: [],
@@ -351,7 +351,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Bring the wet areas into the same discussion",
         paras: [
-          "The Footscray project library includes bathroom and laundry footage. It can help you think about the work you’d like to consider together and what you need each room to do afterwards.",
+          "Our Footscray renovation included the main bathroom, ensuite and laundry in one job. If you’re changing more than one wet area, it often makes sense to plan them together, and we’ll talk through what each room needs to do.",
         ],
         items: [],
         steps: [],
@@ -396,7 +396,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Bring the wet areas into the same discussion",
         paras: [
-          "The Footscray project library includes bathroom and laundry footage. It can help you think about the work you’d like to consider together and what you need each room to do afterwards.",
+          "Our Footscray renovation included the main bathroom, ensuite and laundry in one job. If you’re changing more than one wet area, it often makes sense to plan them together, and we’ll talk through what each room needs to do.",
         ],
         items: [],
         steps: [],
@@ -441,7 +441,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Bring the wet areas into the same discussion",
         paras: [
-          "The Footscray project library includes bathroom and laundry footage. It can help you think about the work you’d like to consider together and what you need each room to do afterwards.",
+          "Our Footscray renovation included the main bathroom, ensuite and laundry in one job. If you’re changing more than one wet area, it often makes sense to plan them together, and we’ll talk through what each room needs to do.",
         ],
         items: [],
         steps: [],
@@ -486,7 +486,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Take a closer look at a completed wet area",
         paras: [
-          "In the Altona gallery, consider the relationship between the fittings and the wall and floor finishes. Bring an image if there’s a detail you’d like to discuss against the conditions in your own room.",
+          "Our Altona bathroom pairs a black curved vanity and dark tapware with white finger tiles and terrazzo. If there’s a detail like that you want, bring a photo and we’ll talk it through against your own room.",
         ],
         items: [],
         steps: [],
@@ -531,7 +531,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Take a closer look at a completed wet area",
         paras: [
-          "In the Altona gallery, consider the relationship between the fittings and the wall and floor finishes. Bring an image if there’s a detail you’d like to discuss against the conditions in your own room.",
+          "Our Altona bathroom pairs a black curved vanity and dark tapware with white finger tiles and terrazzo. If there’s a detail like that you want, bring a photo and we’ll talk it through against your own room.",
         ],
         items: [],
         steps: [],
@@ -621,7 +621,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at how the room fits together",
         paras: [
-          "Use our Altona project gallery to see a completed bathroom context. Compare the wide view with the close-ups, then save the details that speak to the priorities in your brief.",
+          "Our finished Altona bathroom fits terrazzo, finger tiles, a bath and a walk-in shower into one room. Save the details you like and bring them to the first visit.",
         ],
         items: [],
         steps: [],
@@ -666,7 +666,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Bring the wet areas into the same discussion",
         paras: [
-          "The Footscray project library includes bathroom and laundry footage. It can help you think about the work you’d like to consider together and what you need each room to do afterwards.",
+          "Our Footscray renovation included the main bathroom, ensuite and laundry in one job. If you’re changing more than one wet area, it often makes sense to plan them together, and we’ll talk through what each room needs to do.",
         ],
         items: [],
         steps: [],
@@ -695,7 +695,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Read the Footscray project as a set of rooms",
         paras: [
-          "Our Footscray project library records the bathroom and laundry together. Ask which details you can apply to your own layout, such as the way you want the doorways to meet or the amount of storage you need in each room.",
+          "Our Footscray renovation did the bathrooms and laundry together. Ask which details you can apply to your own layout, such as the way you want the doorways to meet or the amount of storage you need in each room.",
         ],
         items: [],
         steps: [],
@@ -756,7 +756,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at how the room fits together",
         paras: [
-          "Use our Altona project gallery to see a completed bathroom context. Compare the wide view with the close-ups, then save the details that speak to the priorities in your brief.",
+          "Our finished Altona bathroom fits terrazzo, finger tiles, a bath and a walk-in shower into one room. Save the details you like and bring them to the first visit.",
         ],
         items: [],
         steps: [],
@@ -801,7 +801,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Take a closer look at a completed wet area",
         paras: [
-          "In the Altona gallery, consider the relationship between the fittings and the wall and floor finishes. Bring an image if there’s a detail you’d like to discuss against the conditions in your own room.",
+          "Our Altona bathroom pairs a black curved vanity and dark tapware with white finger tiles and terrazzo. If there’s a detail like that you want, bring a photo and we’ll talk it through against your own room.",
         ],
         items: [],
         steps: [],
@@ -846,7 +846,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Take a closer look at a completed wet area",
         paras: [
-          "In the Altona gallery, consider the relationship between the fittings and the wall and floor finishes. Bring an image if there’s a detail you’d like to discuss against the conditions in your own room.",
+          "Our Altona bathroom pairs a black curved vanity and dark tapware with white finger tiles and terrazzo. If there’s a detail like that you want, bring a photo and we’ll talk it through against your own room.",
         ],
         items: [],
         steps: [],
@@ -891,7 +891,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at how the room fits together",
         paras: [
-          "Use our Altona project gallery to see a completed bathroom context. Compare the wide view with the close-ups, then save the details that speak to the priorities in your brief.",
+          "Our finished Altona bathroom fits terrazzo, finger tiles, a bath and a walk-in shower into one room. Save the details you like and bring them to the first visit.",
         ],
         items: [],
         steps: [],
@@ -936,7 +936,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Take a closer look at a completed wet area",
         paras: [
-          "In the Altona gallery, consider the relationship between the fittings and the wall and floor finishes. Bring an image if there’s a detail you’d like to discuss against the conditions in your own room.",
+          "Our Altona bathroom pairs a black curved vanity and dark tapware with white finger tiles and terrazzo. If there’s a detail like that you want, bring a photo and we’ll talk it through against your own room.",
         ],
         items: [],
         steps: [],
@@ -981,7 +981,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Bring the wet areas into the same discussion",
         paras: [
-          "The Footscray project library includes bathroom and laundry footage. It can help you think about the work you’d like to consider together and what you need each room to do afterwards.",
+          "Our Footscray renovation included the main bathroom, ensuite and laundry in one job. If you’re changing more than one wet area, it often makes sense to plan them together, and we’ll talk through what each room needs to do.",
         ],
         items: [],
         steps: [],
@@ -1026,7 +1026,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Bring the wet areas into the same discussion",
         paras: [
-          "The Footscray project library includes bathroom and laundry footage. It can help you think about the work you’d like to consider together and what you need each room to do afterwards.",
+          "Our Footscray renovation included the main bathroom, ensuite and laundry in one job. If you’re changing more than one wet area, it often makes sense to plan them together, and we’ll talk through what each room needs to do.",
         ],
         items: [],
         steps: [],
@@ -1071,7 +1071,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Take a closer look at a completed wet area",
         paras: [
-          "In the Altona gallery, consider the relationship between the fittings and the wall and floor finishes. Bring an image if there’s a detail you’d like to discuss against the conditions in your own room.",
+          "Our Altona bathroom pairs a black curved vanity and dark tapware with white finger tiles and terrazzo. If there’s a detail like that you want, bring a photo and we’ll talk it through against your own room.",
         ],
         items: [],
         steps: [],
@@ -1116,7 +1116,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at how the room fits together",
         paras: [
-          "Use our Altona project gallery to see a completed bathroom context. Compare the wide view with the close-ups, then save the details that speak to the priorities in your brief.",
+          "Our finished Altona bathroom fits terrazzo, finger tiles, a bath and a walk-in shower into one room. Save the details you like and bring them to the first visit.",
         ],
         items: [],
         steps: [],
@@ -1161,7 +1161,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at how the room fits together",
         paras: [
-          "Use our Altona project gallery to see a completed bathroom context. Compare the wide view with the close-ups, then save the details that speak to the priorities in your brief.",
+          "Our finished Altona bathroom fits terrazzo, finger tiles, a bath and a walk-in shower into one room. Save the details you like and bring them to the first visit.",
         ],
         items: [],
         steps: [],
@@ -1206,7 +1206,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at how the room fits together",
         paras: [
-          "Use our Altona project gallery to see a completed bathroom context. Compare the wide view with the close-ups, then save the details that speak to the priorities in your brief.",
+          "Our finished Altona bathroom fits terrazzo, finger tiles, a bath and a walk-in shower into one room. Save the details you like and bring them to the first visit.",
         ],
         items: [],
         steps: [],
@@ -1252,7 +1252,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at how the room fits together",
         paras: [
-          "Use our Altona project gallery to see a completed bathroom context. Compare the wide view with the close-ups, then save the details that speak to the priorities in your brief.",
+          "Our finished Altona bathroom fits terrazzo, finger tiles, a bath and a walk-in shower into one room. Save the details you like and bring them to the first visit.",
         ],
         items: [],
         steps: [],
@@ -1297,7 +1297,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Bring the wet areas into the same discussion",
         paras: [
-          "The Footscray project library includes bathroom and laundry footage. It can help you think about the work you’d like to consider together and what you need each room to do afterwards.",
+          "Our Footscray renovation included the main bathroom, ensuite and laundry in one job. If you’re changing more than one wet area, it often makes sense to plan them together, and we’ll talk through what each room needs to do.",
         ],
         items: [],
         steps: [],
@@ -1342,7 +1342,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Take a closer look at a completed wet area",
         paras: [
-          "In the Altona gallery, consider the relationship between the fittings and the wall and floor finishes. Bring an image if there’s a detail you’d like to discuss against the conditions in your own room.",
+          "Our Altona bathroom pairs a black curved vanity and dark tapware with white finger tiles and terrazzo. If there’s a detail like that you want, bring a photo and we’ll talk it through against your own room.",
         ],
         items: [],
         steps: [],
@@ -1387,7 +1387,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Take a closer look at a completed wet area",
         paras: [
-          "In the Altona gallery, consider the relationship between the fittings and the wall and floor finishes. Bring an image if there’s a detail you’d like to discuss against the conditions in your own room.",
+          "Our Altona bathroom pairs a black curved vanity and dark tapware with white finger tiles and terrazzo. If there’s a detail like that you want, bring a photo and we’ll talk it through against your own room.",
         ],
         items: [],
         steps: [],
@@ -1853,7 +1853,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished home as a visual reference",
+        title: "See a finished renovation and extension",
         paras: [
           "The Footscray renovation shows how the main living spaces can relate to the garden. Consider where you want your own extension to meet the outdoors and what you want the rooms you keep to do.",
         ],
@@ -1892,7 +1892,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at the connection to the outdoors",
         paras: [
-          "In the Footscray project gallery, see how the outlook and glazing carry the living space towards the outdoor area. Bring photographs of the opening or view you want to create in your own home.",
+          "Our Footscray job added a two-storey rear extension that opens onto a covered alfresco and pool. Bring photos of the opening or view you want to create in your own home.",
         ],
         items: [],
         steps: [],
@@ -1927,7 +1927,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished home as a visual reference",
+        title: "See a finished renovation and extension",
         paras: [
           "The Footscray renovation shows how the main living spaces can relate to the garden. Consider where you want your own extension to meet the outdoors and what you want the rooms you keep to do.",
         ],
@@ -2023,7 +2023,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at the connection to the outdoors",
         paras: [
-          "In the Footscray project gallery, see how the outlook and glazing carry the living space towards the outdoor area. Bring photographs of the opening or view you want to create in your own home.",
+          "Our Footscray job added a two-storey rear extension that opens onto a covered alfresco and pool. Bring photos of the opening or view you want to create in your own home.",
         ],
         items: [],
         steps: [],
@@ -2150,7 +2150,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished home as a visual reference",
+        title: "See a finished renovation and extension",
         paras: [
           "The Footscray renovation shows how the main living spaces can relate to the garden. Consider where you want your own extension to meet the outdoors and what you want the rooms you keep to do.",
         ],
@@ -2244,7 +2244,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Aberfeldie property",
+        title: "Planning checks for an Aberfeldie property",
         paras: [
           "Moonee Valley City Council publishes heritage information. Use the property report to check the controls at your address, then confirm with council how they apply to your proposal.",
         ],
@@ -2254,7 +2254,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2289,7 +2289,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Airport West property",
+        title: "Planning checks for an Airport West property",
         paras: [
           "Moonee Valley City Council publishes heritage information. Use the property report to check the controls at your address, then confirm with council how they apply to your proposal.",
         ],
@@ -2299,7 +2299,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2334,7 +2334,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Albion property",
+        title: "Planning checks for an Albion property",
         paras: [
           "Brimbank City Council provides guidance on heritage places and proposed work. Check the specific address before assuming what may be retained, removed or extended.",
         ],
@@ -2379,7 +2379,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Altona North property",
+        title: "Planning checks for an Altona North property",
         paras: [
           "Hobsons Bay’s housing and neighbourhood character guidance can help you frame questions about an addition. Check the property report for the relevant council, zones and overlays.",
         ],
@@ -2387,9 +2387,9 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Visit the Altona project gallery",
+        title: "See our Altona renovation",
         paras: [
-          "For a close look at the details of a renovation, start with the Altona gallery. If you’re planning changes to several rooms, note any materials or fittings you would want to use in more than one space.",
+          "Our Altona renovation covered the bathroom, kitchen and laundry. If you’re changing several rooms, note any materials or fittings you’d like to carry through more than one space.",
         ],
         items: [],
         steps: [],
@@ -2424,7 +2424,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Ascot Vale property",
+        title: "Planning checks for an Ascot Vale property",
         paras: [
           "Moonee Valley City Council publishes heritage information. Use the property report to check the controls at your address, then confirm with council how they apply to your proposal.",
         ],
@@ -2434,7 +2434,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2469,7 +2469,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Avondale Heights property",
+        title: "Planning checks for an Avondale Heights property",
         paras: [
           "Moonee Valley City Council publishes heritage information. Use the property report to check the controls at your address, then confirm with council how they apply to your proposal.",
         ],
@@ -2567,9 +2567,9 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Visit the Altona project gallery",
+        title: "See our Altona renovation",
         paras: [
-          "For a close look at the details of a renovation, start with the Altona gallery. If you’re planning changes to several rooms, note any materials or fittings you would want to use in more than one space.",
+          "Our Altona renovation covered the bathroom, kitchen and laundry. If you’re changing several rooms, note any materials or fittings you’d like to carry through more than one space.",
         ],
         items: [],
         steps: [],
@@ -2614,7 +2614,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2659,7 +2659,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2739,7 +2739,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Essendon North property",
+        title: "Planning checks for an Essendon North property",
         paras: [
           "Moonee Valley City Council publishes heritage information. Use the property report to check the controls at your address, then confirm with council how they apply to your proposal.",
         ],
@@ -2749,7 +2749,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2784,7 +2784,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Essendon West property",
+        title: "Planning checks for an Essendon West property",
         paras: [
           "Moonee Valley City Council publishes heritage information. Use the property report to check the controls at your address, then confirm with council how they apply to your proposal.",
         ],
@@ -2794,7 +2794,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2829,7 +2829,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Planning checks for a Essendon property",
+        title: "Planning checks for an Essendon property",
         paras: [
           "Moonee Valley City Council publishes heritage information. Use the property report to check the controls at your address, then confirm with council how they apply to your proposal.",
         ],
@@ -2839,7 +2839,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2884,7 +2884,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -2913,7 +2913,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look at the transition to the garden",
         paras: [
-          "In our Footscray project, the flooring and generous glazing carry a quiet palette through the open living area and draw the outside into view. The project gallery is a useful reference if you’re planning where to open up the back of your own home.",
+          "In our Footscray project, the flooring and generous glazing carry a quiet palette through the open living area and draw the outside into view. It’s worth a look if you’re planning where to open up the back of your own home.",
         ],
         items: [],
         steps: [],
@@ -2929,7 +2929,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3019,7 +3019,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3154,7 +3154,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3244,7 +3244,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3287,9 +3287,9 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Visit the Altona project gallery",
+        title: "See our Altona renovation",
         paras: [
-          "For a close look at the details of a renovation, start with the Altona gallery. If you’re planning changes to several rooms, note any materials or fittings you would want to use in more than one space.",
+          "Our Altona renovation covered the bathroom, kitchen and laundry. If you’re changing several rooms, note any materials or fittings you’d like to carry through more than one space.",
         ],
         items: [],
         steps: [],
@@ -3334,7 +3334,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3379,7 +3379,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3424,7 +3424,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3469,7 +3469,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3514,7 +3514,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3559,7 +3559,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3602,9 +3602,9 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Visit the Altona project gallery",
+        title: "See our Altona renovation",
         paras: [
-          "For a close look at the details of a renovation, start with the Altona gallery. If you’re planning changes to several rooms, note any materials or fittings you would want to use in more than one space.",
+          "Our Altona renovation covered the bathroom, kitchen and laundry. If you’re changing several rooms, note any materials or fittings you’d like to carry through more than one space.",
         ],
         items: [],
         steps: [],
@@ -3647,9 +3647,9 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Visit the Altona project gallery",
+        title: "See our Altona renovation",
         paras: [
-          "For a close look at the details of a renovation, start with the Altona gallery. If you’re planning changes to several rooms, note any materials or fittings you would want to use in more than one space.",
+          "Our Altona renovation covered the bathroom, kitchen and laundry. If you’re changing several rooms, note any materials or fittings you’d like to carry through more than one space.",
         ],
         items: [],
         steps: [],
@@ -3694,7 +3694,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -3739,7 +3739,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -4099,7 +4099,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See how the Footscray rooms connect",
         paras: [
-          "Our Footscray renovation gallery shows how flooring, glazing and a quiet palette can connect the main living area to the garden. Use it to decide what you want to bring into your own brief.",
+          "In our Footscray renovation, herringbone floors and wide glass doors run the main living area straight out to the garden. If you want the same connection at the back of your home, tell us at the first visit.",
         ],
         items: [],
         steps: [],
@@ -4150,9 +4150,9 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use the Footscray gallery as a reference",
+        title: "See how the Footscray kitchen opens to the living area",
         paras: [
-          "Look at the way the kitchen relates to the wider living area. Bring your own plan or photographs and tell us which aspects of that connection you’d like to explore.",
+          "In our Footscray renovation, the island kitchen opens straight onto the dining and living area. Bring your own plan or a few photos and tell us how you’d like your kitchen to connect to the rest of the house.",
         ],
         items: [],
         steps: [],
@@ -4246,7 +4246,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look beyond the kitchen joinery",
         paras: [
-          "In the Footscray project gallery, look at the transitions between the main rooms as well as the cabinetry. Save a view that shows the kind of connection you’d like to discuss.",
+          "Our Footscray kitchen is an island kitchen open to the dining and living area. Look at how the rooms run together as well as the cabinetry, and bring a photo of the kind of connection you want.",
         ],
         items: [],
         steps: [],
@@ -4381,7 +4381,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look beyond the kitchen joinery",
         paras: [
-          "In the Footscray project gallery, look at the transitions between the main rooms as well as the cabinetry. Save a view that shows the kind of connection you’d like to discuss.",
+          "Our Footscray kitchen is an island kitchen open to the dining and living area. Look at how the rooms run together as well as the cabinetry, and bring a photo of the kind of connection you want.",
         ],
         items: [],
         steps: [],
@@ -4426,7 +4426,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look beyond the kitchen joinery",
         paras: [
-          "In the Footscray project gallery, look at the transitions between the main rooms as well as the cabinetry. Save a view that shows the kind of connection you’d like to discuss.",
+          "Our Footscray kitchen is an island kitchen open to the dining and living area. Look at how the rooms run together as well as the cabinetry, and bring a photo of the kind of connection you want.",
         ],
         items: [],
         steps: [],
@@ -4455,7 +4455,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Follow the view from the island",
         paras: [
-          "Use the project gallery to follow the finishes through the open living area towards the outdoors. Then map your own route from the front door to the fridge and from the bench to the table. Those paths can help decide where an island or wall of storage belongs.",
+          "In our Footscray project, the finishes run through the open living area to the outdoors. Map your own route from the front door to the fridge and from the bench to the table. Those paths can help decide where an island or wall of storage belongs.",
         ],
         items: [],
         steps: [],
@@ -4649,7 +4649,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished kitchen to test the brief",
+        title: "See a finished kitchen first",
         paras: [
           "Start with the wider photos of the Footscray kitchen and living area. Note the relationship between joinery, flooring and daylight. Then consider which of those ideas would suit your rooms and what would need to change.",
         ],
@@ -4694,7 +4694,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished kitchen to test the brief",
+        title: "See a finished kitchen first",
         paras: [
           "Start with the wider photos of the Footscray kitchen and living area. Note the relationship between joinery, flooring and daylight. Then consider which of those ideas would suit your rooms and what would need to change.",
         ],
@@ -4739,7 +4739,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished kitchen to test the brief",
+        title: "See a finished kitchen first",
         paras: [
           "Start with the wider photos of the Footscray kitchen and living area. Note the relationship between joinery, flooring and daylight. Then consider which of those ideas would suit your rooms and what would need to change.",
         ],
@@ -4786,7 +4786,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look beyond the kitchen joinery",
         paras: [
-          "In the Footscray project gallery, look at the transitions between the main rooms as well as the cabinetry. Save a view that shows the kind of connection you’d like to discuss.",
+          "Our Footscray kitchen is an island kitchen open to the dining and living area. Look at how the rooms run together as well as the cabinetry, and bring a photo of the kind of connection you want.",
         ],
         items: [],
         steps: [],
@@ -4874,7 +4874,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished kitchen to test the brief",
+        title: "See a finished kitchen first",
         paras: [
           "Start with the wider photos of the Footscray kitchen and living area. Note the relationship between joinery, flooring and daylight. Then consider which of those ideas would suit your rooms and what would need to change.",
         ],
@@ -4921,7 +4921,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look beyond the kitchen joinery",
         paras: [
-          "In the Footscray project gallery, look at the transitions between the main rooms as well as the cabinetry. Save a view that shows the kind of connection you’d like to discuss.",
+          "Our Footscray kitchen is an island kitchen open to the dining and living area. Look at how the rooms run together as well as the cabinetry, and bring a photo of the kind of connection you want.",
         ],
         items: [],
         steps: [],
@@ -4964,7 +4964,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished kitchen to test the brief",
+        title: "See a finished kitchen first",
         paras: [
           "Start with the wider photos of the Footscray kitchen and living area. Note the relationship between joinery, flooring and daylight. Then consider which of those ideas would suit your rooms and what would need to change.",
         ],
@@ -5011,7 +5011,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Look beyond the kitchen joinery",
         paras: [
-          "In the Footscray project gallery, look at the transitions between the main rooms as well as the cabinetry. Save a view that shows the kind of connection you’d like to discuss.",
+          "Our Footscray kitchen is an island kitchen open to the dining and living area. Look at how the rooms run together as well as the cabinetry, and bring a photo of the kind of connection you want.",
         ],
         items: [],
         steps: [],
@@ -5054,7 +5054,7 @@ export const pageCopy: Record<string, PageCopy> = {
         steps: [],
       },
       {
-        title: "Use a finished kitchen to test the brief",
+        title: "See a finished kitchen first",
         paras: [
           "Start with the wider photos of the Footscray kitchen and living area. Note the relationship between joinery, flooring and daylight. Then consider which of those ideas would suit your rooms and what would need to change.",
         ],
@@ -5150,7 +5150,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Start a brief with the room you use",
         paras: [
-          "Our Footscray project includes dedicated laundry footage. Bring the dimensions and model details for your own appliances and show us where you’d like storage or a clearer path through the room.",
+          "Our Footscray renovation includes a laundry with a long white benchtop. Bring the dimensions and model details for your own appliances and show us where you’d like storage or a clearer path through the room.",
         ],
         items: [],
         steps: [],
@@ -5195,7 +5195,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "See the Footscray laundry in context",
         paras: [
-          "The Footscray project library includes the laundry and bathroom together. If those spaces are part of one renovation for you, use the footage to decide which functions and finishes you want to carry between them.",
+          "Our Footscray renovation did the laundry and bathrooms together. If those rooms are part of one renovation for you, think about which functions and finishes you want to carry between them.",
         ],
         items: [],
         steps: [],
@@ -5447,17 +5447,17 @@ export const pageCopy: Record<string, PageCopy> = {
     ],
     sections: [
       {
-        title: "Footscray · Light through the living areas",
+        title: "Footscray – Home Renovation & Extension",
         paras: [
-          "In Footscray, a quiet material palette and wide timber boards connect the living spaces. Follow the project through the kitchen and out towards the private outdoor area to see how those spaces relate.",
+          "In Footscray, herringbone timber floors and a quiet palette connect the living spaces. Follow the project through the island kitchen and out to the covered alfresco and pool.",
         ],
         items: [],
         steps: [],
       },
       {
-        title: "Altona · A closer look at a bathroom renovation",
+        title: "Altona – Bathroom, Kitchen & Laundry Renovation",
         paras: [
-          "Use the Altona gallery to think about how a wet area comes together. Look across the room, then at the junctions around cabinetry, fittings and wall finishes. Those details can help you explain what you want from your own bathroom.",
+          "Look across the Altona bathroom first, then at where the cabinetry, fittings and wall finishes meet. Details like these help you explain what you want from your own bathroom.",
         ],
         items: [],
         steps: [],
@@ -5481,7 +5481,7 @@ export const pageCopy: Record<string, PageCopy> = {
   "/projects/altona/": {
     seoTitle: "Altona Bathroom Renovation Project | Forefront Trades Co.",
     meta: "Browse the Forefront Trades Co. project gallery in Altona and see what to look for as you plan your own bathroom renovation.",
-    h1: "Altona bathroom renovation gallery",
+    h1: "Altona – Bathroom, Kitchen & Laundry Renovation",
     intro: [
       "A bathroom can look very different from one viewpoint to the next. Start with the wider images from our Altona project, then move in close to see how the fittings and finishes sit together.",
     ],
@@ -5521,7 +5521,7 @@ export const pageCopy: Record<string, PageCopy> = {
   "/projects/bentleigh/": {
     seoTitle: "Bentleigh Renovation Project | Forefront Trades Co.",
     meta: "Follow the before and after walkthrough from Forefront Trades Co.’s Bentleigh renovation and see how to read a whole-home transformation.",
-    h1: "Bentleigh renovation in before and after views",
+    h1: "Bentleigh – Kitchen & Bathroom Renovation",
     intro: [
       "A before-and-after walkthrough lets you get your bearings before looking at the finished rooms. Our Bentleigh project is recorded at several stages, with a separate walkthrough for a wider look at the property.",
     ],
@@ -5561,9 +5561,9 @@ export const pageCopy: Record<string, PageCopy> = {
   "/projects/brookfield/": {
     seoTitle: "Brookfield Homeowner Project Story | Forefront Trades Co.",
     meta: "Hear a Brookfield homeowner’s perspective on working with Forefront Trades Co. and consider what you want from your own building project.",
-    h1: "Brookfield project · the homeowner’s perspective",
+    h1: "Brookfield – Laundry & Kitchen Renovation",
     intro: [
-      "The Brookfield project is told through the homeowner’s recorded testimonial. Their account sits alongside the project gallery so you can consider the experience of having building work done at home.",
+      "Nicole had her laundry and kitchen renovated in Brookfield. Her video sits alongside the photos below, so you can hear what having building work done at home was like.",
     ],
     sections: [
       {
@@ -5585,7 +5585,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Find more project examples",
         paras: [
-          "If you’d like to see how finishes and layouts come together, move from this homeowner story to the Footscray renovation gallery.",
+          "To see how finishes and layouts come together on a larger job, look at our Footscray home renovation and extension.",
         ],
         items: [],
         steps: [],
@@ -5633,7 +5633,7 @@ export const pageCopy: Record<string, PageCopy> = {
   "/projects/craigieburn/": {
     seoTitle: "Craigieburn Project | Forefront Trades Co.",
     meta: "Forefront Trades Co.’s Craigieburn project page with links to completed project galleries and help planning a renovation brief.",
-    h1: "Craigieburn project",
+    h1: "Craigieburn – Home Renovation & Extension",
     intro: [
       "The Craigieburn project is part of our planned project gallery. In the meantime, see the completed Footscray and Altona galleries for examples you can use when planning your own renovation.",
     ],
@@ -5665,9 +5665,9 @@ export const pageCopy: Record<string, PageCopy> = {
   "/projects/footscray/": {
     seoTitle: "Footscray Home Renovation Project | Forefront Trades Co.",
     meta: "Explore a Forefront Trades Co. renovation in Footscray with timber floors, soft finishes and a connection from living areas to the outdoors.",
-    h1: "A Footscray renovation with a quieter palette",
+    h1: "Footscray – Home Renovation & Extension",
     intro: [
-      "Daylight and a restrained set of finishes give this Footscray home a relaxed feel. Wide timber floorboards carry the eye through the open living spaces, with soft neutral tones and timber accents warming the rooms.",
+      "Daylight and a restrained set of finishes give this Footscray home a relaxed feel. Herringbone timber floors carry the eye through the open living spaces, with soft neutral tones and timber accents warming the rooms.",
     ],
     sections: [
       {
@@ -5681,7 +5681,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "A closer look at the rooms people use every day",
         paras: [
-          "The project library includes dedicated views of the kitchen, bathroom and laundry. Start with the wide shots to see how each room is organised, then look more closely at the junctions between the joinery, fixtures and finishes.",
+          "The gallery below covers the kitchen, bathrooms and laundry. Start with the wide shots to see how each room is laid out, then look closely at where the joinery, fixtures and finishes meet.",
         ],
         items: [],
         steps: [],
@@ -5705,7 +5705,7 @@ export const pageCopy: Record<string, PageCopy> = {
   "/projects/west-footscray/": {
     seoTitle: "West Footscray Renovation Story | Forefront Trades Co.",
     meta: "Hear the homeowner’s perspective on a Forefront Trades Co. project in West Footscray and prepare questions for your own renovation.",
-    h1: "A West Footscray homeowner’s renovation story",
+    h1: "West Footscray – Bathroom & Laundry Renovation",
     intro: [
       "You can see the finish in a photograph. Hearing from the person who lived through the work gives you a different way to judge what matters before you start your own renovation.",
     ],
@@ -5761,7 +5761,7 @@ export const pageCopy: Record<string, PageCopy> = {
       {
         title: "Watch the homeowner stories",
         paras: [
-          "The Footscray, West Footscray and Brookfield project footage gives homeowners a chance to describe their experience in their own words. Watch the story that’s closest to the kind of work you’re considering, then look at the wider project gallery.",
+          "Our client videos from Brookfield, West Footscray and Point Cook let homeowners describe their experience in their own words. Watch the one closest to the work you’re considering, then look through the project galleries.",
         ],
         items: [],
         steps: [],

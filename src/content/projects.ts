@@ -37,12 +37,12 @@ export const projectsHub = {
   meta: {
     title: "Projects: Renovations & Extensions",
     description:
-      "Recent Renovations & Extensions in Footscray, Craigieburn and Altona, photographed after handover. Kitchens, bathrooms, laundries and full homes.",
+      "Recent renovations and extensions in Footscray, Altona, Brookfield and West Footscray. Kitchens, bathrooms, laundries and full homes.",
   },
   hero: {
     h1: "Recent Renovations & Extensions in Melbourne",
     title: ["Every home here", "is one we built."],
-    intro: "Three recent jobs, from a bathroom, kitchen and laundry in Altona to a whole house and pool in Footscray.",
+    intro: "Four recent jobs, from a laundry and kitchen in Brookfield to a whole house and pool in Footscray.",
     image: p("footscray/pool-extension.jpg", "Rear extension and plunge pool, Footscray"),
   } satisfies HeroData,
 };
@@ -52,7 +52,7 @@ export const projectList: Project[] = [
     slug: "footscray",
     approved: true,
     suburb: "Footscray",
-    title: "Pool out the back",
+    title: "Footscray – Home Renovation & Extension",
     scope: "Full renovation · Extension · Pool",
     summary: "Whole house renovated, plus a two-storey extension, plunge pool and studio.",
     cover: p("footscray/rear-extension.jpg", "Two-storey weatherboard rear extension beside a plunge pool, Footscray"),
@@ -86,7 +86,7 @@ export const projectList: Project[] = [
     slug: "craigieburn",
     approved: false, // private preview only (owner's brief, Oct 2026): photos and scope awaiting approval
     suburb: "Craigieburn",
-    title: "Two kitchens",
+    title: "Craigieburn – Home Renovation & Extension",
     scope: "Renovations & Extensions",
     summary: "Three bathrooms, two butler's pantries, an indoor pool and a six-person cedar sauna.",
     cover: c("craigieburn-kitchen-after.jpg", "Stone island kitchen with timber cabinetry, Craigieburn"),
@@ -134,7 +134,7 @@ export const projectList: Project[] = [
     slug: "altona",
     approved: true,
     suburb: "Altona",
-    title: "Black curved vanity",
+    title: "Altona – Bathroom, Kitchen & Laundry Renovation",
     scope: "Kitchen · Bathroom · Laundry",
     keyword: "bathroom renovation altona",
     summary: "A terrazzo and finger-tile bathroom, separate toilet, galley kitchen and laundry.",
@@ -166,7 +166,7 @@ export const projectList: Project[] = [
     slug: "bentleigh",
     approved: false, // private preview only (owner's brief, Oct 2026): photos and scope awaiting approval
     suburb: "Bentleigh",
-    title: "Kitchen, pantry and a double shower",
+    title: "Bentleigh – Kitchen & Bathroom Renovation",
     scope: "Kitchen · Bathroom · Robe",
     summary: "A stone kitchen with a butler's pantry and wine fridges, a double shower and a fitted walk-in robe.",
     // Stills from the Bentleigh before/after and real estate videos (content library).
@@ -196,9 +196,9 @@ export const projectList: Project[] = [
   },
   {
     slug: "brookfield",
-    approved: true, // TODO(client): confirm (stills from Nicole's published testimonial video)
+    approved: false, // Hidden (owner, 25 Nov): only low-res stills from Nicole's video. Her video stays in Client stories.
     suburb: "Brookfield",
-    title: "Nicole's laundry and kitchen",
+    title: "Brookfield – Laundry & Kitchen Renovation",
     scope: "Laundry · Kitchen",
     summary: "A laundry with the machines side by side under timber-look joinery, done with the kitchen. Finished on time.",
     // Stills from Nicole Brown's 4K testimonial video (content library).
@@ -225,9 +225,9 @@ export const projectList: Project[] = [
   },
   {
     slug: "west-footscray",
-    approved: true, // TODO(client): confirm (from Cassandra's published testimonial video)
+    approved: false, // Hidden (owner, 25 Nov): only a 358px video still. Cassandra's video stays in Client stories.
     suburb: "West Footscray",
-    title: "Three bathrooms, a laundry and the drains",
+    title: "West Footscray – Bathroom & Laundry Renovation",
     scope: "Bathrooms · Laundry · Drainage",
     summary: "Three bathrooms, the laundry and new drainage in one job, in a period weatherboard home.",
     // Only a low-resolution copy of Cassandra's video exists, so this page leads with her video, not a gallery.

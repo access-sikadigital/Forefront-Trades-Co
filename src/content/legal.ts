@@ -224,7 +224,7 @@ export const terms: LegalDoc = {
     {
       heading: "Intellectual property",
       paragraphs: [
-        `The content on this website, including text, photos, videos, designs, graphics and our logo, is owned by or licensed to ${site.name}. It is protected by copyright and other laws.`,
+        `The content on this website, including text, photos, videos, designs, graphics and our logo, is owned by ${site.name} or licensed to us. It is protected by copyright and other laws.`,
         "You may view and print pages for your own personal use. You must not copy, reproduce, publish, modify or use any content for commercial purposes without our written permission, except as allowed by law.",
       ],
     },
