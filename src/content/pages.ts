@@ -24,7 +24,8 @@ export const about = {
     title: ["Builders who sign", "up to a finish date."],
     intro:
       "We design and build renovations and extensions across Melbourne's inner west and north, on a fixed-price contract.",
-    // No background photo (owner's feedback): plain charcoal hero.
+    // Owner (25 Nov): a kitchen or bathroom photo, not plain black and not the van photo.
+    image: { src: "/images/projects/footscray/kitchen-wide.jpg", alt: "White kitchen and dining area with herringbone floor, Footscray" },
     // TODO(client): confirm 30+ years.
     facts: [
       { label: "Based in", value: "Maribyrnong" },

@@ -191,8 +191,9 @@ export const process = [
       { title: "Scheduling", text: "Materials pre-purchased, trades booked, and start and end dates allocated." },
       { title: "Site preparation", text: "Access, parking and protection agreed." },
     ],
-    image: { src: "/images/team/founders.jpg", alt: "The two founders of Forefront Trades Co. in a finished living room", position: "50% 40%" },
-    caption: "The founders: contract signed and trades booked before work starts on site.",
+    // Owner's request (Tony), kept after review on 25 Nov.
+    image: { src: "/images/team/builders-van.jpg", alt: "Two of the Forefront team beside the company van", position: "50% 42%" },
+    caption: "Contract signed, trades booked: the team ready to start on site.",
   },
   {
     step: "3",
