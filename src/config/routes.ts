@@ -103,7 +103,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 1,
     noindex: false,
-    built: true
+    built: false
   },
   {
     path: "/projects/brookfield/",
@@ -114,7 +114,7 @@ export const routes: Route[] = [
     kd: null,
     tier: 2,
     noindex: false,
-    built: true
+    built: false
   },
   {
     path: "/projects/craigieburn/",

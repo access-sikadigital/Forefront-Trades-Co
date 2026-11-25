@@ -14,8 +14,8 @@ import { projectList } from "@/content/projects";
 // Intro from the homepage copy (content/page-copy.ts).
 const seeTheWork = copyFor("/")?.sections.find((x) => x.title === "See the work, not just the promises")?.paras.join(" ") ?? "Real Forefront projects.";
 
-// Shown on the homepage as in the owner's preview r5.2 (Craigieburn and Bentleigh).
-const featured = ["craigieburn", "bentleigh"]
+// Owner's preview r5.2 had Craigieburn and Bentleigh; Footscray and Altona added (owner: "more projects to showcase").
+const featured = ["footscray", "craigieburn", "altona", "bentleigh"]
   .map((slug) => projectList.find((p) => p.slug === slug))
   .filter((p): p is (typeof projectList)[number] => Boolean(p));
 
@@ -39,7 +39,7 @@ export function CompletedProjects() {
     <section className="relative bg-cream-50 py-section">
       <div className="container-x">
         <SectionHeading
-          label="Completed projects"
+          label="Our work"
           title="Completed projects."
           intro={`${seeTheWork} Tap a project to see its photos.`}
         />
@@ -67,7 +67,7 @@ export function CompletedProjects() {
                 </span>
                 <span className="flex flex-1 flex-col p-6">
                   <span className="font-display text-h3 leading-tight font-bold text-purple">
-                    {p.suburb}
+                    {p.title}
                   </span>
                   <span className="mt-1 text-base text-ink/70">{p.scope}</span>
                   <span className="mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-purple/30 px-4 py-2 font-sans text-[0.95rem] font-semibold text-purple transition-colors group-hover:border-purple group-hover:bg-purple group-hover:text-white">

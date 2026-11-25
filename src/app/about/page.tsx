@@ -12,7 +12,7 @@ export const metadata: Metadata = withCopyMeta("/about/", {
   title: about.meta.title,
   description: about.meta.description,
   alternates: { canonical: "/about/" },
-  openGraph: { url: "/about/", images: [{ url: about.hero.image.src, alt: about.hero.image.alt }] },
+  openGraph: { url: "/about/", images: [{ url: about.story.image.src, alt: about.story.image.alt }] },
 });
 
 const copy = copyFor("/about/")!;

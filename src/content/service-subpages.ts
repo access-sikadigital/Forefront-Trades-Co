@@ -273,7 +273,7 @@ const ensuites: { page: ServicePage; extras: ServiceExtra[] } = {
     },
     proof: {
       label: "From our clients",
-      title: "After a shower and a laundry.",
+      title: "What our clients say.",
       // TODO(client): add more ensuite photos (only the Footscray ensuite is photographed so far).
       items: [],
       quotes: [quotes.chris, quotes.pat],

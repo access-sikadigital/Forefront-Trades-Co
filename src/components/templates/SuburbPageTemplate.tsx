@@ -104,7 +104,7 @@ export function SuburbPageTemplate({ service, suburb }: { service: SuburbService
       {projects.length > 0 && (
         <section className="relative bg-cream-50 py-section">
           <div className="container-x">
-            <SectionHeading label="Nearby work" title="Our nearest photographed jobs." intro={`We don't have a photographed job in ${name} yet. These are the closest.`} />
+            <SectionHeading label="Nearby work" title="Our nearest photographed jobs." intro={projects.some((pr) => pr.suburb === name) ? `Our photographed jobs in and near ${name}.` : `We don't have a photographed job in ${name} yet. These are the closest.`} />
             <Reveal as="ul" stagger={0.08} className="mt-12 grid gap-6 md:grid-cols-2 lg:mt-16 lg:gap-8">
               {projects.map((pr) => (
                 <li key={pr.slug}>

@@ -108,7 +108,7 @@ export const landingPages: Record<LandingSlug, LandingPage> = {
       },
       {
         q: "Can you renovate the rest of the house at the same time?",
-        a: "Yes. Renovations & Extensions can go on one contract, so a new kitchen or bathroom gets planned alongside the new rooms.",
+        a: "Yes. Renovations and extensions can go on one contract, so a new kitchen or bathroom gets planned alongside the new rooms.",
       },
     ],
   },

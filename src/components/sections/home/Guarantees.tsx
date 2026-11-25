@@ -89,7 +89,7 @@ export function Guarantees() {
             className="relative grid items-center gap-6 overflow-hidden rounded-[6px] bg-cream-50 p-6 text-purple ring-1 ring-purple/10 sm:p-9 md:col-span-2 md:grid-cols-[auto_1fr_auto] md:gap-10 lg:col-span-12 lg:px-11"
           >
             <p className="font-display text-[clamp(3.5rem,2.4rem+3vw,5.5rem)] leading-none font-bold tracking-[-0.05em] text-orange tabular">
-              $<Counter value={16} />k<span className="text-purple">+</span>
+              $<Counter value={20} />k<span className="text-purple">+</span>
             </p>
             <div>
               <h3 className="font-display text-[clamp(1.5rem,1.2rem+1vw,2.1rem)] leading-none font-bold tracking-[-0.02em]">{insurance.title}</h3>

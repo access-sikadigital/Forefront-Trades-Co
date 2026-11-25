@@ -48,16 +48,17 @@ export const findSuburbPage = (service: SuburbService, suburb: string) => suburb
  * photographed jobs"), never presented as work in that suburb (Page Blueprint §2).
  */
 const nearestByCouncil: Record<string, string[]> = {
-  Maribyrnong: ["footscray", "west-footscray"],
-  "Moonee Valley": ["footscray", "west-footscray"],
-  "Merri-bek": ["footscray", "west-footscray"],
+  Maribyrnong: ["footscray", "altona"],
+  "Moonee Valley": ["footscray", "altona"],
+  "Merri-bek": ["footscray", "altona"],
   "Hobsons Bay": ["altona", "footscray"],
-  Brimbank: ["west-footscray", "footscray"],
-  "City of Melbourne": ["footscray", "west-footscray"],
+  Brimbank: ["footscray", "altona"],
+  "City of Melbourne": ["footscray", "altona"],
 };
 
 export const nearestProjects = (suburb: string) => {
   const council = suburbLocal[suburb]?.council ?? "Maribyrnong";
-  const slugs = (nearestByCouncil[council] ?? ["footscray"]).filter((s) => s !== suburb);
-  return slugs.map((s) => publicProjects.find((p) => p.slug === s)).filter((p) => p !== undefined);
+  // The suburb's own project (if it has one) comes first, then the council's nearest.
+  const slugs = [suburb, ...(nearestByCouncil[council] ?? ["footscray"]).filter((s) => s !== suburb)];
+  return slugs.map((s) => publicProjects.find((p) => p.slug === s)).filter((p) => p !== undefined).slice(0, 2);
 };

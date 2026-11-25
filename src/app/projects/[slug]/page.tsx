@@ -19,11 +19,17 @@ export async function generateMetadata(props: PageProps<"/projects/[slug]">): Pr
   if (!pr) return {};
   const path = `/projects/${pr.slug}/`;
   return withCopyMeta(path, {
-    title: `${pr.title}, ${pr.suburb}`,
+    title: pr.title,
     description: `${pr.summary} ${pr.scope.replace(/ · /g, ", ")} in ${pr.suburb}, by Forefront Trades Co.`,
     alternates: { canonical: path },
     openGraph: { url: path, images: [{ url: pr.cover.src, alt: pr.cover.alt }] },
   });
+}
+
+/** "Full renovation · Extension · Pool" → "Full renovation, extension and pool". */
+function scopeSentence(scope: string) {
+  const parts = scope.split(" · ").map((x, i) => (i === 0 ? x : x.toLowerCase()));
+  return parts.length > 1 ? `${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}` : parts[0];
 }
 
 /** Case study: hero, what was built, before/after, gallery, related services, then the offer. */
@@ -33,7 +39,7 @@ export default async function ProjectPage(props: PageProps<"/projects/[slug]">) 
   const copy = copyFor(`/projects/${pr.slug}/`);
   return (
     <>
-      <PageHero hero={{ h1: `${pr.scope.replace(/ · /g, ", ")} in ${pr.suburb}`, title: [copy?.h1 ?? pr.title], intro: copy ? copy.intro.join(" ") : pr.summary, image: pr.cover, facts: pr.facts }} />
+      <PageHero hero={{ h1: `${scopeSentence(pr.scope)} in ${pr.suburb}`, title: [copy?.h1 ?? pr.title], intro: copy ? copy.intro.join(" ") : pr.summary, image: pr.cover, facts: pr.facts }} />
       {copy ? <CopySections sections={copy.sections} /> : <ProjectStory project={pr} />}
       {pr.video && <ProjectVideo video={pr.video} quote={pr.quote} />}
       {pr.beforeAfter && <BeforeAfterPairs pairs={pr.beforeAfter} />}

@@ -387,7 +387,7 @@ export const servicePages: Record<ServiceSlug, ServicePage> = {
       { q: "Should we go up or build out the back?", a: "It depends on your block, your budget and whether the existing house can carry a second storey. We'll tell you which makes sense at the first visit." },
       { q: "Do you handle the engineering and permits?", a: "Yes. The drawings, engineering and permits are part of your contract with us, so you're not hiring an engineer or chasing council yourself." },
       { q: "Can we stay in the house while you build?", a: "Often, because most of an extension is built outside the rooms you live in. The disruption comes when old and new are joined, and we'll tell you when that is before it starts." },
-      { q: "Can you renovate the rest of the house at the same time?", a: "Yes. Renovations & Extensions go on one contract, so the kitchen, bathrooms and new rooms are planned together." },
+      { q: "Can you renovate the rest of the house at the same time?", a: "Yes. Renovations and extensions go on one contract, so the kitchen, bathrooms and new rooms are planned together." },
       fixedPriceFaq,
     ],
   },
