@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { InlineScript } from "@/components/ui/InlineScript";
-import { site } from "@/config/site";
+import { ogImage, site } from "@/config/site";
 import { fontVariables } from "@/lib/fonts";
 import { organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     siteName: site.name,
-    images: [{ url: "/images/projects/footscray/pool-extension.jpg", width: 2400, height: 1600, alt: "Forefront Trades Co. rear extension and pool, Footscray" }],
+    images: [ogImage],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: { card: "summary_large_image", images: [ogImage] },
   // Google Search Console ownership (keep, even after verification succeeds). The HTML-file method is public/google46a453612aa98ad8.html.
   verification: { google: "Wx0X8T7T9tDIJCp667Zi0mL_S7lnxBPHBTfeikzH_NU" },
 };

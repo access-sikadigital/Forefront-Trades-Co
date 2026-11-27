@@ -27,6 +27,14 @@ export const site = {
   },
 } as const;
 
+/** Default link-preview image (1200x630) for pages that don't set their own. */
+export const ogImage = {
+  url: "/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Forefront Trades Co. rear extension and pool, Footscray",
+};
+
 export type NavItem = { label: string; href: string; children?: NavItem[] };
 
 // Service order is fixed by the client — keep it identical to the home page cards.
