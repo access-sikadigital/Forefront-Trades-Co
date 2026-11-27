@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 // TODO(client): confirm who calls back and how quickly (speed to lead).
-// TODO: fire the GA4 / Google Ads / Meta "Lead" conversion on this page once tracking is set up.
+// Conversions fire from the form ("generate_lead" dataLayer event), not on this page view.
 const next = [
   { title: "We read your enquiry", text: "Your details and the job you described come straight to our team." },
   { title: "A free phone or video conversation", text: "About the project, the location, where you're up to and your priorities." },
