@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useId, useState, type FormEvent, type ReactNode } from "react";
 import { ArrowIcon, PhoneButton } from "@/components/ui/Button";
 import { site } from "@/config/site";
+import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 // Options follow the owner's preview r5.2 (Oct 2026). Keep in step with /api/enquiry/.
@@ -102,6 +103,8 @@ export function EnquiryForm({ defaultService, className, compact = false }: { de
       const json = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
       if (res.ok && json.ok) {
         setStatus("sent");
+        // GTM trigger "CE - generate_lead" fires the GA4 lead event and the Google Ads lead conversion.
+        track("generate_lead", { form_page: window.location.pathname, service: String(data.service ?? "") });
         form.reset();
         // Separate thank-you page: a clean conversion URL for analytics and ad platforms.
         router.push("/thank-you/");

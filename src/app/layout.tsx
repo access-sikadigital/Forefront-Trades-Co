@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { Tracking, TrackingNoScript } from "@/components/providers/Tracking";
 import { InlineScript } from "@/components/ui/InlineScript";
-import { ogImage, site } from "@/config/site";
+import { ogImage, site, tracking } from "@/config/site";
 import { fontVariables } from "@/lib/fonts";
 import { organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
@@ -24,7 +25,11 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", images: [ogImage] },
   // Google Search Console ownership (keep, even after verification succeeds). The HTML-file method is public/google46a453612aa98ad8.html.
-  verification: { google: "Wx0X8T7T9tDIJCp667Zi0mL_S7lnxBPHBTfeikzH_NU" },
+  verification: {
+    google: "Wx0X8T7T9tDIJCp667Zi0mL_S7lnxBPHBTfeikzH_NU",
+    // Bing Webmaster Tools ownership (keep, even after verification succeeds).
+    other: { "msvalidate.01": tracking.bingVerification },
+  },
 };
 
 export const viewport: Viewport = {
@@ -42,6 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <InlineScript html={bootScript} />
       </head>
       <body>
+        <TrackingNoScript />
         <a href="#main" className="label fixed top-3 left-3 z-[200] -translate-y-24 bg-orange px-4 py-3 text-white focus:translate-y-0">
           Skip to content
         </a>
@@ -50,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main id="main">{children}</main>
           <Footer />
         </SmoothScroll>
+        <Tracking />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }} />
       </body>
     </html>

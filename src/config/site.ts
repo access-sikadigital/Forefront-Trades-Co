@@ -27,6 +27,18 @@ export const site = {
   },
 } as const;
 
+/**
+ * Tracking IDs (all in the access@sikadigital.com accounts).
+ * - GTM: FOR-01 - Forefront Trades Co. (also used on quote.forefronttrades.com.au)
+ * - Clarity: project "Forefront Trades Co - Website"
+ * - Bing Webmaster Tools: msvalidate.01 meta tag (keep after verification)
+ */
+export const tracking = {
+  gtmId: "GTM-K7GQ66C",
+  clarityId: "zk190kbau2",
+  bingVerification: "7ABAAC2EA0E34A098438EAD1EE14CC8D",
+} as const;
+
 /** Default link-preview image (1200x630) for pages that don't set their own. */
 export const ogImage = {
   url: "/og-image.jpg",
