@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogImage } from "@/config/site";
 import { copyFor } from "@/content/page-copy";
 
 /**
@@ -12,6 +13,6 @@ export function withCopyMeta(path: string, base: Metadata): Metadata {
     ...base,
     title: { absolute: c.seoTitle },
     description: c.meta,
-    openGraph: { ...base.openGraph, title: c.seoTitle, description: c.meta },
+    openGraph: { images: [ogImage], ...base.openGraph, title: c.seoTitle, description: c.meta },
   };
 }
